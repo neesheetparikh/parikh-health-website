@@ -17,7 +17,7 @@ export default function ProvidersPage() {
         className="pt-36 pb-20"
         style={{ background: "linear-gradient(135deg, #0F1F3D 0%, #1a3058 100%)" }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
             Our Team
           </span>
@@ -34,7 +34,7 @@ export default function ProvidersPage() {
 
       {/* Provider cards */}
       <section className="bg-white py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <div className="space-y-16">
             {TEAM.map((member, idx) => (
               <div
@@ -112,7 +112,7 @@ export default function ProvidersPage() {
         className="py-20"
         style={{ background: "linear-gradient(135deg, #0F1F3D 0%, #1a3058 100%)" }}
       >
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="site-container-narrow text-center">
           <h2 className="font-serif text-4xl font-semibold text-white mb-4">
             Ready to Meet Your Provider?
           </h2>

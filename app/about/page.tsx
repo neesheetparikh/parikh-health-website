@@ -37,7 +37,7 @@ export default function AboutPage() {
           background: "linear-gradient(135deg, #0F1F3D 0%, #1a3058 100%)",
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
             Our Story
           </span>
@@ -54,7 +54,7 @@ export default function AboutPage() {
 
       {/* Mission */}
       <section className="bg-white py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
@@ -108,7 +108,7 @@ export default function AboutPage() {
 
       {/* Values */}
       <section className="bg-[#F8F7F4] py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <div className="text-center mb-14">
             <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
               Our Values
@@ -138,7 +138,7 @@ export default function AboutPage() {
 
       {/* Team */}
       <section className="bg-white py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <div className="text-center mb-14">
             <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
               The Team
@@ -195,7 +195,7 @@ export default function AboutPage() {
         className="py-20"
         style={{ background: "linear-gradient(135deg, #0F1F3D 0%, #1a3058 100%)" }}
       >
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="site-container-narrow text-center">
           <h2 className="font-serif text-4xl font-semibold text-white mb-4">
             Ready to Meet the Team?
           </h2>

@@ -23,7 +23,7 @@ export default function EducationPage() {
         className="pt-36 pb-20"
         style={{ background: "linear-gradient(135deg, #0F1F3D 0%, #1a3058 100%)" }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
             Health Education
           </span>
@@ -39,7 +39,7 @@ export default function EducationPage() {
       </section>
 
       <section className="bg-white py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           {/* Categories */}
           <div className="flex flex-wrap gap-2 mb-14">
             <span className="text-xs font-semibold text-[#0F1F3D] bg-[#0F1F3D]/5 px-4 py-1.5 rounded-full">

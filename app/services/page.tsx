@@ -17,7 +17,7 @@ export default function ServicesPage() {
         className="pt-36 pb-20"
         style={{ background: "linear-gradient(135deg, #0F1F3D 0%, #1a3058 100%)" }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
             What We Offer
           </span>
@@ -33,7 +33,7 @@ export default function ServicesPage() {
 
       {/* Services grid */}
       <section className="bg-white py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {SERVICES.map((service) => (
               <Link
@@ -80,7 +80,7 @@ export default function ServicesPage() {
 
       {/* CTA */}
       <section className="bg-[#F8F7F4] py-20">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="site-container-narrow text-center">
           <h2 className="font-serif text-3xl font-semibold text-[#0F1F3D] mb-4">
             Not Sure Which Service You Need?
           </h2>

@@ -17,7 +17,7 @@ export default function AppointmentsPage() {
         className="pt-36 pb-20"
         style={{ background: "linear-gradient(135deg, #0F1F3D 0%, #1a3058 100%)" }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
             Scheduling
           </span>
@@ -32,7 +32,7 @@ export default function AppointmentsPage() {
       </section>
 
       <section className="bg-white py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <div className="grid lg:grid-cols-3 gap-10">
             {/* Main: booking widget area */}
             <div className="lg:col-span-2">

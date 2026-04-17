@@ -72,7 +72,7 @@ export default async function BlogPostPage({ params }: Params) {
         className="pt-36 pb-16"
         style={{ background: "linear-gradient(135deg, #0F1F3D 0%, #1a3058 100%)" }}
       >
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+        <div className="site-container-article">
           <Link
             href="/education"
             className="inline-flex items-center gap-1.5 text-white/50 hover:text-white text-sm mb-6 transition-colors"
@@ -104,7 +104,7 @@ export default async function BlogPostPage({ params }: Params) {
 
       {/* Article */}
       <section className="bg-white py-16">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+        <div className="site-container-article">
           <div className="grid lg:grid-cols-[1fr_280px] gap-16">
             {/* Content */}
             <article>

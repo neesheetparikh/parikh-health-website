@@ -36,7 +36,7 @@ export default async function ServicePage({ params }: Params) {
         className="pt-36 pb-20"
         style={{ background: "linear-gradient(135deg, #0F1F3D 0%, #1a3058 100%)" }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <Link
             href="/services"
             className="inline-flex items-center gap-1.5 text-white/50 hover:text-white text-sm mb-6 transition-colors"
@@ -57,7 +57,7 @@ export default async function ServicePage({ params }: Params) {
 
       {/* Main content */}
       <section className="bg-white py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <div className="grid lg:grid-cols-3 gap-16">
             <div className="lg:col-span-2">
               <h2 className="font-serif text-3xl font-semibold text-[#0F1F3D] mb-5">

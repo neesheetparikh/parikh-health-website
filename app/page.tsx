@@ -97,7 +97,7 @@ export default function HomePage() {
           }}
         />
 
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-24">
+        <div className="site-container relative pt-32 pb-24">
           <div className="max-w-3xl">
             {/* Rating badge */}
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-8">
@@ -183,7 +183,7 @@ export default function HomePage() {
 
       {/* ── STATS ──────────────────────────────────────────────────────────── */}
       <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x divide-gray-100">
             {[
               { value: "15+", label: "Years in Practice" },
@@ -209,7 +209,7 @@ export default function HomePage() {
 
       {/* ── SERVICES ───────────────────────────────────────────────────────── */}
       <section className="bg-[#F8F7F4] py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <div className="text-center mb-14">
             <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
               What We Offer
@@ -259,7 +259,7 @@ export default function HomePage() {
 
       {/* ── WHY US ─────────────────────────────────────────────────────────── */}
       <section className="bg-white py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
@@ -335,7 +335,7 @@ export default function HomePage() {
 
       {/* ── TESTIMONIALS ───────────────────────────────────────────────────── */}
       <section className="bg-[#0F1F3D] py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <div className="text-center mb-14">
             <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
               Patient Stories
@@ -383,7 +383,7 @@ export default function HomePage() {
 
       {/* ── EDUCATION PREVIEW ──────────────────────────────────────────────── */}
       <section className="bg-white py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <div className="flex items-end justify-between mb-12">
             <div>
               <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
@@ -448,7 +448,7 @@ export default function HomePage() {
             "linear-gradient(135deg, #0F1F3D 0%, #1a3058 100%)",
         }}
       >
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <div className="site-container-article text-center">
           <h2 className="font-serif text-4xl font-semibold text-white mb-4">
             Ready to Experience Exceptional Care?
           </h2>

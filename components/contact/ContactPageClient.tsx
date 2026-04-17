@@ -80,7 +80,7 @@ export default function ContactPage() {
         className="pt-36 pb-20"
         style={{ background: "linear-gradient(135deg, #0F1F3D 0%, #1a3058 100%)" }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
             Get in Touch
           </span>
@@ -95,7 +95,7 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-white py-24" id="message">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <div className="grid lg:grid-cols-3 gap-16">
             {/* Form */}
             <div className="lg:col-span-2">

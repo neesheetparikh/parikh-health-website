@@ -33,7 +33,7 @@ export default function Navbar() {
           : "bg-transparent"
       )}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="site-container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex flex-col leading-none group">
@@ -108,7 +108,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-xl">
-          <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-4">
+          <div className="site-container flex flex-col gap-4 py-6">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}

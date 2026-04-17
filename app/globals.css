@@ -22,9 +22,15 @@
 
   --color-cream: #F8F7F4;
 
-  /* Animation */
-  --animate-fade-up: fadeUp 0.6s ease-out forwards;
-  --animate-fade-in: fadeIn 0.4s ease-out forwards;
+  /* Explicit spacing scale so Tailwind v4 utilities always resolve */
+  --spacing: 0.25rem;
+
+  /* Container sizes */
+  --container-3xl: 48rem;
+  --container-4xl: 56rem;
+  --container-5xl: 64rem;
+  --container-6xl: 72rem;
+  --container-7xl: 80rem;
 }
 
 @keyframes fadeUp {
@@ -37,10 +43,9 @@
   to   { opacity: 1; }
 }
 
-* {
+/* ── Reset ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 html {
@@ -69,7 +74,25 @@ a, button {
   border-radius: 4px;
 }
 
-/* Prose overrides for MDX blog posts */
+/* ── Layout helper — wraps all page section content ─────────────────────── */
+/* Equivalent to max-w-7xl mx-auto px-6 lg:px-8 but guaranteed to work     */
+.site-container {
+  width: 100%;
+  max-width: 80rem;        /* 1280px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;    /* 24px  */
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .site-container {
+    padding-left: 2rem;    /* 32px */
+    padding-right: 2rem;
+  }
+}
+
+/* ── Prose (MDX blog posts) ──────────────────────────────────────────────── */
 .prose h1, .prose h2, .prose h3, .prose h4 {
   font-family: var(--font-serif);
   color: #0F1F3D;
@@ -84,15 +107,38 @@ a, button {
   text-decoration: underline;
 }
 
-/* Scroll margin for nav links */
+/* ── Utilities ───────────────────────────────────────────────────────────── */
 [id] {
   scroll-margin-top: 5rem;
 }
 
-/* Line-clamp utilities (for blog excerpt truncation) */
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* Narrower containers for CTA banners and articles */
+.site-container-narrow {
+  width: 100%;
+  max-width: 48rem;   /* 768px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.site-container-article {
+  width: 100%;
+  max-width: 64rem;   /* 1024px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .site-container-narrow  { padding-left: 2rem; padding-right: 2rem; }
+  .site-container-article { padding-left: 2rem; padding-right: 2rem; }
 }
