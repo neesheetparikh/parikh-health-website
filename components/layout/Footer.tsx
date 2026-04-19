@@ -8,7 +8,7 @@ const SERVICES_LINKS = [
   { label: "Physical Therapy", href: "/services/physical-therapy" },
   { label: "Concierge Medicine", href: "/services/concierge-medicine" },
   { label: "Cosmetic Services", href: "/services/cosmetics" },
-  { label: "Corporate Health", href: "/services/corporate-health" },
+  { label: "Athlete Wellness", href: "/services/athlete-wellness" },
 ];
 
 const QUICK_LINKS = [
