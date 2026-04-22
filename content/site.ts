@@ -73,6 +73,48 @@ export const TEAM = [
     specialties: ["Sports Rehabilitation", "Musculoskeletal Therapy", "Fit3D Body Scanning", "Post-Surgical Recovery"],
     acceptingNewPatients: true,
   },
+  {
+    id: "sonia-sharma",
+    name: "Sonia Sharma",
+    credentials: "PT",
+    title: "Physical Therapist",
+    bio: "Sonia Sharma is a licensed physical therapist dedicated to helping patients recover from injury and return to the activities they love. She brings expertise in orthopedic and sports rehabilitation to every treatment plan.",
+    image: "/team/sonia-sharma.jpg",
+    specialties: ["Orthopedic Rehabilitation", "Sports Therapy", "Manual Therapy"],
+    acceptingNewPatients: true,
+  },
+  {
+    id: "harshit-bhatwala",
+    name: "Harshit Bhatwala",
+    credentials: "PT",
+    title: "Physical Therapist",
+    bio: "Harshit Bhatwala is a licensed physical therapist focused on evidence-based care and personalized rehabilitation. He works closely with patients to restore strength, mobility, and confidence after injury or surgery.",
+    image: "/team/harshit-bhatwala.jpg",
+    specialties: ["Sports Rehabilitation", "Post-Surgical Recovery", "Therapeutic Exercise"],
+    acceptingNewPatients: true,
+  },
+  {
+    id: "vaishali-parab",
+    name: "Vaishali Parab",
+    credentials: "PTA",
+    title: "Physical Therapist Assistant",
+    bio: "Vaishali Parab is a physical therapist assistant who works alongside our PT team to deliver hands-on rehabilitation and therapeutic exercise programs tailored to each patient's recovery goals.",
+    image: "/team/vaishali-parab.jpg",
+    specialties: ["Therapeutic Exercise", "Rehabilitation Support", "Patient Education"],
+    acceptingNewPatients: true,
+  },
+];
+
+export const SUPPORT_STAFF = [
+  { name: "Gabriela Montiel", title: "Office Manager" },
+  { name: "Ami Desai", title: "Medical Assistant & Phlebotomist" },
+  { name: "Duncan Chisholm", title: "Medical Assistant & Phlebotomist" },
+  { name: "Aarushi Kumar", title: "Front Desk" },
+  { name: "Vivi Le", title: "PT Aide" },
+  { name: "Jazmyn Henry", title: "PT Aide" },
+  { name: "Earl Dela Rosa", title: "PT Aide" },
+  { name: "Neha Shah", title: "PT Aide" },
+  { name: "Saurabh Bhatt", title: "Billing Specialist" },
 ];
 
 export const SERVICES = [
