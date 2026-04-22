@@ -34,11 +34,11 @@ export default function AboutPage() {
       <section
         className="pt-36 pb-20"
         style={{
-          background: "linear-gradient(135deg, #0F1F3D 0%, #1a3058 100%)",
+          background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)",
         }}
       >
         <div className="site-container">
-          <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
+          <span className="text-[#111111] text-sm font-semibold tracking-widest uppercase">
             Our Story
           </span>
           <h1 className="font-serif text-5xl font-semibold text-white mt-3 mb-5 max-w-xl leading-tight">
@@ -57,10 +57,10 @@ export default function AboutPage() {
         <div className="site-container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
+              <span className="text-[#111111] text-sm font-semibold tracking-widest uppercase">
                 Who We Are
               </span>
-              <h2 className="font-serif text-4xl font-semibold text-[#0F1F3D] mt-3 mb-5 leading-snug">
+              <h2 className="font-serif text-4xl font-semibold text-[#111111] mt-3 mb-5 leading-snug">
                 A Different Kind of Practice
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
@@ -91,7 +91,7 @@ export default function AboutPage() {
                   "Bilingual care available",
                 ].map((pt) => (
                   <li key={pt} className="flex items-center gap-3">
-                    <CheckCircle2 size={16} className="text-[#C9A465]" />
+                    <CheckCircle2 size={16} className="text-[#111111]" />
                     <span className="text-sm text-gray-600">{pt}</span>
                   </li>
                 ))}
@@ -110,10 +110,10 @@ export default function AboutPage() {
       <section className="bg-[#F8F7F4] py-24">
         <div className="site-container">
           <div className="text-center mb-14">
-            <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
+            <span className="text-[#111111] text-sm font-semibold tracking-widest uppercase">
               Our Values
             </span>
-            <h2 className="font-serif text-4xl font-semibold text-[#0F1F3D] mt-3">
+            <h2 className="font-serif text-4xl font-semibold text-[#111111] mt-3">
               What Guides Everything We Do
             </h2>
           </div>
@@ -123,10 +123,10 @@ export default function AboutPage() {
                 key={v.title}
                 className="bg-white rounded-2xl p-8 border border-gray-100"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#0F1F3D]/5 flex items-center justify-center mb-5">
-                  <v.icon size={22} className="text-[#C9A465]" />
+                <div className="w-12 h-12 rounded-xl bg-[#111111]/5 flex items-center justify-center mb-5">
+                  <v.icon size={22} className="text-[#111111]" />
                 </div>
-                <h3 className="font-serif text-xl font-semibold text-[#0F1F3D] mb-3">
+                <h3 className="font-serif text-xl font-semibold text-[#111111] mb-3">
                   {v.title}
                 </h3>
                 <p className="text-sm text-gray-500 leading-relaxed">{v.body}</p>
@@ -140,10 +140,10 @@ export default function AboutPage() {
       <section className="bg-white py-24">
         <div className="site-container">
           <div className="text-center mb-14">
-            <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
+            <span className="text-[#111111] text-sm font-semibold tracking-widest uppercase">
               The Team
             </span>
-            <h2 className="font-serif text-4xl font-semibold text-[#0F1F3D] mt-3">
+            <h2 className="font-serif text-4xl font-semibold text-[#111111] mt-3">
               Meet Your Providers
             </h2>
           </div>
@@ -157,9 +157,9 @@ export default function AboutPage() {
                   <div className="text-gray-300 text-sm">Photo</div>
                 </div>
                 <div className="p-6">
-                  <h3 className="font-serif text-xl font-semibold text-[#0F1F3D]">
+                  <h3 className="font-serif text-xl font-semibold text-[#111111]">
                     {member.name},{" "}
-                    <span className="font-normal text-[#C9A465]">
+                    <span className="font-normal text-[#111111]">
                       {member.credentials}
                     </span>
                   </h3>
@@ -182,7 +182,7 @@ export default function AboutPage() {
           <div className="text-center">
             <Link
               href="/providers"
-              className="inline-flex items-center gap-2 bg-[#0F1F3D] hover:bg-[#1a2f5a] text-white font-medium px-7 py-3.5 rounded-full text-sm transition-colors"
+              className="inline-flex items-center gap-2 bg-[#111111] hover:bg-[#333333] text-white font-medium px-7 py-3.5 rounded-full text-sm transition-colors"
             >
               Full Provider Profiles <ArrowRight size={16} />
             </Link>
@@ -193,7 +193,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section
         className="py-20"
-        style={{ background: "linear-gradient(135deg, #0F1F3D 0%, #1a3058 100%)" }}
+        style={{ background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)" }}
       >
         <div className="site-container-narrow text-center">
           <h2 className="font-serif text-4xl font-semibold text-white mb-4">
@@ -204,7 +204,7 @@ export default function AboutPage() {
           </p>
           <Link
             href="/appointments"
-            className="inline-flex items-center gap-2 bg-[#C9A465] hover:bg-[#b8912e] text-white font-medium px-8 py-4 rounded-full transition-colors"
+            className="inline-flex items-center gap-2 bg-[#111111] hover:bg-[#333333] text-white font-medium px-8 py-4 rounded-full transition-colors"
           >
             Book an Appointment <ArrowRight size={18} />
           </Link>

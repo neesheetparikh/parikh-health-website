@@ -15,10 +15,10 @@ export default function AppointmentsPage() {
       {/* Header */}
       <section
         className="pt-36 pb-20"
-        style={{ background: "linear-gradient(135deg, #0F1F3D 0%, #1a3058 100%)" }}
+        style={{ background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)" }}
       >
         <div className="site-container">
-          <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
+          <span className="text-[#111111] text-sm font-semibold tracking-widest uppercase">
             Scheduling
           </span>
           <h1 className="font-serif text-5xl font-semibold text-white mt-3 mb-5 max-w-xl leading-tight">
@@ -36,7 +36,7 @@ export default function AppointmentsPage() {
           <div className="grid lg:grid-cols-3 gap-10">
             {/* Main: booking widget area */}
             <div className="lg:col-span-2">
-              <h2 className="font-serif text-3xl font-semibold text-[#0F1F3D] mb-3">
+              <h2 className="font-serif text-3xl font-semibold text-[#111111] mb-3">
                 Book Online
               </h2>
               <p className="text-gray-500 mb-8">
@@ -55,7 +55,7 @@ export default function AppointmentsPage() {
                       href={SITE.booking.zocdocUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-[#0F1F3D] hover:bg-[#1a2f5a] text-white font-medium px-8 py-4 rounded-full transition-colors text-base"
+                      className="inline-flex items-center gap-2 bg-[#111111] hover:bg-[#333333] text-white font-medium px-8 py-4 rounded-full transition-colors text-base"
                     >
                       Book on ZocDoc <ArrowRight size={18} />
                     </a>
@@ -79,7 +79,7 @@ export default function AppointmentsPage() {
                     </p>
                     <a
                       href={`tel:${SITE.phone.appointments}`}
-                      className="inline-flex items-center gap-2 bg-[#0F1F3D] text-white font-medium px-7 py-3.5 rounded-full text-sm"
+                      className="inline-flex items-center gap-2 bg-[#111111] text-white font-medium px-7 py-3.5 rounded-full text-sm"
                     >
                       <Phone size={16} /> Call to Book
                     </a>
@@ -90,7 +90,7 @@ export default function AppointmentsPage() {
               {/* New vs Existing */}
               <div className="mt-10 grid sm:grid-cols-2 gap-6">
                 <div className="bg-[#F8F7F4] rounded-2xl p-6 border border-gray-100">
-                  <h3 className="font-serif text-lg font-semibold text-[#0F1F3D] mb-3">
+                  <h3 className="font-serif text-lg font-semibold text-[#111111] mb-3">
                     New Patient?
                   </h3>
                   <ul className="space-y-2 mb-4">
@@ -101,20 +101,20 @@ export default function AppointmentsPage() {
                       "List any current medications",
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-2 text-sm text-gray-500">
-                        <CheckCircle2 size={14} className="text-[#C9A465] mt-0.5 shrink-0" />
+                        <CheckCircle2 size={14} className="text-[#111111] mt-0.5 shrink-0" />
                         {item}
                       </li>
                     ))}
                   </ul>
                   <Link
                     href="/contact"
-                    className="text-sm text-[#C9A465] font-medium hover:underline"
+                    className="text-sm text-[#111111] font-medium hover:underline"
                   >
                     Have questions? Contact us →
                   </Link>
                 </div>
                 <div className="bg-[#F8F7F4] rounded-2xl p-6 border border-gray-100">
-                  <h3 className="font-serif text-lg font-semibold text-[#0F1F3D] mb-3">
+                  <h3 className="font-serif text-lg font-semibold text-[#111111] mb-3">
                     Existing Patient?
                   </h3>
                   <ul className="space-y-2 mb-4">
@@ -125,14 +125,14 @@ export default function AppointmentsPage() {
                       "Prescription refills: allow 48 hrs",
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-2 text-sm text-gray-500">
-                        <CheckCircle2 size={14} className="text-[#C9A465] mt-0.5 shrink-0" />
+                        <CheckCircle2 size={14} className="text-[#111111] mt-0.5 shrink-0" />
                         {item}
                       </li>
                     ))}
                   </ul>
                   <a
                     href={`tel:${SITE.phone.appointments}`}
-                    className="text-sm text-[#C9A465] font-medium hover:underline"
+                    className="text-sm text-[#111111] font-medium hover:underline"
                   >
                     Call for same-day availability →
                   </a>
@@ -143,7 +143,7 @@ export default function AppointmentsPage() {
             {/* Sidebar */}
             <div className="space-y-6">
               {/* Call */}
-              <div className="bg-[#0F1F3D] rounded-2xl p-7 text-white">
+              <div className="bg-[#111111] rounded-2xl p-7 text-white">
                 <h3 className="font-serif text-xl font-semibold mb-4">
                   Prefer to Call?
                 </h3>
@@ -152,17 +152,17 @@ export default function AppointmentsPage() {
                 </p>
                 <a
                   href={`tel:${SITE.phone.appointments}`}
-                  className="flex items-center gap-2 text-lg font-semibold hover:text-[#C9A465] transition-colors"
+                  className="flex items-center gap-2 text-lg font-semibold hover:text-[#111111] transition-colors"
                 >
-                  <Phone size={18} className="text-[#C9A465]" />
+                  <Phone size={18} className="text-[#111111]" />
                   {SITE.phone.appointments}
                 </a>
               </div>
 
               {/* Hours */}
               <div className="border border-gray-100 rounded-2xl p-7">
-                <h3 className="font-serif text-lg font-semibold text-[#0F1F3D] mb-4 flex items-center gap-2">
-                  <Clock size={18} className="text-[#C9A465]" /> Office Hours
+                <h3 className="font-serif text-lg font-semibold text-[#111111] mb-4 flex items-center gap-2">
+                  <Clock size={18} className="text-[#111111]" /> Office Hours
                 </h3>
                 <ul className="space-y-2">
                   {SITE.hours.map((h) => (
@@ -171,7 +171,7 @@ export default function AppointmentsPage() {
                       className="flex justify-between text-sm text-gray-600"
                     >
                       <span>{h.day}</span>
-                      <span className="font-medium text-[#0F1F3D]">{h.hours}</span>
+                      <span className="font-medium text-[#111111]">{h.hours}</span>
                     </li>
                   ))}
                 </ul>
@@ -179,8 +179,8 @@ export default function AppointmentsPage() {
 
               {/* Location */}
               <div className="border border-gray-100 rounded-2xl p-7">
-                <h3 className="font-serif text-lg font-semibold text-[#0F1F3D] mb-4 flex items-center gap-2">
-                  <MapPin size={18} className="text-[#C9A465]" /> Location
+                <h3 className="font-serif text-lg font-semibold text-[#111111] mb-4 flex items-center gap-2">
+                  <MapPin size={18} className="text-[#111111]" /> Location
                 </h3>
                 <p className="text-sm text-gray-500 mb-4">
                   {SITE.address.full}
@@ -189,15 +189,15 @@ export default function AppointmentsPage() {
                   href={SITE.address.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-[#C9A465] font-medium hover:underline"
+                  className="text-sm text-[#111111] font-medium hover:underline"
                 >
                   Get Directions →
                 </a>
               </div>
 
               {/* Concierge note */}
-              <div className="bg-[#C9A465]/10 border border-[#C9A465]/20 rounded-2xl p-7">
-                <h3 className="font-serif text-lg font-semibold text-[#0F1F3D] mb-2">
+              <div className="bg-black/5 border border-black/10 rounded-2xl p-7">
+                <h3 className="font-serif text-lg font-semibold text-[#111111] mb-2">
                   Concierge Patients
                 </h3>
                 <p className="text-sm text-gray-500">

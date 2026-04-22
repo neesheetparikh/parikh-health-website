@@ -9,8 +9,8 @@ export default function AccessibilityPage() {
   return (
     <section className="bg-white pt-36 pb-24">
       <div className="site-container-narrow">
-        <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">Legal</span>
-        <h1 className="font-serif text-4xl font-semibold text-[#0F1F3D] mt-3 mb-8">
+        <span className="text-[#111111] text-sm font-semibold tracking-widest uppercase">Legal</span>
+        <h1 className="font-serif text-4xl font-semibold text-[#111111] mt-3 mb-8">
           Accessibility Statement
         </h1>
         <div className="prose prose-lg text-gray-600">

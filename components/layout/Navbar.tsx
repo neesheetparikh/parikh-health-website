@@ -27,10 +27,8 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100"
-          : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md",
+        scrolled ? "shadow-sm border-b border-gray-100" : "border-b border-gray-100"
       )}
     >
       <div className="site-container">
@@ -40,7 +38,7 @@ export default function Navbar() {
             <span
               className={cn(
                 "font-serif text-xl font-semibold tracking-tight transition-colors",
-                scrolled ? "text-[#0F1F3D]" : "text-white"
+                "text-[#111111]"
               )}
             >
               ParikhHealth
@@ -48,7 +46,7 @@ export default function Navbar() {
             <span
               className={cn(
                 "text-xs font-light tracking-widest uppercase transition-colors",
-                scrolled ? "text-[#C9A465]" : "text-[#C9A465]"
+                "text-gray-400"
               )}
             >
               Sunnyvale, CA
@@ -62,8 +60,8 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "text-sm font-medium tracking-wide hover:text-[#C9A465] transition-colors",
-                  scrolled ? "text-[#1a1a1a]" : "text-white/90"
+                  "text-sm font-medium tracking-wide hover:text-[#111111] transition-colors",
+                  "text-[#1a1a1a]"
                 )}
               >
                 {link.label}
@@ -77,7 +75,7 @@ export default function Navbar() {
               href={`tel:${SITE.phone.appointments}`}
               className={cn(
                 "flex items-center gap-1.5 text-sm font-medium transition-colors",
-                scrolled ? "text-[#0F1F3D]" : "text-white/80 hover:text-white"
+                "text-[#111111] hover:text-[#333333]"
               )}
             >
               <Phone size={14} />
@@ -85,7 +83,7 @@ export default function Navbar() {
             </a>
             <Link
               href="/appointments"
-              className="bg-[#C9A465] hover:bg-[#b8912e] text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors"
+              className="bg-[#111111] hover:bg-[#333333] text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors"
             >
               Book Appointment
             </Link>
@@ -96,7 +94,7 @@ export default function Navbar() {
             onClick={() => setOpen(!open)}
             className={cn(
               "lg:hidden p-2 rounded-md",
-              scrolled ? "text-[#0F1F3D]" : "text-white"
+              "text-[#111111]"
             )}
             aria-label="Toggle menu"
           >
@@ -114,7 +112,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-base font-medium text-[#1a1a1a] hover:text-[#C9A465] py-1"
+                className="text-base font-medium text-[#1a1a1a] hover:text-[#111111] py-1"
               >
                 {link.label}
               </Link>
@@ -122,7 +120,7 @@ export default function Navbar() {
             <div className="pt-4 border-t border-gray-100 flex flex-col gap-3">
               <a
                 href={`tel:${SITE.phone.appointments}`}
-                className="flex items-center gap-2 text-sm text-[#0F1F3D]"
+                className="flex items-center gap-2 text-sm text-[#111111]"
               >
                 <Phone size={14} />
                 {SITE.phone.appointments}
@@ -130,7 +128,7 @@ export default function Navbar() {
               <Link
                 href="/appointments"
                 onClick={() => setOpen(false)}
-                className="bg-[#C9A465] text-white text-sm font-medium px-5 py-3 rounded-full text-center"
+                className="bg-[#111111] text-white text-sm font-medium px-5 py-3 rounded-full text-center"
               >
                 Book Appointment
               </Link>

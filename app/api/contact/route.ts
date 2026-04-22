@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
 
     const htmlBody = `
       <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
-        <h2 style="color:#0F1F3D;border-bottom:2px solid #C9A465;padding-bottom:8px">
+        <h2 style="color:#111111;border-bottom:2px solid #111111;padding-bottom:8px">
           New Message from ParikhHealth Website
         </h2>
         <table style="width:100%;border-collapse:collapse;margin:16px 0">
@@ -28,8 +28,8 @@ export async function POST(req: NextRequest) {
           <tr><td style="padding:6px 12px;background:#f5f5f5;font-weight:600">Patient?</td><td style="padding:6px 12px">${isPatient === "yes" ? "Yes — existing patient" : "No — new patient"}</td></tr>
           <tr><td style="padding:6px 12px;background:#f5f5f5;font-weight:600">Subject</td><td style="padding:6px 12px">${subject}</td></tr>
         </table>
-        <h3 style="color:#0F1F3D">Message</h3>
-        <div style="background:#f9f9f9;border-left:3px solid #C9A465;padding:12px 16px;white-space:pre-wrap">${message}</div>
+        <h3 style="color:#111111">Message</h3>
+        <div style="background:#f9f9f9;border-left:3px solid #111111;padding:12px 16px;white-space:pre-wrap">${message}</div>
         <p style="color:#999;font-size:12px;margin-top:24px">
           Submitted ${new Date().toLocaleString("en-US", { timeZone: "America/Los_Angeles" })} PT via parikhhealth.com
         </p>

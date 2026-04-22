@@ -70,7 +70,7 @@ export default async function BlogPostPage({ params }: Params) {
       {/* Header */}
       <section
         className="pt-36 pb-16"
-        style={{ background: "linear-gradient(135deg, #0F1F3D 0%, #1a3058 100%)" }}
+        style={{ background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)" }}
       >
         <div className="site-container-article">
           <Link
@@ -79,7 +79,7 @@ export default async function BlogPostPage({ params }: Params) {
           >
             <ArrowLeft size={14} /> All Articles
           </Link>
-          <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
+          <span className="text-[#111111] text-sm font-semibold tracking-widest uppercase">
             {post.category}
           </span>
           <h1 className="font-serif text-4xl md:text-5xl font-semibold text-white mt-3 mb-6 leading-tight">
@@ -108,7 +108,7 @@ export default async function BlogPostPage({ params }: Params) {
           <div className="grid lg:grid-cols-[1fr_280px] gap-16">
             {/* Content */}
             <article>
-              <div className="prose prose-lg prose-headings:font-serif prose-headings:text-[#0F1F3D] prose-a:text-[#C9A465] prose-a:no-underline hover:prose-a:underline max-w-none text-gray-700">
+              <div className="prose prose-lg prose-headings:font-serif prose-headings:text-[#111111] prose-a:text-[#111111] prose-a:no-underline hover:prose-a:underline max-w-none text-gray-700">
                 <MDXRemote source={post.content} />
               </div>
 
@@ -131,7 +131,7 @@ export default async function BlogPostPage({ params }: Params) {
             {/* Sidebar */}
             <aside className="space-y-6">
               {/* Book CTA */}
-              <div className="bg-[#0F1F3D] rounded-2xl p-6 text-white sticky top-28">
+              <div className="bg-[#111111] rounded-2xl p-6 text-white sticky top-28">
                 <h3 className="font-serif text-lg font-semibold mb-3">
                   Have Questions?
                 </h3>
@@ -142,7 +142,7 @@ export default async function BlogPostPage({ params }: Params) {
                 <div className="space-y-2">
                   <Link
                     href="/appointments"
-                    className="block text-center bg-[#C9A465] hover:bg-[#b8912e] text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors"
+                    className="block text-center bg-[#111111] hover:bg-[#333333] text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors"
                   >
                     Book an Appointment
                   </Link>
@@ -158,7 +158,7 @@ export default async function BlogPostPage({ params }: Params) {
               {/* Related */}
               {related.length > 0 && (
                 <div>
-                  <h3 className="text-sm font-semibold text-[#0F1F3D] uppercase tracking-wide mb-4">
+                  <h3 className="text-sm font-semibold text-[#111111] uppercase tracking-wide mb-4">
                     Related Articles
                   </h3>
                   <div className="space-y-4">
@@ -170,7 +170,7 @@ export default async function BlogPostPage({ params }: Params) {
                       >
                         <div className="w-14 h-14 rounded-xl bg-[#F8F7F4] shrink-0" />
                         <div>
-                          <p className="text-sm font-medium text-[#0F1F3D] group-hover:text-[#C9A465] transition-colors leading-snug">
+                          <p className="text-sm font-medium text-[#111111] group-hover:text-[#111111] transition-colors leading-snug">
                             {r.title}
                           </p>
                           <p className="text-xs text-gray-400 mt-1">
@@ -182,7 +182,7 @@ export default async function BlogPostPage({ params }: Params) {
                   </div>
                   <Link
                     href="/education"
-                    className="flex items-center gap-1 text-xs font-semibold text-[#C9A465] mt-5 hover:underline"
+                    className="flex items-center gap-1 text-xs font-semibold text-[#111111] mt-5 hover:underline"
                   >
                     All Articles <ArrowRight size={12} />
                   </Link>

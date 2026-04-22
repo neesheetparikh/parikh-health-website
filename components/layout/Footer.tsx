@@ -7,6 +7,7 @@ const SERVICES_LINKS = [
   { label: "Sports Medicine", href: "/services/sports-medicine" },
   { label: "Physical Therapy", href: "/services/physical-therapy" },
   { label: "Concierge Medicine", href: "/services/concierge-medicine" },
+  { label: "Women's Health", href: "/services/womens-health" },
   { label: "Cosmetic Services", href: "/services/cosmetics" },
   { label: "Athlete Wellness", href: "/services/athlete-wellness" },
 ];
@@ -22,7 +23,7 @@ const QUICK_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0F1F3D] text-white">
+    <footer className="bg-[#111111] text-white">
       {/* Main footer */}
       <div className="site-container py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -32,7 +33,7 @@ export default function Footer() {
               <span className="font-serif text-2xl font-semibold">
                 ParikhHealth
               </span>
-              <span className="text-xs text-[#C9A465] tracking-widest uppercase mt-1">
+              <span className="text-xs text-white/60 tracking-widest uppercase mt-1">
                 Sunnyvale, CA
               </span>
             </div>
@@ -42,7 +43,7 @@ export default function Footer() {
             </p>
             <Link
               href="/appointments"
-              className="inline-block bg-[#C9A465] hover:bg-[#b8912e] text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors"
+              className="inline-block bg-white hover:bg-white/90 text-[#111111] text-sm font-medium px-5 py-2.5 rounded-full transition-colors"
             >
               Book an Appointment
             </Link>
@@ -50,7 +51,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-sm font-semibold tracking-widest uppercase text-[#C9A465] mb-5">
+            <h3 className="text-sm font-semibold tracking-widest uppercase text-white/60 mb-5">
               Services
             </h3>
             <ul className="space-y-2.5">
@@ -69,7 +70,7 @@ export default function Footer() {
 
           {/* Quick links */}
           <div>
-            <h3 className="text-sm font-semibold tracking-widest uppercase text-[#C9A465] mb-5">
+            <h3 className="text-sm font-semibold tracking-widest uppercase text-white/60 mb-5">
               Quick Links
             </h3>
             <ul className="space-y-2.5">
@@ -88,12 +89,12 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-semibold tracking-widest uppercase text-[#C9A465] mb-5">
+            <h3 className="text-sm font-semibold tracking-widest uppercase text-white/60 mb-5">
               Contact
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin size={14} className="text-[#C9A465] mt-0.5 shrink-0" />
+                <MapPin size={14} className="text-white/60 mt-0.5 shrink-0" />
                 <a
                   href={SITE.address.mapsUrl}
                   target="_blank"
@@ -106,7 +107,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={14} className="text-[#C9A465] shrink-0" />
+                <Phone size={14} className="text-white/60 shrink-0" />
                 <div className="flex flex-col">
                   <a
                     href={`tel:${SITE.phone.appointments}`}
@@ -123,7 +124,7 @@ export default function Footer() {
                 </div>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={14} className="text-[#C9A465] shrink-0" />
+                <Mail size={14} className="text-white/60 shrink-0" />
                 <a
                   href={`mailto:${SITE.email}`}
                   className="text-sm text-white/70 hover:text-white transition-colors"
@@ -132,7 +133,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Clock size={14} className="text-[#C9A465] mt-0.5 shrink-0" />
+                <Clock size={14} className="text-white/60 mt-0.5 shrink-0" />
                 <div className="flex flex-col gap-0.5">
                   {SITE.hours.map((h) => (
                     <span key={h.day} className="text-sm text-white/70">

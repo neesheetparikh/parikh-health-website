@@ -140,6 +140,25 @@ export const SERVICES = [
     image: "/services/cosmetics.jpg",
   },
   {
+    id: "womens-health",
+    name: "Women's Health",
+    shortDesc: "Compassionate, comprehensive care for women at every stage of life.",
+    description:
+      "Our women's health services provide a comfortable, thorough approach to preventive care and gynecologic health. We believe every woman deserves a provider who listens carefully and takes her concerns seriously — whether she's coming in for a routine exam or navigating a new health question.",
+    icon: "heart",
+    highlights: [
+      "Annual well-woman exams",
+      "Pap smears & cervical cancer screening",
+      "Clinical breast exams",
+      "Contraception counseling & management",
+      "Menstrual health & hormone discussions",
+      "STI screening & sexual health",
+      "Menopause & perimenopause support",
+      "Referrals to OB/GYN specialists when needed",
+    ],
+    image: "/services/womens-health.jpg",
+  },
+  {
     id: "concierge-medicine",
     name: "Concierge Medicine",
     shortDesc: "Unhurried care, direct access, and a true medical partnership.",

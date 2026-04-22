@@ -15,10 +15,10 @@ export default function ProvidersPage() {
       {/* Header */}
       <section
         className="pt-36 pb-20"
-        style={{ background: "linear-gradient(135deg, #0F1F3D 0%, #1a3058 100%)" }}
+        style={{ background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)" }}
       >
         <div className="site-container">
-          <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
+          <span className="text-[#111111] text-sm font-semibold tracking-widest uppercase">
             Our Team
           </span>
           <h1 className="font-serif text-5xl font-semibold text-white mt-3 mb-5 max-w-xl leading-tight">
@@ -57,14 +57,14 @@ export default function ProvidersPage() {
                 {/* Bio */}
                 <div className={idx % 2 === 1 ? "lg:order-1" : ""}>
                   <div className="mb-2">
-                    <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
+                    <span className="text-[#111111] text-sm font-semibold tracking-widest uppercase">
                       {member.title}
                     </span>
                   </div>
-                  <h2 className="font-serif text-4xl font-semibold text-[#0F1F3D] mb-1">
+                  <h2 className="font-serif text-4xl font-semibold text-[#111111] mb-1">
                     {member.name}
                   </h2>
-                  <p className="text-[#C9A465] font-medium text-lg mb-6">
+                  <p className="text-[#111111] font-medium text-lg mb-6">
                     {member.credentials}
                   </p>
                   <p className="text-gray-600 leading-relaxed mb-8">
@@ -72,7 +72,7 @@ export default function ProvidersPage() {
                   </p>
 
                   <div className="mb-6">
-                    <h3 className="text-sm font-semibold text-[#0F1F3D] uppercase tracking-wide mb-3">
+                    <h3 className="text-sm font-semibold text-[#111111] uppercase tracking-wide mb-3">
                       Specialties
                     </h3>
                     <ul className="flex flex-wrap gap-2">
@@ -96,7 +96,7 @@ export default function ProvidersPage() {
 
                   <Link
                     href="/appointments"
-                    className="inline-flex items-center gap-2 bg-[#0F1F3D] hover:bg-[#1a2f5a] text-white font-medium px-7 py-3.5 rounded-full text-sm transition-colors"
+                    className="inline-flex items-center gap-2 bg-[#111111] hover:bg-[#333333] text-white font-medium px-7 py-3.5 rounded-full text-sm transition-colors"
                   >
                     Book with {member.name.split(" ")[0]} <ArrowRight size={16} />
                   </Link>
@@ -110,7 +110,7 @@ export default function ProvidersPage() {
       {/* CTA */}
       <section
         className="py-20"
-        style={{ background: "linear-gradient(135deg, #0F1F3D 0%, #1a3058 100%)" }}
+        style={{ background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)" }}
       >
         <div className="site-container-narrow text-center">
           <h2 className="font-serif text-4xl font-semibold text-white mb-4">
@@ -121,7 +121,7 @@ export default function ProvidersPage() {
           </p>
           <Link
             href="/appointments"
-            className="inline-flex items-center gap-2 bg-[#C9A465] hover:bg-[#b8912e] text-white font-medium px-8 py-4 rounded-full transition-colors"
+            className="inline-flex items-center gap-2 bg-[#111111] hover:bg-[#333333] text-white font-medium px-8 py-4 rounded-full transition-colors"
           >
             Book an Appointment <ArrowRight size={18} />
           </Link>

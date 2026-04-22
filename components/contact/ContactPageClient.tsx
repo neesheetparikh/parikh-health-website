@@ -78,10 +78,10 @@ export default function ContactPage() {
       {/* Header */}
       <section
         className="pt-36 pb-20"
-        style={{ background: "linear-gradient(135deg, #0F1F3D 0%, #1a3058 100%)" }}
+        style={{ background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)" }}
       >
         <div className="site-container">
-          <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
+          <span className="text-[#111111] text-sm font-semibold tracking-widest uppercase">
             Get in Touch
           </span>
           <h1 className="font-serif text-5xl font-semibold text-white mt-3 mb-5 max-w-xl leading-tight">
@@ -99,14 +99,14 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-3 gap-16">
             {/* Form */}
             <div className="lg:col-span-2">
-              <h2 className="font-serif text-3xl font-semibold text-[#0F1F3D] mb-2">
+              <h2 className="font-serif text-3xl font-semibold text-[#111111] mb-2">
                 Send Us a Message
               </h2>
               <p className="text-gray-500 mb-8 text-sm">
                 For urgent medical concerns, please call us directly at{" "}
                 <a
                   href={`tel:${SITE.phone.appointments}`}
-                  className="text-[#C9A465] font-medium"
+                  className="text-[#111111] font-medium"
                 >
                   {SITE.phone.appointments}
                 </a>
@@ -119,7 +119,7 @@ export default function ContactPage() {
                     size={40}
                     className="text-green-500 mx-auto mb-4"
                   />
-                  <h3 className="font-serif text-2xl font-semibold text-[#0F1F3D] mb-2">
+                  <h3 className="font-serif text-2xl font-semibold text-[#111111] mb-2">
                     Message Sent
                   </h3>
                   <p className="text-gray-500 text-sm">
@@ -131,7 +131,7 @@ export default function ContactPage() {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   {/* Are you a patient? */}
                   <div>
-                    <label className="block text-sm font-medium text-[#0F1F3D] mb-2">
+                    <label className="block text-sm font-medium text-[#111111] mb-2">
                       Are you a current patient?
                     </label>
                     <div className="flex gap-4">
@@ -146,7 +146,7 @@ export default function ContactPage() {
                             value={val}
                             checked={form.isPatient === val}
                             onChange={handleChange}
-                            className="accent-[#C9A465]"
+                            className="accent-black"
                           />
                           <span className="text-sm text-gray-600 capitalize">
                             {val === "yes" ? "Yes, existing patient" : "No, I'm new"}
@@ -161,7 +161,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-sm font-medium text-[#0F1F3D] mb-1.5"
+                        className="block text-sm font-medium text-[#111111] mb-1.5"
                       >
                         Full Name <span className="text-red-400">*</span>
                       </label>
@@ -173,13 +173,13 @@ export default function ContactPage() {
                         value={form.name}
                         onChange={handleChange}
                         placeholder="Jane Smith"
-                        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#C9A465]/30 focus:border-[#C9A465]"
+                        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-black/20 focus:border-black"
                       />
                     </div>
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-sm font-medium text-[#0F1F3D] mb-1.5"
+                        className="block text-sm font-medium text-[#111111] mb-1.5"
                       >
                         Email Address <span className="text-red-400">*</span>
                       </label>
@@ -191,7 +191,7 @@ export default function ContactPage() {
                         value={form.email}
                         onChange={handleChange}
                         placeholder="jane@example.com"
-                        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#C9A465]/30 focus:border-[#C9A465]"
+                        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-black/20 focus:border-black"
                       />
                     </div>
                   </div>
@@ -201,7 +201,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="phone"
-                        className="block text-sm font-medium text-[#0F1F3D] mb-1.5"
+                        className="block text-sm font-medium text-[#111111] mb-1.5"
                       >
                         Phone Number
                       </label>
@@ -212,13 +212,13 @@ export default function ContactPage() {
                         value={form.phone}
                         onChange={handleChange}
                         placeholder="(408) 555-0100"
-                        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#C9A465]/30 focus:border-[#C9A465]"
+                        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-black/20 focus:border-black"
                       />
                     </div>
                     <div>
                       <label
                         htmlFor="subject"
-                        className="block text-sm font-medium text-[#0F1F3D] mb-1.5"
+                        className="block text-sm font-medium text-[#111111] mb-1.5"
                       >
                         Subject <span className="text-red-400">*</span>
                       </label>
@@ -228,7 +228,7 @@ export default function ContactPage() {
                         required
                         value={form.subject}
                         onChange={handleChange}
-                        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#C9A465]/30 focus:border-[#C9A465] bg-white"
+                        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-black/20 focus:border-black bg-white"
                       >
                         <option value="">Select a subject</option>
                         {SUBJECTS.map((s) => (
@@ -244,7 +244,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium text-[#0F1F3D] mb-1.5"
+                      className="block text-sm font-medium text-[#111111] mb-1.5"
                     >
                       Message <span className="text-red-400">*</span>
                     </label>
@@ -256,7 +256,7 @@ export default function ContactPage() {
                       value={form.message}
                       onChange={handleChange}
                       placeholder="How can we help you?"
-                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#C9A465]/30 focus:border-[#C9A465] resize-none"
+                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-black/20 focus:border-black resize-none"
                     />
                   </div>
 
@@ -276,7 +276,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="inline-flex items-center gap-2 bg-[#0F1F3D] hover:bg-[#1a2f5a] disabled:opacity-60 text-white font-medium px-8 py-4 rounded-full transition-colors text-sm"
+                    className="inline-flex items-center gap-2 bg-[#111111] hover:bg-[#333333] disabled:opacity-60 text-white font-medium px-8 py-4 rounded-full transition-colors text-sm"
                   >
                     {status === "submitting" ? (
                       "Sending..."
@@ -293,65 +293,65 @@ export default function ContactPage() {
             {/* Sidebar */}
             <div className="space-y-6">
               <div className="bg-[#F8F7F4] rounded-2xl p-7">
-                <h3 className="font-serif text-xl font-semibold text-[#0F1F3D] mb-6">
+                <h3 className="font-serif text-xl font-semibold text-[#111111] mb-6">
                   Contact Information
                 </h3>
                 <ul className="space-y-5">
                   <li className="flex items-start gap-3">
-                    <Phone size={16} className="text-[#C9A465] mt-0.5 shrink-0" />
+                    <Phone size={16} className="text-[#111111] mt-0.5 shrink-0" />
                     <div>
                       <p className="text-xs text-gray-400 mb-0.5 uppercase tracking-wide font-medium">
                         Appointments
                       </p>
                       <a
                         href={`tel:${SITE.phone.appointments}`}
-                        className="text-sm font-medium text-[#0F1F3D] hover:text-[#C9A465] transition-colors"
+                        className="text-sm font-medium text-[#111111] hover:text-[#111111] transition-colors"
                       >
                         {SITE.phone.appointments}
                       </a>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Phone size={16} className="text-[#C9A465] mt-0.5 shrink-0" />
+                    <Phone size={16} className="text-[#111111] mt-0.5 shrink-0" />
                     <div>
                       <p className="text-xs text-gray-400 mb-0.5 uppercase tracking-wide font-medium">
                         General
                       </p>
                       <a
                         href={`tel:${SITE.phone.general}`}
-                        className="text-sm font-medium text-[#0F1F3D] hover:text-[#C9A465] transition-colors"
+                        className="text-sm font-medium text-[#111111] hover:text-[#111111] transition-colors"
                       >
                         {SITE.phone.general}
                       </a>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Printer size={16} className="text-[#C9A465] mt-0.5 shrink-0" />
+                    <Printer size={16} className="text-[#111111] mt-0.5 shrink-0" />
                     <div>
                       <p className="text-xs text-gray-400 mb-0.5 uppercase tracking-wide font-medium">
                         Fax
                       </p>
-                      <span className="text-sm font-medium text-[#0F1F3D]">
+                      <span className="text-sm font-medium text-[#111111]">
                         {SITE.phone.fax}
                       </span>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Mail size={16} className="text-[#C9A465] mt-0.5 shrink-0" />
+                    <Mail size={16} className="text-[#111111] mt-0.5 shrink-0" />
                     <div>
                       <p className="text-xs text-gray-400 mb-0.5 uppercase tracking-wide font-medium">
                         Email
                       </p>
                       <a
                         href={`mailto:${SITE.email}`}
-                        className="text-sm font-medium text-[#0F1F3D] hover:text-[#C9A465] transition-colors"
+                        className="text-sm font-medium text-[#111111] hover:text-[#111111] transition-colors"
                       >
                         {SITE.email}
                       </a>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Clock size={16} className="text-[#C9A465] mt-0.5 shrink-0" />
+                    <Clock size={16} className="text-[#111111] mt-0.5 shrink-0" />
                     <div>
                       <p className="text-xs text-gray-400 mb-1 uppercase tracking-wide font-medium">
                         Office Hours
@@ -364,7 +364,7 @@ export default function ContactPage() {
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <MapPin size={16} className="text-[#C9A465] mt-0.5 shrink-0" />
+                    <MapPin size={16} className="text-[#111111] mt-0.5 shrink-0" />
                     <div>
                       <p className="text-xs text-gray-400 mb-0.5 uppercase tracking-wide font-medium">
                         Address
@@ -373,7 +373,7 @@ export default function ContactPage() {
                         href={SITE.address.mapsUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm font-medium text-[#0F1F3D] hover:text-[#C9A465] transition-colors"
+                        className="text-sm font-medium text-[#111111] hover:text-[#111111] transition-colors"
                       >
                         {SITE.address.street}
                         <br />
@@ -399,7 +399,7 @@ export default function ContactPage() {
                 />
               </div>
 
-              <div className="bg-[#0F1F3D] rounded-2xl p-6 text-white">
+              <div className="bg-[#111111] rounded-2xl p-6 text-white">
                 <h3 className="font-serif text-lg font-semibold mb-2">
                   Ready to Book?
                 </h3>
@@ -408,7 +408,7 @@ export default function ContactPage() {
                 </p>
                 <Link
                   href="/appointments"
-                  className="block text-center bg-[#C9A465] hover:bg-[#b8912e] text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors"
+                  className="block text-center bg-[#111111] hover:bg-[#333333] text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors"
                 >
                   Book an Appointment
                 </Link>

@@ -21,10 +21,10 @@ export default function EducationPage() {
       {/* Header */}
       <section
         className="pt-36 pb-20"
-        style={{ background: "linear-gradient(135deg, #0F1F3D 0%, #1a3058 100%)" }}
+        style={{ background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)" }}
       >
         <div className="site-container">
-          <span className="text-[#C9A465] text-sm font-semibold tracking-widest uppercase">
+          <span className="text-[#111111] text-sm font-semibold tracking-widest uppercase">
             Health Education
           </span>
           <h1 className="font-serif text-5xl font-semibold text-white mt-3 mb-5 max-w-xl leading-tight">
@@ -42,13 +42,13 @@ export default function EducationPage() {
         <div className="site-container">
           {/* Categories */}
           <div className="flex flex-wrap gap-2 mb-14">
-            <span className="text-xs font-semibold text-[#0F1F3D] bg-[#0F1F3D]/5 px-4 py-1.5 rounded-full">
+            <span className="text-xs font-semibold text-[#111111] bg-[#111111]/5 px-4 py-1.5 rounded-full">
               All Topics
             </span>
             {categories.map((cat) => (
               <span
                 key={cat}
-                className="text-xs font-medium text-gray-500 bg-gray-50 border border-gray-100 px-4 py-1.5 rounded-full cursor-pointer hover:border-[#C9A465] hover:text-[#C9A465] transition-colors"
+                className="text-xs font-medium text-gray-500 bg-gray-50 border border-gray-100 px-4 py-1.5 rounded-full cursor-pointer hover:border-[#111111] hover:text-[#111111] transition-colors"
               >
                 {cat}
               </span>
@@ -58,7 +58,7 @@ export default function EducationPage() {
           {/* Featured posts */}
           {featured.length > 0 && (
             <div className="mb-16">
-              <h2 className="font-serif text-2xl font-semibold text-[#0F1F3D] mb-8">
+              <h2 className="font-serif text-2xl font-semibold text-[#111111] mb-8">
                 Featured Articles
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -70,10 +70,10 @@ export default function EducationPage() {
                   >
                     <div className="bg-[#F8F7F4] h-52" />
                     <div className="p-6">
-                      <span className="text-xs font-semibold text-[#C9A465] uppercase tracking-wide">
+                      <span className="text-xs font-semibold text-[#111111] uppercase tracking-wide">
                         {post.category}
                       </span>
-                      <h3 className="font-serif text-xl font-semibold text-[#0F1F3D] mt-1.5 mb-2 group-hover:text-[#C9A465] transition-colors leading-snug">
+                      <h3 className="font-serif text-xl font-semibold text-[#111111] mt-1.5 mb-2 group-hover:text-[#111111] transition-colors leading-snug">
                         {post.title}
                       </h3>
                       <p className="text-sm text-gray-500 leading-relaxed mb-4 line-clamp-2">
@@ -85,7 +85,7 @@ export default function EducationPage() {
                           <span>·</span>
                           <span>{formatDate(post.publishedAt)}</span>
                         </div>
-                        <span className="flex items-center gap-1 text-xs font-semibold text-[#0F1F3D] group-hover:text-[#C9A465] transition-colors">
+                        <span className="flex items-center gap-1 text-xs font-semibold text-[#111111] group-hover:text-[#111111] transition-colors">
                           {post.readingTime} read <ArrowRight size={12} />
                         </span>
                       </div>
@@ -99,7 +99,7 @@ export default function EducationPage() {
           {/* All posts */}
           {rest.length > 0 && (
             <div>
-              <h2 className="font-serif text-2xl font-semibold text-[#0F1F3D] mb-8">
+              <h2 className="font-serif text-2xl font-semibold text-[#111111] mb-8">
                 All Articles
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -110,10 +110,10 @@ export default function EducationPage() {
                     className="group"
                   >
                     <div className="bg-[#F8F7F4] rounded-2xl h-40 mb-4" />
-                    <span className="text-xs font-semibold text-[#C9A465] uppercase tracking-wide">
+                    <span className="text-xs font-semibold text-[#111111] uppercase tracking-wide">
                       {post.category}
                     </span>
-                    <h3 className="font-serif text-lg font-semibold text-[#0F1F3D] mt-1.5 mb-2 group-hover:text-[#C9A465] transition-colors leading-snug">
+                    <h3 className="font-serif text-lg font-semibold text-[#111111] mt-1.5 mb-2 group-hover:text-[#111111] transition-colors leading-snug">
                       {post.title}
                     </h3>
                     <p className="text-sm text-gray-500 line-clamp-2 mb-3">
