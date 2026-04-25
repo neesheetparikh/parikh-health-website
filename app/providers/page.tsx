@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { TEAM, SUPPORT_STAFF } from "@/content/site";
 
@@ -59,11 +60,21 @@ export default function ProvidersPage() {
               >
                 {/* Photo */}
                 <div
-                  className={`bg-[#F8F7F4] rounded-3xl h-[440px] flex items-center justify-center ${
+                  className={`bg-[#F8F7F4] rounded-3xl h-[440px] overflow-hidden flex items-center justify-center ${
                     idx % 2 === 1 ? "lg:order-2" : ""
                   }`}
                 >
-                  <span className="text-gray-300 text-sm">{member.name} photo</span>
+                  {member.image ? (
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={600}
+                      height={440}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  ) : (
+                    <span className="text-gray-300 text-sm">{member.name} photo</span>
+                  )}
                 </div>
 
                 {/* Bio */}
@@ -133,9 +144,19 @@ export default function ProvidersPage() {
                 key={member.id}
                 className="bg-white rounded-2xl p-8 border border-gray-100"
               >
-                {/* Photo placeholder */}
-                <div className="bg-[#F8F7F4] rounded-2xl h-52 flex items-center justify-center mb-6">
-                  <span className="text-gray-300 text-sm">{member.name} photo</span>
+                {/* Photo */}
+                <div className="bg-[#F8F7F4] rounded-2xl h-52 overflow-hidden flex items-center justify-center mb-6">
+                  {member.image ? (
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={400}
+                      height={208}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  ) : (
+                    <span className="text-gray-300 text-sm">{member.name} photo</span>
+                  )}
                 </div>
 
                 <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
