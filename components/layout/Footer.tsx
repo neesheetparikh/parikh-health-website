@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Phone, MapPin, Clock, Mail } from "lucide-react";
 import { SITE } from "@/content/site";
 
+
 const SERVICES_LINKS = [
   { label: "Primary Care", href: "/services/primary-care" },
   { label: "Sports Medicine", href: "/services/sports-medicine" },
@@ -41,12 +42,14 @@ export default function Footer() {
               Exceptional primary care and sports medicine for every stage of
               life — delivered with compassion, precision, and respect.
             </p>
-            <Link
-              href="/appointments"
+            <a
+              href={SITE.booking.zocdocUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-white hover:bg-white/90 text-[#111111] text-sm font-medium px-5 py-2.5 rounded-full transition-colors"
             >
               Book an Appointment
-            </Link>
+            </a>
           </div>
 
           {/* Services */}

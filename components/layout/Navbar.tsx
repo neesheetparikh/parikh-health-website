@@ -81,12 +81,14 @@ export default function Navbar() {
               <Phone size={14} />
               {SITE.phone.appointments}
             </a>
-            <Link
-              href="/appointments"
+            <a
+              href={SITE.booking.zocdocUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#111111] hover:bg-[#333333] text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors"
             >
               Book Appointment
-            </Link>
+            </a>
           </div>
 
           {/* Mobile menu toggle */}
@@ -125,13 +127,15 @@ export default function Navbar() {
                 <Phone size={14} />
                 {SITE.phone.appointments}
               </a>
-              <Link
-                href="/appointments"
+              <a
+                href={SITE.booking.zocdocUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="bg-[#111111] text-white text-sm font-medium px-5 py-3 rounded-full text-center"
+                className="bg-[#111111] text-white text-sm font-medium px-5 py-3 rounded-full text-center block"
               >
                 Book Appointment
-              </Link>
+              </a>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { TEAM, SUPPORT_STAFF } from "@/content/site";
+import { TEAM, SUPPORT_STAFF, SITE } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Our Team | ParikhHealth",
@@ -113,12 +113,14 @@ export default function ProvidersPage() {
                     </div>
                   )}
 
-                  <Link
-                    href="/appointments"
+                  <a
+                    href={member.bookingUrl ?? SITE.booking.zocdocUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-[#111111] hover:bg-[#333333] text-white font-medium px-7 py-3.5 rounded-full text-sm transition-colors"
                   >
                     Book with {member.name.split(" ")[0]} <ArrowRight size={16} />
-                  </Link>
+                  </a>
                 </div>
               </div>
             ))}

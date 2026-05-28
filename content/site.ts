@@ -30,7 +30,7 @@ export const SITE = {
   // Appointment booking — set provider to "zocdoc" | "calendly" | "custom"
   booking: {
     provider: "zocdoc" as "zocdoc" | "calendly" | "custom",
-    zocdocUrl: "https://www.zocdoc.com/practice/parikhhealth",
+    zocdocUrl: "https://www.zocdoc.com/booking-link/practice/parikhhealth-13809",
     calendlyUrl: "", // fill in if switching to Calendly
   },
   social: {
@@ -52,6 +52,7 @@ export const TEAM = [
     image: "/team/dr-parikh.jpg",
     specialties: ["Family Medicine", "Sports Medicine", "Osteopathic Manipulative Therapy", "Concierge Medicine"],
     acceptingNewPatients: true,
+    bookingUrl: "https://www.zocdoc.com/booking-link/doctor/neesheet-parikh-do-29659",
   },
   {
     id: "kinnari-shah",
@@ -62,6 +63,7 @@ export const TEAM = [
     image: "/team/kinnari-shah.jpg",
     specialties: ["Primary Care", "Preventive Medicine", "Chronic Disease Management"],
     acceptingNewPatients: true,
+    bookingUrl: "https://www.zocdoc.com/booking-link/doctor/kinnari-shah-pa-c-451056",
   },
   {
     id: "miral-patel",
