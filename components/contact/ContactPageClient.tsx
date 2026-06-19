@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, MapPin, Clock, Mail, MessageSquare } from "lucide-react";
+import { Phone, MapPin, Clock, Mail, MessageSquare, Printer } from "lucide-react";
 import { SITE } from "@/content/site";
 
 export default function ContactPage() {
@@ -87,6 +87,22 @@ export default function ContactPage() {
                 We reply within one business day
               </p>
             </a>
+
+            {/* Fax */}
+            <div className="bg-[#F8F7F4] rounded-2xl p-8">
+              <div className="w-11 h-11 rounded-xl bg-[#111111]/8 flex items-center justify-center mb-6">
+                <Printer size={20} className="text-[#111111]" />
+              </div>
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">
+                Fax
+              </p>
+              <p className="font-serif text-xl font-semibold text-[#111111]">
+                {SITE.phone.fax}
+              </p>
+              <p className="text-sm text-gray-500 mt-1">
+                Available 24 hours
+              </p>
+            </div>
 
             {/* Address */}
             <a

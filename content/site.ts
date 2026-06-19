@@ -11,7 +11,7 @@ export const SITE = {
   phone: {
     appointments: "408-266-3100",
     general: "408-266-3100",
-    fax: "",
+    fax: "408-608-1961",
   },
   email: "support@parikhhealth.com",
   address: {

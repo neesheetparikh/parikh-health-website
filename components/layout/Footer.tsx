@@ -19,7 +19,6 @@ const QUICK_LINKS = [
   { label: "Book Appointment", href: "/appointments" },
   { label: "Education & Blog", href: "/education" },
   { label: "Contact", href: "/contact" },
-  { label: "Patient Messages", href: "/contact#message" },
 ];
 
 export default function Footer() {
