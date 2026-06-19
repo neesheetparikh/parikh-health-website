@@ -48,19 +48,25 @@ export default function AppointmentsPage() {
               <div className="bg-[#F8F7F4] rounded-2xl border border-gray-100 overflow-hidden">
                 {SITE.booking.provider === "zocdoc" && SITE.booking.zocdocUrl ? (
                   <div className="p-10 text-center">
-                    <p className="text-gray-500 text-sm mb-6">
-                      We use ZocDoc for secure, easy online scheduling.
-                    </p>
                     <a
                       href={SITE.booking.zocdocUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 bg-[#111111] hover:bg-[#333333] text-white font-medium px-8 py-4 rounded-full transition-colors text-base"
                     >
-                      Book on ZocDoc <ArrowRight size={18} />
+                      Book Now <ArrowRight size={18} />
                     </a>
-                    <p className="text-xs text-gray-400 mt-4">
-                      ZocDoc is HIPAA-compliant and free for patients.
+                    <p className="text-xs text-gray-400 mt-5">
+                      Scheduling powered by{" "}
+                      <a
+                        href={SITE.booking.zocdocUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline hover:text-gray-600 transition-colors"
+                      >
+                        ZocDoc
+                      </a>
+                      {" "}— HIPAA-compliant and free for patients.
                     </p>
                   </div>
                 ) : SITE.booking.provider === "calendly" && SITE.booking.calendlyUrl ? (

@@ -53,24 +53,15 @@ export default function ContactPage() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("submitting");
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (res.ok) {
-        setStatus("success");
-        setForm(INITIAL);
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
+    const subject = encodeURIComponent(`[ParikhHealth] ${form.subject} — ${form.name}`);
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone || "—"}\nPatient: ${form.isPatient === "yes" ? "Yes — existing patient" : "No — new patient"}\nSubject: ${form.subject}\n\nMessage:\n${form.message}`
+    );
+    window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
+    setStatus("success");
+    setForm(INITIAL);
   };
 
   return (
