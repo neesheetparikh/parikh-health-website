@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ParikhHealth — Brand Palette Mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Antonio:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream:   #F4EFE3;  /* 60% — surface / background */
+    --oxblood: #7E2222;  /* 25% — primary / buttons / accents */
+    --ink:     #1A1D22;  /* 10% — type / dark sections */
+    --green:   #4A6A48;  /*  3% — accent */
+    --dust:    #C4A985;  /*  2% — neutral / borders */
+
+    --oxblood-dark: #641A1A;
+    --cream-dark:   #EDE6D6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #DDD8CF;
+    padding: 60px 24px;
+  }
+
+  /* ── palette swatch strip ── */
+  .palette {
+    max-width: 960px; margin: 0 auto 48px;
+    display: flex; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,.12);
+  }
+  .swatch {
+    flex: 1; padding: 18px 16px;
+    font-family: 'Antonio', sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase;
+  }
+  .swatch-name { margin-bottom: 4px; }
+  .swatch-hex  { opacity: .65; font-weight: 400; font-size: 10px; }
+
+  /* ── page label ── */
+  .page-label {
+    text-align: center; margin-bottom: 12px;
+    font-family: 'Antonio', sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: .2em; text-transform: uppercase; color: #888;
+  }
+
+  /* ── mockup shell ── */
+  .mockup {
+    max-width: 960px; margin: 0 auto 80px;
+    border-radius: 20px; overflow: hidden;
+    box-shadow: 0 28px 80px rgba(26,29,34,.22);
+  }
+
+  /* ── NAV ── */
+  .nav {
+    background: var(--cream);
+    border-bottom: 1px solid var(--dust);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 52px;
+  }
+  .logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; letter-spacing: -.01em; }
+  .logo-ink { color: var(--ink); }
+  .logo-ox  { color: var(--oxblood); }
+  .logo-sub {
+    font-family: 'Antonio', sans-serif; font-size: 9.5px; font-weight: 400;
+    letter-spacing: .18em; text-transform: uppercase; color: var(--dust); margin-top: 3px;
+  }
+  .nav-links {
+    display: flex; gap: 30px; font-size: 13px; font-weight: 500;
+    color: var(--ink); letter-spacing: -.01em;
+  }
+  .nav-btn {
+    font-family: 'Antonio', sans-serif; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase;
+    background: var(--oxblood); color: #fff;
+    padding: 10px 22px; border-radius: 100px; border: none; cursor: pointer;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--cream);
+    padding: 68px 52px 56px;
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--cream-dark); border: 1px solid var(--dust);
+    color: var(--oxblood); font-size: 11px; font-weight: 600;
+    letter-spacing: .06em; text-transform: uppercase;
+    padding: 7px 16px; border-radius: 100px; margin-bottom: 32px;
+  }
+  .stars { color: var(--oxblood); font-size: 11px; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px; font-weight: 700; line-height: 1.05;
+    letter-spacing: -.02em; color: var(--ink); margin-bottom: 22px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    border-bottom: 3px solid var(--oxblood);
+  }
+  .hero p {
+    font-size: 16px; line-height: 1.78; color: #6B6258;
+    max-width: 500px; margin-bottom: 40px;
+  }
+  .btns { display: flex; gap: 14px; margin-bottom: 42px; }
+  .btn-primary {
+    font-family: 'Antonio', sans-serif; font-size: 13px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase;
+    background: var(--oxblood); color: #fff;
+    padding: 15px 32px; border-radius: 100px; border: none; cursor: pointer;
+  }
+  .btn-outline {
+    font-size: 13px; font-weight: 500; color: var(--ink);
+    background: transparent; border: 1.5px solid var(--dust);
+    padding: 14px 28px; border-radius: 100px; cursor: pointer;
+  }
+  .info-row {
+    display: flex; gap: 32px; font-size: 12px; color: var(--dust);
+    border-top: 1px solid var(--dust); padding-top: 28px;
+    letter-spacing: .01em;
+  }
+
+  /* ── FEATURED CARDS (INK BG) ── */
+  .cards {
+    background: var(--ink);
+    padding: 36px 52px;
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 16px;
+  }
+  .card {
+    border: 1px solid rgba(196,169,133,.18);
+    border-radius: 16px; padding: 26px;
+    transition: border-color .2s;
+  }
+  .card-tag {
+    font-family: 'Antonio', sans-serif; font-size: 10px; font-weight: 700;
+    letter-spacing: .18em; text-transform: uppercase;
+    color: var(--dust); margin-bottom: 14px;
+  }
+  .card-tag.featured { color: var(--oxblood); filter: brightness(1.5); }
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px; font-weight: 600; color: #fff; margin-bottom: 10px;
+  }
+  .card p { font-size: 12px; line-height: 1.65; color: rgba(244,239,227,.5); margin-bottom: 16px; }
+  .card-link {
+    font-family: 'Antonio', sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: rgba(244,239,227,.3);
+  }
+
+  /* ── STATS ── */
+  .stats {
+    background: var(--cream);
+    display: grid; grid-template-columns: repeat(4,1fr);
+    border-top: 1px solid var(--dust);
+  }
+  .stat {
+    padding: 30px 20px; text-align: center;
+    border-right: 1px solid var(--dust);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px; font-weight: 700; color: var(--ink);
+  }
+  .stat-lbl { font-size: 11px; color: var(--dust); margin-top: 5px; font-weight: 500; letter-spacing: .02em; }
+
+  /* ── WHY US STRIP ── */
+  .why {
+    background: var(--oxblood);
+    padding: 40px 52px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
+  }
+  .why h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 12px;
+  }
+  .why p { font-size: 14px; line-height: 1.7; color: rgba(244,239,227,.72); }
+  .why-items { display: flex; flex-direction: column; gap: 12px; }
+  .why-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 13px; color: rgba(244,239,227,.85);
+  }
+  .why-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--dust); margin-top: 6px; flex-shrink: 0;
+  }
+  .why-cta {
+    display: inline-block; margin-top: 20px;
+    font-family: 'Antonio', sans-serif; font-size: 12px; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+    background: #fff; color: var(--oxblood);
+    padding: 12px 26px; border-radius: 100px;
+  }
+
+  /* ── TESTIMONIAL STRIP ── */
+  .testimonials {
+    background: var(--cream-dark);
+    padding: 48px 52px;
+  }
+  .test-label {
+    font-family: 'Antonio', sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: .18em; text-transform: uppercase;
+    color: var(--dust); margin-bottom: 28px;
+  }
+  .test-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+  .test-card {
+    background: var(--cream); border: 1px solid var(--dust);
+    border-radius: 14px; padding: 22px;
+  }
+  .test-stars { color: var(--oxblood); font-size: 12px; margin-bottom: 10px; }
+  .test-quote {
+    font-size: 13px; line-height: 1.7; color: #5A5248;
+    font-style: italic; margin-bottom: 14px;
+  }
+  .test-author { font-size: 12px; font-weight: 600; color: var(--ink); }
+  .test-detail { font-size: 11px; color: var(--dust); margin-top: 2px; }
+
+  /* ── FOOTER STRIP ── */
+  .footer {
+    background: var(--ink);
+    padding: 32px 52px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; }
+  .footer-copy { font-size: 11px; color: rgba(244,239,227,.3); }
+  .footer-links { display: flex; gap: 20px; font-size: 11px; color: rgba(244,239,227,.4); }
+
+  /* ── green accent usage note ── */
+  .green-accent {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #E8EFE7; border: 1px solid #B8CEB6;
+    color: var(--green); font-size: 11px; font-weight: 600;
+    padding: 5px 12px; border-radius: 100px; margin-left: 10px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Palette strip -->
+<div class="palette">
+  <div class="swatch" style="background:#F4EFE3; color:#1A1D22; flex:6;">
+    <div class="swatch-name">Cream — Surface 60%</div>
+    <div class="swatch-hex">#F4EFE3</div>
+  </div>
+  <div class="swatch" style="background:#7E2222; color:#fff; flex:2.5;">
+    <div class="swatch-name">Oxblood — Primary 25%</div>
+    <div class="swatch-hex">#7E2222</div>
+  </div>
+  <div class="swatch" style="background:#1A1D22; color:#fff; flex:1;">
+    <div class="swatch-name">Ink — Type 10%</div>
+    <div class="swatch-hex">#1A1D22</div>
+  </div>
+  <div class="swatch" style="background:#4A6A48; color:#fff; flex:.3;">
+    <div class="swatch-name">Green 3%</div>
+    <div class="swatch-hex">#4A6A48</div>
+  </div>
+  <div class="swatch" style="background:#C4A985; color:#fff; flex:.2;">
+    <div class="swatch-name">Dust 2%</div>
+    <div class="swatch-hex">#C4A985</div>
+  </div>
+</div>
+
+<p class="page-label">ParikhHealth · Full page mockup · 60/25/10/3/2 ratio</p>
+
+<div class="mockup">
+
+  <!-- NAV -->
+  <div class="nav">
+    <div>
+      <div class="logo"><span class="logo-ink">Parikh</span><span class="logo-ox">Health</span></div>
+      <div class="logo-sub">Sunnyvale, CA</div>
+    </div>
+    <div class="nav-links">About &nbsp;·&nbsp; Services &nbsp;·&nbsp; Team &nbsp;·&nbsp; Education &nbsp;·&nbsp; Contact</div>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <span style="font-size:12px;color:var(--dust);">📞 408-384-4898</span>
+      <button class="nav-btn">Book Appointment</button>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="badge">
+      <span class="stars">★★★★★</span>
+      4.78 · 201 reviews · Sunnyvale, CA
+      <span class="green-accent">✓ Accepting New Patients</span>
+    </div>
+    <h1>Your Health.<br><em>Performed at Its Best.</em></h1>
+    <p>Exceptional primary care and sports medicine — from weekend warriors to elite athletes, and every family in between. Serving Sunnyvale and the greater Bay Area.</p>
+    <div class="btns">
+      <button class="btn-primary">Book an Appointment →</button>
+      <button class="btn-outline">Explore Athlete Wellness →</button>
+    </div>
+    <div class="info-row">
+      <span>📍 Sunnyvale, CA</span>
+      <span>🕐 Mon – Fri &nbsp; 9 AM – 4 PM</span>
+      <span>📞 408-384-4898</span>
+    </div>
+  </div>
+
+  <!-- FEATURED CARDS -->
+  <div class="cards">
+    <div class="card">
+      <div class="card-tag featured">⚡ Featured Program</div>
+      <h3>Athlete Wellness</h3>
+      <p>Membership-based sports medicine with same-day access, direct cell to Dr. Parikh, injury prevention & recovery. For all ages and all sports.</p>
+      <div class="card-link">Learn more ›</div>
+    </div>
+    <div class="card">
+      <div class="card-tag">★ Premium</div>
+      <h3>Concierge Medicine</h3>
+      <p>Unhurried visits, same-day availability, and a physician who truly knows every detail of your health history.</p>
+      <div class="card-link">Learn more ›</div>
+    </div>
+    <div class="card">
+      <div class="card-tag">Primary Care</div>
+      <h3>Comprehensive Care</h3>
+      <p>Your long-term health partner for preventive screenings, chronic conditions, acute illness, and everything in between.</p>
+      <div class="card-link">Learn more ›</div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat"><div class="stat-val">15+</div><div class="stat-lbl">Years in Practice</div></div>
+    <div class="stat"><div class="stat-val">201+</div><div class="stat-lbl">5-Star Reviews</div></div>
+    <div class="stat"><div class="stat-val">7</div><div class="stat-lbl">Specialty Services</div></div>
+    <div class="stat"><div class="stat-val">6</div><div class="stat-lbl">Providers & Therapists</div></div>
+  </div>
+
+  <!-- WHY US -->
+  <div class="why">
+    <div>
+      <h2>Medicine That Sees the Whole Person</h2>
+      <p>We believe the best medical care is built on relationship, not transactions. Every patient deserves time, attention, and a provider who knows their history.</p>
+      <button class="why-cta">Meet Our Team →</button>
+    </div>
+    <div class="why-items">
+      <div class="why-item"><div class="why-dot"></div>Board-certified physicians with subspecialty training</div>
+      <div class="why-item"><div class="why-dot"></div>In-house physical therapy with Fit3D body scanning</div>
+      <div class="why-item"><div class="why-dot"></div>Integrated team — your providers communicate directly</div>
+      <div class="why-item"><div class="why-dot"></div>Same-day sick visits available</div>
+      <div class="why-item"><div class="why-dot"></div>Women's health, cosmetic services & sports medicine</div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="testimonials">
+    <div class="test-label">★ Patient Stories</div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-quote">"Dr. Parikh takes the time to actually listen. I never feel rushed, and he always explains everything clearly."</div>
+        <div class="test-author">Sarah M.</div>
+        <div class="test-detail">Patient since 2019</div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-quote">"After my knee surgery, Miral got me back to running in 10 weeks. The Fit3D scanner helped us track every bit of progress."</div>
+        <div class="test-author">James T.</div>
+        <div class="test-detail">Physical Therapy Patient</div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-quote">"Kinnari is incredibly thorough and genuinely caring. She caught something two other doctors missed."</div>
+        <div class="test-author">Priya K.</div>
+        <div class="test-detail">Patient since 2021</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="logo"><span style="color:var(--cream)">Parikh</span><span style="color:var(--oxblood)">Health</span></div>
+    <div class="footer-copy">© 2025 ParikhHealth · 1299 Oakmead Parkway, Sunnyvale, CA 94085</div>
+    <div class="footer-links">
+      <span>Privacy Policy</span><span>Accessibility</span><span>HIPAA Compliant</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

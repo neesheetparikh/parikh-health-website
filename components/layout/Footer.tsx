@@ -111,20 +111,12 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={14} className="text-white/60 shrink-0" />
-                <div className="flex flex-col">
-                  <a
-                    href={`tel:${SITE.phone.appointments}`}
-                    className="text-sm text-white/70 hover:text-white transition-colors"
-                  >
-                    {SITE.phone.appointments} (Appts)
-                  </a>
-                  <a
-                    href={`tel:${SITE.phone.general}`}
-                    className="text-sm text-white/70 hover:text-white transition-colors"
-                  >
-                    {SITE.phone.general} (General)
-                  </a>
-                </div>
+                <a
+                  href={`tel:${SITE.phone.general}`}
+                  className="text-sm text-white/70 hover:text-white transition-colors"
+                >
+                  {SITE.phone.general}
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={14} className="text-white/60 shrink-0" />

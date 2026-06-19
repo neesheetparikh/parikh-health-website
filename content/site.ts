@@ -9,11 +9,11 @@ export const SITE = {
     "ParikhHealth is a premier primary care and sports medicine practice in Sunnyvale, CA — delivering compassionate, evidence-based medicine for every stage of life.",
   url: "https://www.parikhhealth.com",
   phone: {
-    appointments: "408-384-4898",
+    appointments: "408-266-3100",
     general: "408-266-3100",
-    fax: "408-608-1961",
+    fax: "",
   },
-  email: "info@parikhhealth.com",
+  email: "support@parikhhealth.com",
   address: {
     street: "1299 Oakmead Parkway",
     city: "Sunnyvale",
