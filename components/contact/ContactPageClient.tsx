@@ -163,6 +163,20 @@ export default function ContactPage() {
 
           </div>
 
+          {/* Google Map */}
+          <div className="rounded-2xl overflow-hidden border border-gray-100 mb-10" style={{ height: "400px" }}>
+            <iframe
+              title="ParikhHealth Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.639986591798!2d-122.01699368468902!3d37.37249597198487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5e5b1f4b0c1%3A0x8b0f3b6e3b0f3b6e!2s1299+Oakmead+Pkwy%2C+Sunnyvale%2C+CA+94085!5e0!3m2!1sen!2sus!4v1"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+
           {/* Emergency notice */}
           <div className="bg-red-50 border border-red-100 rounded-2xl px-8 py-6 text-center max-w-2xl mx-auto">
             <p className="text-sm text-red-700 font-medium">
