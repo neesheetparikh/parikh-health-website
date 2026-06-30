@@ -142,9 +142,10 @@ export default function ProvidersPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {PT_TEAM.map((member) => (
-              <div
+              <Link
                 key={member.id}
-                className="bg-white rounded-2xl p-8 border border-gray-100"
+                href={`/providers/${member.id}`}
+                className="bg-white rounded-2xl p-8 border border-gray-100 block hover:shadow-md transition-shadow"
               >
                 {/* Photo */}
                 <div className="bg-[#F8F7F4] rounded-2xl h-52 overflow-hidden flex items-center justify-center mb-6">
@@ -181,7 +182,7 @@ export default function ProvidersPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

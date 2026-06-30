@@ -24,19 +24,26 @@ export function getAllPosts(): BlogPost[] {
     .map((file) => {
       const raw = fs.readFileSync(path.join(BLOG_DIR, file), "utf-8");
       const { data, content } = matter(raw);
+      // Derive slug from filename if not set in frontmatter
+      const slug = (data.slug as string) ?? file.replace(/\.mdx$/, "");
+      // Support both 'excerpt' and 'description' fields
+      const excerpt = (data.excerpt as string) ?? (data.description as string) ?? "";
+      // Support both 'readingTime' and 'readTime' fields
+      const readingTime = (data.readingTime as string) ?? (data.readTime as string) ?? "5 min read";
       return {
-        slug: data.slug as string,
+        slug,
         title: data.title as string,
-        excerpt: data.excerpt as string,
+        excerpt,
         category: data.category as string,
         author: data.author as string,
         publishedAt: data.publishedAt as string,
-        readingTime: data.readingTime as string,
+        readingTime,
         featured: Boolean(data.featured),
         tags: (data.tags as string[]) ?? [],
         content,
       };
     })
+    .filter((p) => p.title && p.publishedAt)
     .sort(
       (a, b) =>
         new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
@@ -50,5 +57,5 @@ export function getPostBySlug(slug: string): BlogPost | null {
 
 export function getAllCategories(): string[] {
   const posts = getAllPosts();
-  return [...new Set(posts.map((p) => p.category))];
+  return [...new Set(posts.map((p) => p.category).filter(Boolean))];
 }

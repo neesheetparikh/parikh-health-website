@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { SERVICES } from "@/content/site";
+import { SERVICES, TEAM, CONDITIONS } from "@/content/site";
 import { getAllPosts } from "@/lib/blog";
 
 const BASE = "https://www.parikhhealth.com";
@@ -15,6 +15,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/education`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/appointments`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/faq`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/insurance`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/reviews`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
+    { url: `${BASE}/new-patients`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
   ];
 
   const servicePages: MetadataRoute.Sitemap = SERVICES.map((s) => ({
@@ -24,6 +28,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const providerPages: MetadataRoute.Sitemap = TEAM.map((m) => ({
+    url: `${BASE}/providers/${m.id}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  const conditionPages: MetadataRoute.Sitemap = CONDITIONS.map((c) => ({
+    url: `${BASE}/conditions/${c.id}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   const blogPages: MetadataRoute.Sitemap = posts.map((p) => ({
     url: `${BASE}/education/${p.slug}`,
     lastModified: new Date(p.publishedAt),
@@ -31,5 +49,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...servicePages, ...blogPages];
+  return [...staticPages, ...servicePages, ...providerPages, ...conditionPages, ...blogPages];
 }
