@@ -82,6 +82,37 @@ export default async function ServicePage({ params }: Params) {
                 ))}
               </ul>
 
+              {"conditionsTreated" in service && service.conditionsTreated && (
+                <div className="mb-10">
+                  <h3 className="font-serif text-2xl font-semibold text-[#111111] mb-5">
+                    Conditions We Treat
+                  </h3>
+                  <div className="grid sm:grid-cols-2 gap-x-8 gap-y-8">
+                    {service.conditionsTreated.map((group) => (
+                      <div key={group.category}>
+                        <h4 className="text-sm font-semibold text-[#111111] uppercase tracking-wide mb-3">
+                          {group.category}
+                        </h4>
+                        <ul className="space-y-2">
+                          {group.items.map((item) => (
+                            <li
+                              key={item}
+                              className="flex items-start gap-2.5 text-sm text-gray-600"
+                            >
+                              <CheckCircle2
+                                size={14}
+                                className="text-[#111111] mt-0.5 shrink-0"
+                              />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <div className="bg-[#F8F7F4] rounded-2xl p-8">
                 <h3 className="font-serif text-xl font-semibold text-[#111111] mb-3">
                   Ready to Get Started?

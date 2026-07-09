@@ -200,6 +200,89 @@ export const SERVICES = [
       "Menopause & perimenopause support",
       "Referrals to OB/GYN specialists when needed",
     ],
+    conditionsTreated: [
+      {
+        category: "Preventive & Wellness",
+        items: [
+          "Annual well-woman exams",
+          "Pap smears / cervical cancer screening",
+          "Breast cancer screening (mammogram orders, clinical breast exams)",
+          "Osteoporosis screening (DEXA ordering)",
+          "STI screening",
+          "Immunizations (HPV vaccine, etc.)",
+        ],
+      },
+      {
+        category: "Reproductive & Gynecologic",
+        items: [
+          "Contraception management (pills, patch, ring, IUD counseling, Nexplanon)",
+          "Dysmenorrhea (painful periods)",
+          "Menorrhagia / abnormal uterine bleeding",
+          "PCOS (Polycystic Ovary Syndrome)",
+          "PMS / PMDD",
+          "Vaginitis (bacterial vaginosis, yeast, trichomoniasis)",
+          "UTIs / recurrent UTIs",
+          "Pelvic inflammatory disease (initial management)",
+          "Endometriosis (diagnosis, co-management)",
+          "Uterine fibroids (co-management)",
+          "Ovarian cysts (monitoring, referral coordination)",
+        ],
+      },
+      {
+        category: "Menopause & Hormones",
+        items: [
+          "Perimenopause / menopause management",
+          "Hormone replacement therapy (HRT) — initiation & monitoring",
+          "Genitourinary syndrome of menopause (GSM)",
+          "Sexual dysfunction / low libido",
+          "Premature ovarian insufficiency",
+        ],
+      },
+      {
+        category: "Pregnancy-Adjacent",
+        items: [
+          "Preconception counseling",
+          "Prenatal labs and first trimester care (if not OB)",
+          "Postpartum depression / anxiety",
+          "Lactation support (basic)",
+        ],
+      },
+      {
+        category: "Mental Health (Women-Specific)",
+        items: [
+          "Postpartum depression & anxiety",
+          "Perinatal mood disorders",
+          "Depression/anxiety with hormonal correlations",
+          "Eating disorders (initial evaluation)",
+        ],
+      },
+      {
+        category: "Cardiometabolic (Women-Specific Presentations)",
+        items: [
+          "Hypertension in women / pregnancy-related hypertension history",
+          "Metabolic syndrome / insulin resistance (often tied to PCOS)",
+          "Thyroid disorders (hypothyroidism, Hashimoto's — very common in women)",
+          "Anemia (iron deficiency, B12)",
+        ],
+      },
+      {
+        category: "Musculoskeletal",
+        items: [
+          "Osteoporosis / osteopenia management",
+          "Hypermobility (more prevalent in women)",
+          "Fibromyalgia",
+          "Frozen shoulder",
+        ],
+      },
+      {
+        category: "Pelvic Floor (Co-management with PT)",
+        items: [
+          "Urinary incontinence (stress, urge, mixed)",
+          "Pelvic organ prolapse (evaluation, referral)",
+          "Interstitial cystitis / bladder pain syndrome",
+        ],
+      },
+    ],
     image: "/services/womens-health.jpg",
   },
   {
@@ -508,5 +591,4 @@ export const CONDITIONS = [
     providers: ["neesheet-parikh"],
     serviceLink: "cosmetics",
   },
-];
 ];
