@@ -61,7 +61,7 @@ export const TEAM = [
     title: "Physician Assistant",
     bio: "Kinnari Shah is a certified physician assistant who delivers thorough, patient-centered primary care. She partners closely with patients to manage chronic conditions, preventive health, and acute illnesses with warmth and precision.",
     image: "/team/kinnari-shah.jpg",
-    specialties: ["Primary Care", "Preventive Medicine", "Chronic Disease Management"],
+    specialties: ["Primary Care", "Women's Health", "Aesthetics"],
     acceptingNewPatients: true,
     bookingUrl: "https://www.zocdoc.com/booking-link/doctor/kinnari-shah-pa-c-451056",
   },
@@ -82,7 +82,7 @@ export const TEAM = [
     title: "Physical Therapist",
     bio: "Sonia Sharma is a licensed physical therapist dedicated to helping patients recover from injury and return to the activities they love. She brings expertise in orthopedic and sports rehabilitation to every treatment plan.",
     image: "/team/sonia-sharma.jpg",
-    specialties: ["Orthopedic Rehabilitation", "Sports Therapy", "Manual Therapy"],
+    specialties: ["Orthopedic Rehabilitation", "Sports Therapy", "Manual Therapy", "Pelvic Health"],
     acceptingNewPatients: true,
   },
   {
