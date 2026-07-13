@@ -110,7 +110,6 @@ export const TEAM = [
 export const SUPPORT_STAFF = [
   { name: "Gabriela Montiel", title: "Office Manager" },
   { name: "Ami Desai", title: "Medical Assistant & Phlebotomist" },
-  { name: "Duncan Chisholm", title: "Medical Assistant & Phlebotomist" },
   { name: "Aarushi Kumar", title: "Front Desk", image: "/team/aarushi-kumar.jpg" },
   { name: "Vivi Le", title: "PT Aide", image: "/team/vivi-le.jpg" },
   { name: "Jazmyn Henry", title: "PT Aide", image: "/team/jazmyn-henry.jpg" },
