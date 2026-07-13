@@ -170,16 +170,53 @@ export const SERVICES = [
   },
   {
     id: "cosmetics",
-    name: "Cosmetic Services",
+    name: "Aesthetic Services",
     shortDesc: "Medical-grade aesthetics with a physician's expertise.",
     description:
-      "Looking your best supports feeling your best. Our cosmetic services are performed under physician oversight, ensuring safety and natural-looking results — no med-spa guesswork.",
+      "Looking your best supports feeling your best. Our aesthetic services are performed under direct physician oversight — not delegated to non-medical staff — ensuring safety, precise technique, and natural-looking results. From neuromodulators to PRP-based regeneration, every treatment is grounded in medical training, not med-spa guesswork.",
     icon: "sparkles",
     highlights: [
       "Botox & neurotoxin treatments",
-      "Dermal fillers",
+      "PRP hair restoration",
+      "Microneedling",
       "Skin rejuvenation",
       "Medical-grade skincare",
+    ],
+    detailHeading: "Treatments We Offer",
+    conditionsTreated: [
+      {
+        category: "Injectables & Neuromodulators",
+        items: [
+          "Botox, Dysport & Xeomin",
+          "Forehead lines & frown lines (glabellar lines)",
+          "Crow's feet & bunny lines",
+          "Brow lift",
+          "Preventive Botox",
+          "Hyperhidrosis (excessive sweating) treatment",
+        ],
+      },
+      {
+        category: "Skin Rejuvenation",
+        items: [
+          "Medical-grade microneedling",
+          "Microneedling with PRP (vampire facial)",
+          "PRP facial treatments",
+          "Acne scar reduction",
+          "Fine line & wrinkle improvement",
+          "Pore minimization & texture enhancement",
+          "Medical-grade skincare consultations",
+        ],
+      },
+      {
+        category: "PRP Hair Restoration",
+        items: [
+          "PRP scalp injections for thinning hair",
+          "Androgenetic alopecia (pattern hair loss) treatment",
+          "Hair loss assessment & candidacy evaluation",
+          "Monthly induction series with quarterly maintenance",
+          "Combined therapy planning (PRP + topical/oral)",
+        ],
+      },
     ],
     image: "/services/cosmetics.jpg",
   },

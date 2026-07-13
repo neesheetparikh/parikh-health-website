@@ -85,7 +85,7 @@ export default async function ServicePage({ params }: Params) {
               {"conditionsTreated" in service && service.conditionsTreated && (
                 <div className="mb-10">
                   <h3 className="font-serif text-2xl font-semibold text-[#111111] mb-5">
-                    Conditions We Treat
+                    {("detailHeading" in service && service.detailHeading) || "Conditions We Treat"}
                   </h3>
                   <div className="grid sm:grid-cols-2 gap-x-8 gap-y-8">
                     {service.conditionsTreated.map((group) => (

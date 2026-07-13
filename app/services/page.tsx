@@ -6,7 +6,7 @@ import { SERVICES } from "@/content/site";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "ParikhHealth offers primary care, sports medicine, physical therapy, concierge medicine, cosmetics, corporate health, osteopathic manipulative therapy, and in-home medical services in Sunnyvale, CA.",
+    "ParikhHealth offers primary care, sports medicine, physical therapy, concierge medicine, aesthetic services, corporate health, osteopathic manipulative therapy, and in-home medical services in Sunnyvale, CA.",
 };
 
 export default function ServicesPage() {
