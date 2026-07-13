@@ -209,6 +209,17 @@ export default function ProvidersPage() {
                 key={member.name}
                 className="bg-[#F8F7F4] rounded-2xl px-5 py-6 border border-gray-100"
               >
+                {member.image && (
+                  <div className="w-12 h-12 rounded-full overflow-hidden mb-3">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={48}
+                      height={48}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                )}
                 <p className="font-serif font-semibold text-[#111111] text-base leading-snug">
                   {member.name}
                 </p>
