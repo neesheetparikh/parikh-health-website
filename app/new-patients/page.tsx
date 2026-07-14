@@ -139,14 +139,12 @@ export default function NewPatientsPage() {
                   We are currently accepting new patients across all services.
                 </p>
                 <div className="space-y-3">
-                  <a
-                    href={SITE.booking.zocdocUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href="/appointments"
                     className="flex items-center justify-center gap-2 bg-white text-[#111111] font-medium px-5 py-3 rounded-full text-sm hover:bg-white/90 transition-colors"
                   >
                     <Calendar size={14} /> Book Online
-                  </a>
+                  </Link>
                   <a
                     href={`tel:${SITE.phone.appointments}`}
                     className="flex items-center justify-center gap-2 border border-white/30 hover:border-white text-white font-medium px-5 py-3 rounded-full text-sm transition-colors"

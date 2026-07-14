@@ -1,31 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
-import { SITE } from "@/content/site";
+import { SITE, ACCEPTED_PLANS, NOT_ACCEPTED_PLANS } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Insurance & Accepted Plans",
   description: "ParikhHealth accepts most major PPO insurance plans in Sunnyvale, CA. View accepted plans and learn about self-pay and concierge options.",
   alternates: { canonical: `${SITE.url}/insurance` },
 };
-
-const ACCEPTED_PLANS = [
-  { name: "Aetna PPO", notes: "Most Aetna PPO plans accepted" },
-  { name: "Blue Shield of California PPO", notes: "Individual & employer plans" },
-  { name: "Cigna PPO", notes: "Open Access & PPO plans" },
-  { name: "United Healthcare PPO", notes: "Choice and Options plans" },
-  { name: "Anthem Blue Cross PPO", notes: "California plans" },
-  { name: "Health Net PPO", notes: "Select plans" },
-  { name: "Medicare (Original / Traditional)", notes: "Part B accepted" },
-  { name: "Tricare", notes: "Select plans — call to verify" },
-];
-
-const NOT_ACCEPTED = [
-  "HMO plans (Kaiser, most HMOs)",
-  "Medi-Cal / Medicaid",
-  "Covered California plans (marketplace plans)",
-  "Medicare Advantage (HMO-based)",
-];
 
 export default function InsurancePage() {
   return (
@@ -76,7 +58,7 @@ export default function InsurancePage() {
               </h2>
               <div className="bg-orange-50 border border-orange-100 rounded-2xl p-6 mb-12">
                 <ul className="space-y-2">
-                  {NOT_ACCEPTED.map((plan) => (
+                  {NOT_ACCEPTED_PLANS.map((plan) => (
                     <li key={plan} className="flex items-center gap-3 text-sm text-gray-700">
                       <span className="w-4 h-4 rounded-full border-2 border-orange-300 shrink-0" />
                       {plan}

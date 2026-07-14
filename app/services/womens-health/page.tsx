@@ -236,14 +236,12 @@ export default function WomensHealthPage() {
                   <p>Phone: {SITE.phone.appointments}</p>
                   <p>Hours: Mon–Fri, 9:00 AM – 4:00 PM</p>
                 </div>
-                <a
-                  href={SITE.booking.zocdocUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/appointments"
                   className="block text-center bg-white text-[#111111] hover:bg-gray-100 font-medium px-5 py-2.5 rounded-full text-sm transition-colors mb-3"
                 >
-                  Book Online (Zocdoc)
-                </a>
+                  Book Online
+                </Link>
                 <Link
                   href="/contact"
                   className="block text-center border border-white/20 hover:border-white text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors"

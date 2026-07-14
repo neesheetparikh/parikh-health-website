@@ -111,15 +111,13 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={SITE.booking.zocdocUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/appointments"
                 className="inline-flex items-center justify-center gap-2 bg-[#111111] hover:bg-[#333333] text-white font-medium px-8 py-4 rounded-full text-base transition-colors"
               >
                 Book an Appointment
                 <ArrowRight size={18} />
-              </a>
+              </Link>
               <Link
                 href="/services/athlete-wellness"
                 className="inline-flex items-center justify-center gap-2 border border-gray-300 hover:border-[#111111] text-[#111111] font-medium px-8 py-4 rounded-full text-base transition-colors"

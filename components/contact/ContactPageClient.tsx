@@ -151,14 +151,12 @@ export default function ContactPage() {
                   Book an appointment online in minutes
                 </p>
               </div>
-              <a
-                href={SITE.booking.zocdocUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/appointments"
                 className="mt-6 inline-flex items-center justify-center bg-white hover:bg-gray-100 text-[#111111] font-medium text-sm px-6 py-3 rounded-full transition-colors"
               >
                 Book Now →
-              </a>
+              </Link>
             </div>
 
           </div>

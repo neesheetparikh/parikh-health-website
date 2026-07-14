@@ -31,6 +31,10 @@ export const SITE = {
   booking: {
     provider: "zocdoc" as "zocdoc" | "calendly" | "custom",
     zocdocUrl: "https://www.zocdoc.com/booking-link/practice/parikhhealth-13809",
+    // Practice ID used by Zocdoc's embeddable "Book Online Button" widget
+    // (offsiteschedule.zocdoc.com/plugin/embed) so booking happens in an
+    // on-page overlay instead of navigating patients to zocdoc.com.
+    zocdocPracticeId: "parikhhealth-13809",
     calendlyUrl: "", // fill in if switching to Calendly
   },
   social: {
@@ -116,6 +120,24 @@ export const SUPPORT_STAFF = [
   { name: "Earl Dela Rosa", title: "PT Aide", image: "/team/earl-dela-rosa.jpg" },
   { name: "Neha Shah", title: "PT Aide" },
   { name: "Saurabh Bhatt", title: "Billing Specialist" },
+];
+
+export const ACCEPTED_PLANS = [
+  { name: "Aetna PPO", notes: "Most Aetna PPO plans accepted" },
+  { name: "Blue Shield of California PPO", notes: "Individual & employer plans" },
+  { name: "Cigna PPO", notes: "Open Access & PPO plans" },
+  { name: "United Healthcare PPO", notes: "Choice and Options plans" },
+  { name: "Anthem Blue Cross PPO", notes: "California plans" },
+  { name: "Health Net PPO", notes: "Select plans" },
+  { name: "Medicare (Original / Traditional)", notes: "Part B accepted" },
+  { name: "Tricare", notes: "Select plans — call to verify" },
+];
+
+export const NOT_ACCEPTED_PLANS = [
+  "HMO plans (Kaiser, most HMOs)",
+  "Medi-Cal / Medicaid",
+  "Covered California plans (marketplace plans)",
+  "Medicare Advantage (HMO-based)",
 ];
 
 export const SERVICES = [

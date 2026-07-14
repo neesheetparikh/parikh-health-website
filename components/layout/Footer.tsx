@@ -41,14 +41,12 @@ export default function Footer() {
               Exceptional primary care and sports medicine for every stage of
               life — delivered with compassion, precision, and respect.
             </p>
-            <a
-              href={SITE.booking.zocdocUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/appointments"
               className="inline-block bg-white hover:bg-white/90 text-[#111111] text-sm font-medium px-5 py-2.5 rounded-full transition-colors"
             >
               Book an Appointment
-            </a>
+            </Link>
           </div>
 
           {/* Services */}

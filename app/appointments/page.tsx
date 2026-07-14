@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Phone, Clock, MapPin, CheckCircle2, ArrowRight } from "lucide-react";
-import { SITE } from "@/content/site";
+import { Phone, Clock, MapPin, CheckCircle2, ArrowRight, Video, Building2, Stethoscope, ShieldCheck } from "lucide-react";
+import { SITE, ACCEPTED_PLANS, TEAM } from "@/content/site";
+import ZocdocBookButton from "@/components/booking/ZocdocBookButton";
 
 export const metadata: Metadata = {
   title: "Book an Appointment",
@@ -48,25 +49,11 @@ export default function AppointmentsPage() {
               <div className="bg-[#F8F7F4] rounded-2xl border border-gray-100 overflow-hidden">
                 {SITE.booking.provider === "zocdoc" && SITE.booking.zocdocUrl ? (
                   <div className="p-10 text-center">
-                    <a
-                      href={SITE.booking.zocdocUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-[#111111] hover:bg-[#333333] text-white font-medium px-8 py-4 rounded-full transition-colors text-base"
-                    >
-                      Book Now <ArrowRight size={18} />
-                    </a>
+                    <ZocdocBookButton className="inline-flex items-center gap-2 bg-[#111111] hover:bg-[#333333] text-white font-medium px-8 py-4 rounded-full transition-colors text-base cursor-pointer" />
                     <p className="text-xs text-gray-400 mt-5">
-                      Scheduling powered by{" "}
-                      <a
-                        href={SITE.booking.zocdocUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline hover:text-gray-600 transition-colors"
-                      >
-                        ZocDoc
-                      </a>
-                      {" "}— HIPAA-compliant and free for patients.
+                      Scheduling powered by ZocDoc — HIPAA-compliant and free
+                      for patients. Pick your provider, visit type, and time —
+                      right here on our site.
                     </p>
                   </div>
                 ) : SITE.booking.provider === "calendly" && SITE.booking.calendlyUrl ? (
@@ -143,6 +130,110 @@ export default function AppointmentsPage() {
                     Call for same-day availability →
                   </a>
                 </div>
+              </div>
+
+              {/* In-person vs telehealth */}
+              <div className="mt-16">
+                <h2 className="font-serif text-2xl font-semibold text-[#111111] mb-3">
+                  In-Person or Telehealth — Your Choice
+                </h2>
+                <p className="text-gray-500 mb-6 max-w-2xl">
+                  When you book online, you can choose the visit format that
+                  works best for you. Not every visit type is eligible for
+                  telehealth, so if you&apos;re not sure, our front desk can
+                  help you pick the right one.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div className="flex gap-4 bg-[#F8F7F4] rounded-2xl p-6 border border-gray-100">
+                    <Building2 size={20} className="text-[#111111] shrink-0 mt-1" />
+                    <div>
+                      <h3 className="font-serif text-lg font-semibold text-[#111111] mb-1">
+                        In-Person Visits
+                      </h3>
+                      <p className="text-sm text-gray-500 leading-relaxed">
+                        Physical exams, procedures, physical therapy, and most
+                        new patient visits are done in our Sunnyvale office.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 bg-[#F8F7F4] rounded-2xl p-6 border border-gray-100">
+                    <Video size={20} className="text-[#111111] shrink-0 mt-1" />
+                    <div>
+                      <h3 className="font-serif text-lg font-semibold text-[#111111] mb-1">
+                        Telehealth Visits
+                      </h3>
+                      <p className="text-sm text-gray-500 leading-relaxed">
+                        Available for select visit types — including
+                        follow-ups, medication management, and minor illness
+                        consultations. When booking online, filter by
+                        &quot;video visit&quot; to see telehealth availability.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Choosing a provider */}
+              <div className="mt-16">
+                <h2 className="font-serif text-2xl font-semibold text-[#111111] mb-3">
+                  Not Sure Which Provider to See?
+                </h2>
+                <p className="text-gray-500 mb-6 max-w-2xl">
+                  Our online booking lets you choose a specific provider for
+                  your visit type — you don&apos;t have to see the same person
+                  for everything.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {TEAM.filter((m) => ["DO", "PA-C"].includes(m.credentials)).map((m) => (
+                    <div key={m.id} className="flex gap-4 border border-gray-100 rounded-2xl p-5">
+                      <Stethoscope size={18} className="text-[#111111] shrink-0 mt-1" />
+                      <div>
+                        <p className="font-serif font-semibold text-[#111111]">
+                          {m.name}, {m.credentials}
+                        </p>
+                        <p className="text-sm text-gray-500 mt-1">
+                          {m.specialties.join(" · ")}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-sm text-gray-500 mt-5">
+                  Physical therapy, pelvic health, and rehab? See our{" "}
+                  <Link href="/providers" className="text-[#111111] font-medium hover:underline">
+                    full care team
+                  </Link>{" "}
+                  to pick the right specialist.
+                </p>
+              </div>
+
+              {/* Insurance summary */}
+              <div className="mt-16">
+                <h2 className="font-serif text-2xl font-semibold text-[#111111] mb-3">
+                  Insurance We Accept
+                </h2>
+                <p className="text-gray-500 mb-6 max-w-2xl">
+                  We accept most major PPO plans. Coverage varies by employer
+                  and plan year, so we recommend verifying benefits before your
+                  visit.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-3 mb-5">
+                  {ACCEPTED_PLANS.map((plan) => (
+                    <div key={plan.name} className="flex items-start gap-3 bg-[#F8F7F4] rounded-xl p-4 border border-gray-100">
+                      <ShieldCheck size={16} className="text-green-600 mt-0.5 shrink-0" />
+                      <div>
+                        <p className="font-medium text-[#111111] text-sm">{plan.name}</p>
+                        <p className="text-xs text-gray-500 mt-0.5">{plan.notes}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <Link
+                  href="/insurance"
+                  className="inline-flex items-center gap-1.5 text-sm text-[#111111] font-medium hover:underline"
+                >
+                  Full insurance details & self-pay options <ArrowRight size={14} />
+                </Link>
               </div>
             </div>
 
