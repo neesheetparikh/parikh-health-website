@@ -51,9 +51,9 @@ export default function AppointmentsPage() {
                   <div className="p-10 text-center">
                     <ZocdocBookButton className="inline-flex items-center gap-2 bg-[#111111] hover:bg-[#333333] text-white font-medium px-8 py-4 rounded-full transition-colors text-base cursor-pointer" />
                     <p className="text-xs text-gray-400 mt-5">
-                      Scheduling powered by ZocDoc — HIPAA-compliant and free
-                      for patients. Pick your provider, visit type, and time —
-                      right here on our site.
+                      Scheduling powered by ZocDoc — HIPAA-compliant and
+                      free for patients. Opens right here on the page, so
+                      you never leave our site.
                     </p>
                   </div>
                 ) : SITE.booking.provider === "calendly" && SITE.booking.calendlyUrl ? (
