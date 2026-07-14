@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Phone, Clock, MapPin, CheckCircle2, ArrowRight, Video, Building2, Stethoscope, ShieldCheck, MessageSquare, Activity } from "lucide-react";
+import { Phone, Clock, MapPin, CheckCircle2, ArrowRight, Video, Building2, Stethoscope, ShieldCheck, MessageSquare, Activity, HelpCircle } from "lucide-react";
 import { SITE, ACCEPTED_PLANS, TEAM } from "@/content/site";
 import ZocdocBookButton from "@/components/booking/ZocdocBookButton";
 
@@ -207,8 +207,75 @@ export default function AppointmentsPage() {
                 </p>
               </div>
 
-              {/* Insurance summary */}
+              {/* Insurance explained */}
               <div className="mt-16">
+                <h2 className="font-serif text-2xl font-semibold text-[#111111] mb-3">
+                  Insurance, Explained Simply
+                </h2>
+                <p className="text-gray-500 mb-6 max-w-2xl">
+                  Insurance terms can be confusing. Here&apos;s what the
+                  common ones actually mean for what you&apos;ll pay.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                  {[
+                    {
+                      term: "Deductible",
+                      def: "The amount you pay out-of-pocket each year before your insurance starts covering costs. A $1,500 deductible means you pay the first $1,500 of care yourself.",
+                    },
+                    {
+                      term: "Copay",
+                      def: "A fixed fee — like $25 or $40 — you pay at each visit, often even after your deductible is met.",
+                    },
+                    {
+                      term: "Coinsurance",
+                      def: "After your deductible is met, this is the percentage of the bill you still owe. If your plan covers 80%, you pay the remaining 20%.",
+                    },
+                    {
+                      term: "In-Network",
+                      def: "We have a negotiated rate with your insurance company, which usually means lower costs for you than an out-of-network provider.",
+                    },
+                    {
+                      term: "Benefits",
+                      def: "The specific services your plan covers and how much of the cost it pays — this varies by plan even within the same insurance company.",
+                    },
+                    {
+                      term: "Out-of-Pocket Maximum",
+                      def: "The most you'll pay in a year for covered care. Once you hit it, your insurance covers 100% of costs for the rest of the year.",
+                    },
+                  ].map((item) => (
+                    <div key={item.term} className="flex gap-3 bg-[#F8F7F4] rounded-xl p-5 border border-gray-100">
+                      <HelpCircle size={16} className="text-[#111111] mt-0.5 shrink-0" />
+                      <div>
+                        <p className="font-serif font-semibold text-[#111111] text-sm mb-1">{item.term}</p>
+                        <p className="text-xs text-gray-500 leading-relaxed">{item.def}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="border border-gray-100 rounded-2xl p-6 mb-10">
+                  <p className="font-serif font-semibold text-[#111111] text-sm mb-3">
+                    How this works at your visit
+                  </p>
+                  <ol className="space-y-2">
+                    {[
+                      "We check that you're in-network before your appointment — or call the number on your insurance card to verify yourself.",
+                      "At check-in, you pay your copay or any remaining deductible.",
+                      "We bill your insurance for the rest of the visit.",
+                      "If anything's still owed after your insurance processes the claim, we'll bill you afterward.",
+                    ].map((step, i) => (
+                      <li key={step} className="flex items-start gap-3 text-sm text-gray-500">
+                        <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#111111] text-white text-xs font-medium shrink-0 mt-0.5">
+                          {i + 1}
+                        </span>
+                        {step}
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              </div>
+
+              {/* Insurance summary */}
+              <div>
                 <h2 className="font-serif text-2xl font-semibold text-[#111111] mb-3">
                   Insurance We Accept
                 </h2>
