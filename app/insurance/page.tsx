@@ -57,7 +57,7 @@ export default function InsurancePage() {
                 Plans We Do Not Accept
               </h2>
               <div className="bg-orange-50 border border-orange-100 rounded-2xl p-6 mb-12">
-                <ul className="space-y-2">
+                <ul className="space-y-2 mb-5">
                   {NOT_ACCEPTED_PLANS.map((plan) => (
                     <li key={plan} className="flex items-center gap-3 text-sm text-gray-700">
                       <span className="w-4 h-4 rounded-full border-2 border-orange-300 shrink-0" />
@@ -65,6 +65,15 @@ export default function InsurancePage() {
                     </li>
                   ))}
                 </ul>
+                <p className="text-sm text-gray-700 leading-relaxed pt-4 border-t border-orange-100">
+                  Have one of these plans and still want to see us? You&apos;re
+                  welcome to pay cash for your visit, or join our{" "}
+                  <Link href="/services/concierge-medicine" className="font-medium text-[#111111] hover:underline">
+                    Concierge Medicine
+                  </Link>{" "}
+                  program for direct access to Dr. Parikh, independent of
+                  insurance.
+                </p>
               </div>
 
               {/* Important notes */}
@@ -79,7 +88,7 @@ export default function InsurancePage() {
                   <strong className="text-[#111111]">Physical therapy benefits are separate.</strong> PT services are billed to insurance but are subject to your plan&apos;s PT-specific benefits, which may differ from medical benefits. Your PT benefits (copay, sessions per year, deductible) should be verified separately.
                 </p>
                 <p>
-                  <strong className="text-[#111111]">Cosmetic services are not covered by insurance.</strong> Botox, dermal fillers, and aesthetic services are self-pay only.
+                  <strong className="text-[#111111]">Aesthetic services are not covered by insurance.</strong> Botox, microneedling, PRP treatments, and other aesthetic services are self-pay only.
                 </p>
                 <p>
                   <strong className="text-[#111111]">Concierge membership fees are not covered by insurance.</strong> The membership fee is a separate charge for enhanced access. Standard clinical services rendered during concierge visits are still billed to your insurance as normal.

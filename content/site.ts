@@ -34,7 +34,10 @@ export const SITE = {
     // Practice ID used by Zocdoc's embeddable "Book Online Button" widget
     // (offsiteschedule.zocdoc.com/plugin/embed) so booking happens in an
     // on-page overlay instead of navigating patients to zocdoc.com.
-    zocdocPracticeId: "parikhhealth-13809",
+    // Per Zocdoc's documented embed pattern, this is just the numeric code
+    // at the end of the practice booking URL (.../practice/parikhhealth-13809),
+    // not the full slug.
+    zocdocPracticeId: "13809",
     calendlyUrl: "", // fill in if switching to Calendly
   },
   social: {

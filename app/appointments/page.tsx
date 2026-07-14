@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Phone, Clock, MapPin, CheckCircle2, ArrowRight, Video, Building2, Stethoscope, ShieldCheck } from "lucide-react";
+import { Phone, Clock, MapPin, CheckCircle2, ArrowRight, Video, Building2, Stethoscope, ShieldCheck, MessageSquare, Activity } from "lucide-react";
 import { SITE, ACCEPTED_PLANS, TEAM } from "@/content/site";
 import ZocdocBookButton from "@/components/booking/ZocdocBookButton";
 
@@ -74,7 +74,7 @@ export default function AppointmentsPage() {
                       href={`tel:${SITE.phone.appointments}`}
                       className="inline-flex items-center gap-2 bg-[#111111] text-white font-medium px-7 py-3.5 rounded-full text-sm"
                     >
-                      <Phone size={16} /> Call to Book
+                      <Phone size={16} /> Call or Text to Book
                     </a>
                   </div>
                 )}
@@ -239,13 +239,14 @@ export default function AppointmentsPage() {
 
             {/* Sidebar */}
             <div className="space-y-6">
-              {/* Call */}
+              {/* Call or Text */}
               <div className="bg-[#111111] rounded-2xl p-7 text-white">
                 <h3 className="font-serif text-xl font-semibold mb-4">
-                  Prefer to Call?
+                  Call/Text for Appointment
                 </h3>
                 <p className="text-sm text-white/60 mb-5">
-                  Our front desk is happy to schedule you directly.
+                  Our front desk is happy to schedule you directly — call or
+                  text, whichever&apos;s easier.
                 </p>
                 <a
                   href={`tel:${SITE.phone.appointments}`}
@@ -253,6 +254,30 @@ export default function AppointmentsPage() {
                 >
                   <Phone size={18} className="text-[#111111]" />
                   {SITE.phone.appointments}
+                </a>
+                <a
+                  href={`sms:${SITE.phone.appointments.replace(/-/g, "")}`}
+                  className="flex items-center gap-2 text-sm font-medium text-white/70 hover:text-white transition-colors mt-3"
+                >
+                  <MessageSquare size={15} className="text-[#111111]" />
+                  Text us instead
+                </a>
+              </div>
+
+              {/* Physical Therapy scheduling */}
+              <div className="border border-gray-100 rounded-2xl p-7">
+                <h3 className="font-serif text-lg font-semibold text-[#111111] mb-3 flex items-center gap-2">
+                  <Activity size={18} className="text-[#111111]" /> Physical Therapy
+                </h3>
+                <p className="text-sm text-gray-500 leading-relaxed mb-5">
+                  PT appointments are scheduled directly with our PT team —
+                  text us at {SITE.phone.appointments} to set up your session.
+                </p>
+                <a
+                  href={`sms:${SITE.phone.appointments.replace(/-/g, "")}`}
+                  className="flex items-center gap-2 text-sm font-medium text-[#111111] hover:underline"
+                >
+                  <MessageSquare size={15} /> Text to Schedule PT
                 </a>
               </div>
 
