@@ -66,6 +66,26 @@ export const TEAM = [
     bookingUrl: "https://www.zocdoc.com/booking-link/doctor/kinnari-shah-pa-c-451056",
   },
   {
+    id: "neeru-puri",
+    name: "Neeru Puri",
+    credentials: "MD",
+    title: "Physician — Women's Health",
+    bio: "Dr. Puri is a board-certified family medicine physician dedicated exclusively to women's health. She provides comprehensive, compassionate care across every stage of life — from preventive screenings and contraception counseling to menopause management and complex hormonal concerns.",
+    image: "",
+    specialties: ["Women's Health"],
+    acceptingNewPatients: true,
+  },
+  {
+    id: "robert-oh",
+    name: "Robert Oh",
+    credentials: "MD",
+    title: "Physician — Family Medicine & Sports Medicine",
+    bio: "Dr. Oh is a board-certified family medicine and sports medicine physician providing comprehensive primary care alongside injury prevention, evaluation, and management for active patients of all ages.",
+    image: "",
+    specialties: ["Family Medicine", "Sports Medicine"],
+    acceptingNewPatients: true,
+  },
+  {
     id: "miral-patel",
     name: "Miral Patel",
     credentials: "PT",
@@ -422,7 +442,7 @@ export const CONDITIONS = [
     description: "Knee pain is one of the most common complaints we see at ParikhHealth — from athletes with acute injuries to adults with chronic degeneration. Dr. Parikh evaluates the full picture: mechanism of injury, imaging review, functional assessment, and goals. Treatment may include osteopathic manipulation, corticosteroid or PRP injections, and a coordinated physical therapy program with our in-house PT team.",
     keywords: ["knee pain Sunnyvale", "knee injury treatment", "knee doctor Sunnyvale CA"],
     treatments: ["Physical examination & imaging review", "Corticosteroid injections", "PRP therapy", "Physical therapy & rehabilitation", "Return-to-sport planning"],
-    providers: ["neesheet-parikh", "miral-patel"],
+    providers: ["neesheet-parikh", "miral-patel", "robert-oh"],
     serviceLink: "sports-medicine",
   },
   {
@@ -442,7 +462,7 @@ export const CONDITIONS = [
     description: "Back pain affects most adults at some point, and the right treatment depends entirely on the cause. Dr. Parikh's osteopathic training makes him uniquely qualified to assess and treat back pain — combining traditional primary care diagnostics with hands-on osteopathic manipulative therapy (OMT). Our physical therapists provide targeted spinal rehabilitation for chronic or post-surgical cases.",
     keywords: ["back pain doctor Sunnyvale", "lower back pain treatment", "osteopathic back pain Sunnyvale"],
     treatments: ["Osteopathic Manipulative Therapy (OMT)", "Diagnostic imaging coordination", "Anti-inflammatory injections", "Physical therapy & core stabilization", "Ergonomic & lifestyle counseling"],
-    providers: ["neesheet-parikh", "harshit-bhatwala"],
+    providers: ["neesheet-parikh", "harshit-bhatwala", "robert-oh"],
     serviceLink: "primary-care",
   },
   {
@@ -452,7 +472,7 @@ export const CONDITIONS = [
     description: "A pre-participation sports physical (PPE) is required for most school-sponsored sports and recommended for any athlete beginning a new training program. At ParikhHealth, Dr. Parikh performs thorough PPEs that go beyond the basics — assessing cardiovascular health, musculoskeletal function, and sport-specific risks. Same-week appointments are usually available.",
     keywords: ["sports physical Sunnyvale", "pre-participation physical Sunnyvale CA", "sports clearance exam Bay Area"],
     treatments: ["Cardiovascular screening", "Musculoskeletal assessment", "Vision & hearing check", "Medical history review", "Same-day sport clearance when appropriate"],
-    providers: ["neesheet-parikh"],
+    providers: ["neesheet-parikh", "robert-oh"],
     serviceLink: "sports-medicine",
   },
   {
@@ -462,7 +482,7 @@ export const CONDITIONS = [
     description: "Concussions require careful evaluation and structured recovery — not just rest. Dr. Parikh manages concussions using current evidence-based protocols including ImPACT testing, symptom tracking, and graduated return-to-activity programs. We coordinate with schools for return-to-learn protocols and provide return-to-sport clearance when the athlete is ready.",
     keywords: ["concussion specialist Sunnyvale", "concussion management Bay Area", "return to play concussion"],
     treatments: ["Concussion evaluation & baseline testing", "Symptom monitoring", "Return-to-learn coordination", "Graduated return-to-play protocol", "Return-to-sport clearance"],
-    providers: ["neesheet-parikh"],
+    providers: ["neesheet-parikh", "robert-oh"],
     serviceLink: "sports-medicine",
   },
   {
@@ -472,7 +492,7 @@ export const CONDITIONS = [
     description: "Hypertension is often called the 'silent killer' because it rarely causes symptoms until it causes damage. At ParikhHealth, Dr. Parikh and Kinnari Shah provide ongoing management for patients with high blood pressure — including lifestyle modifications, medication management when appropriate, and regular monitoring. The goal is to understand and address the root causes, not just treat numbers.",
     keywords: ["high blood pressure doctor Sunnyvale", "hypertension management primary care", "blood pressure treatment Sunnyvale CA"],
     treatments: ["Comprehensive blood pressure evaluation", "Lifestyle & dietary counseling", "Medication management", "Home monitoring guidance", "Regular follow-up care"],
-    providers: ["neesheet-parikh", "kinnari-shah"],
+    providers: ["neesheet-parikh", "kinnari-shah", "robert-oh"],
     serviceLink: "primary-care",
   },
   {
@@ -482,7 +502,7 @@ export const CONDITIONS = [
     description: "Managing diabetes well means more than keeping your A1C in check. Our team helps patients build sustainable habits, understand their numbers, and prevent complications. We manage both Type 1 and Type 2 diabetes, coordinate with endocrinologists when needed, and use the latest monitoring technologies to keep patients engaged in their own care.",
     keywords: ["diabetes doctor Sunnyvale", "diabetes management primary care Sunnyvale", "Type 2 diabetes treatment Bay Area"],
     treatments: ["A1C & glucose monitoring", "Medication & insulin management", "Nutrition & lifestyle counseling", "Diabetes education", "Specialist coordination"],
-    providers: ["neesheet-parikh", "kinnari-shah"],
+    providers: ["neesheet-parikh", "kinnari-shah", "robert-oh"],
     serviceLink: "primary-care",
   },
   {
@@ -492,7 +512,7 @@ export const CONDITIONS = [
     description: "Your annual physical is the foundation of preventive health. At ParikhHealth, we don't rush through wellness visits. Dr. Parikh and Kinnari Shah take time to review your full history, order appropriate age-based screenings, discuss your health goals, and ensure your preventive care is up to date. We accept most PPO insurance plans and offer self-pay rates.",
     keywords: ["annual physical Sunnyvale", "wellness exam Sunnyvale CA", "physical exam doctor Sunnyvale"],
     treatments: ["Complete physical examination", "Preventive screenings (age & risk-based)", "Laboratory work", "Immunizations & vaccines", "Health goal setting"],
-    providers: ["neesheet-parikh", "kinnari-shah"],
+    providers: ["neesheet-parikh", "kinnari-shah", "robert-oh"],
     serviceLink: "primary-care",
   },
   {
@@ -502,7 +522,7 @@ export const CONDITIONS = [
     description: "Rotator cuff injuries range from mild tendinitis to full thickness tears — and each requires a different approach. Dr. Parikh evaluates shoulder injuries with a thorough exam and imaging when needed, and our physical therapy team provides expert rehabilitation. For many patients, surgery can be avoided with a structured non-operative treatment plan.",
     keywords: ["rotator cuff injury Sunnyvale", "shoulder pain doctor Sunnyvale", "shoulder PT Silicon Valley"],
     treatments: ["Shoulder examination & imaging", "Corticosteroid or PRP injections", "Physical therapy & rotator cuff strengthening", "Post-surgical rehabilitation", "Return-to-sport planning"],
-    providers: ["neesheet-parikh", "miral-patel"],
+    providers: ["neesheet-parikh", "miral-patel", "robert-oh"],
     serviceLink: "sports-medicine",
   },
   {
@@ -512,7 +532,7 @@ export const CONDITIONS = [
     description: "Plantar fasciitis is one of the most common causes of heel pain and can be frustrating to treat without the right approach. At ParikhHealth, we combine Dr. Parikh's sports medicine expertise with our physical therapy team's hands-on rehabilitation to address the root biomechanical causes — not just the symptoms.",
     keywords: ["plantar fasciitis treatment Sunnyvale", "heel pain doctor Sunnyvale CA", "foot pain sports medicine Bay Area"],
     treatments: ["Biomechanical assessment", "Stretching & strengthening protocols", "Orthotics counseling", "Corticosteroid injections when appropriate", "Shockwave therapy referral if needed"],
-    providers: ["neesheet-parikh", "harshit-bhatwala"],
+    providers: ["neesheet-parikh", "harshit-bhatwala", "robert-oh"],
     serviceLink: "sports-medicine",
   },
   {
@@ -522,7 +542,7 @@ export const CONDITIONS = [
     description: "ParikhHealth provides compassionate, thorough women's wellness care in a comfortable and private environment. Our annual well-woman exams include cervical cancer screening, breast exams, STI screening, contraception counseling, and menopause or perimenopause support. We believe women deserve a provider who listens carefully and takes their concerns seriously.",
     keywords: ["women's wellness exam Sunnyvale", "Pap smear Sunnyvale CA", "gynecology primary care Sunnyvale"],
     treatments: ["Annual well-woman exam", "Pap smear & cervical cancer screening", "Clinical breast exam", "Contraception counseling", "Menopause & hormone discussions"],
-    providers: ["neesheet-parikh", "kinnari-shah"],
+    providers: ["neesheet-parikh", "kinnari-shah", "neeru-puri"],
     serviceLink: "womens-health",
   },
   {
@@ -542,7 +562,7 @@ export const CONDITIONS = [
     description: "Your annual wellness exam is your most important appointment of the year. At ParikhHealth in Sunnyvale, CA, Dr. Parikh and Kinnari Shah, PA-C conduct thorough preventive visits tailored to your age, sex, and personal health history. We go beyond checking boxes — we spend real time understanding your goals, ordering appropriate screenings, reviewing your medications, and building a preventive care plan that actually fits your life. Most PPO insurance plans cover annual wellness exams at no cost to you.",
     keywords: ["annual wellness exam Sunnyvale", "wellness exam doctor Sunnyvale CA", "preventive care Sunnyvale", "annual checkup Sunnyvale CA", "yearly physical Sunnyvale"],
     treatments: ["Complete head-to-toe physical examination", "Age-appropriate preventive screenings", "Comprehensive laboratory bloodwork", "Immunizations & vaccine review", "Chronic disease monitoring", "Health goal setting & lifestyle planning"],
-    providers: ["neesheet-parikh", "kinnari-shah"],
+    providers: ["neesheet-parikh", "kinnari-shah", "robert-oh"],
     serviceLink: "primary-care",
   },
   {
@@ -552,7 +572,7 @@ export const CONDITIONS = [
     description: "Early detection is the most powerful tool in breast cancer outcomes. At ParikhHealth, clinical breast exams are a standard part of every women's wellness visit. Dr. Parikh and Kinnari Shah, PA-C conduct thorough breast examinations, review your personal and family history for risk factors, and coordinate mammography referrals based on current USPSTF and ACR screening guidelines. We also counsel patients on breast self-awareness and what changes to watch for between visits.",
     keywords: ["clinical breast exam Sunnyvale", "breast exam doctor Sunnyvale CA", "breast health primary care Sunnyvale", "breast cancer screening Sunnyvale", "mammogram referral Sunnyvale"],
     treatments: ["Clinical breast examination", "Breast cancer risk assessment", "Mammography coordination & referrals", "Breast self-examination guidance", "Genetic risk counseling referral if indicated"],
-    providers: ["neesheet-parikh", "kinnari-shah"],
+    providers: ["neesheet-parikh", "kinnari-shah", "neeru-puri"],
     serviceLink: "womens-health",
   },
   {
@@ -562,7 +582,7 @@ export const CONDITIONS = [
     description: "Cervical cancer is one of the most preventable cancers when Pap smears and HPV testing are performed on schedule. At ParikhHealth in Sunnyvale, we follow current USPSTF and ACOG screening guidelines — Pap smears every 3 years for women aged 21–65, or every 5 years with HPV co-testing. Results are reviewed promptly and we coordinate any needed colposcopy or specialist referrals. Our office provides a private, comfortable environment for these sensitive exams.",
     keywords: ["Pap smear Sunnyvale", "cervical cancer screening Sunnyvale CA", "HPV test Sunnyvale", "Pap smear doctor Sunnyvale", "gynecology primary care Sunnyvale CA"],
     treatments: ["Pap smear (cervical cytology)", "HPV co-testing", "Abnormal Pap follow-up", "Colposcopy referral coordination", "HPV vaccination counseling"],
-    providers: ["neesheet-parikh", "kinnari-shah"],
+    providers: ["neesheet-parikh", "kinnari-shah", "neeru-puri"],
     serviceLink: "womens-health",
   },
   {
@@ -572,7 +592,7 @@ export const CONDITIONS = [
     description: "Women's health encompasses far more than reproductive care. At ParikhHealth, we provide comprehensive primary care tailored specifically to women's health needs across every life stage — from annual wellness exams and contraception counseling in your 20s, to perimenopause support and bone health in your 40s and 50s, to preventive screenings and chronic disease management as you age. Dr. Parikh and Kinnari Shah, PA-C are experienced in treating the whole woman, not just a list of symptoms.",
     keywords: ["women's health doctor Sunnyvale", "women's primary care Sunnyvale CA", "women's healthcare Sunnyvale", "women's preventive care Sunnyvale", "OBGYN primary care Sunnyvale CA"],
     treatments: ["Annual well-woman exams", "Contraception counseling & management", "Menopause & perimenopause care", "Hormone health discussions", "Osteoporosis screening & prevention", "Preventive cancer screenings"],
-    providers: ["neesheet-parikh", "kinnari-shah"],
+    providers: ["neesheet-parikh", "kinnari-shah", "neeru-puri"],
     serviceLink: "womens-health",
   },
   {
@@ -582,7 +602,7 @@ export const CONDITIONS = [
     description: "Sexual health is an important part of overall health, and ParikhHealth provides confidential, non-judgmental sexual health care for all patients. We offer comprehensive STI screening including HIV, gonorrhea, chlamydia, syphilis, hepatitis B and C, and HPV. We provide PrEP (pre-exposure prophylaxis) for HIV prevention, contraception counseling, and LGBTQ+-affirming care. All visits are completely confidential within the limits of applicable law.",
     keywords: ["STI testing Sunnyvale", "sexual health doctor Sunnyvale CA", "STD screening Sunnyvale", "PrEP Sunnyvale CA", "confidential STI testing Sunnyvale"],
     treatments: ["Comprehensive STI panel testing", "HIV testing & PrEP counseling", "Contraception counseling", "HPV vaccination", "LGBTQ+-affirming primary care", "Partner notification guidance"],
-    providers: ["neesheet-parikh", "kinnari-shah"],
+    providers: ["neesheet-parikh", "kinnari-shah", "neeru-puri"],
     serviceLink: "womens-health",
   },
   {
@@ -592,7 +612,7 @@ export const CONDITIONS = [
     description: "A well-woman exam is more than a Pap smear — it's your dedicated annual time with a provider who knows your full health picture. At ParikhHealth in Sunnyvale, our well-woman visits include a complete physical, clinical breast exam, cervical cancer screening (when due), discussion of contraception or menopause management, STI risk assessment, mental health check-in, and any laboratory work indicated by your age and history. We accept most PPO plans and offer transparent self-pay rates.",
     keywords: ["well-woman exam Sunnyvale", "well woman visit Sunnyvale CA", "annual women's exam Sunnyvale", "OB-GYN primary care Sunnyvale", "women's annual exam Sunnyvale CA"],
     treatments: ["Complete physical examination", "Pap smear & HPV testing (when due)", "Clinical breast examination", "Contraception counseling", "Menopause management", "Preventive labs & immunizations"],
-    providers: ["neesheet-parikh", "kinnari-shah"],
+    providers: ["neesheet-parikh", "kinnari-shah", "neeru-puri"],
     serviceLink: "womens-health",
   },
   {
@@ -602,7 +622,7 @@ export const CONDITIONS = [
     description: "ParikhHealth is a direct-access primary care practice in Sunnyvale, CA serving adults and adolescents with comprehensive, relationship-based medical care. Dr. Neesheet Parikh, DO and Kinnari Shah, PA-C provide chronic disease management, acute illness care, preventive screenings, and coordination of specialty care — all under one roof. Unlike large health systems, we offer same-week appointments, direct physician access, and visits that never feel rushed. Conveniently located at 1299 Oakmead Parkway in Sunnyvale with easy freeway access.",
     keywords: ["primary care Sunnyvale CA", "primary care doctor Sunnyvale", "family doctor Sunnyvale CA", "internal medicine Sunnyvale", "PCP Sunnyvale CA", "best primary care Sunnyvale"],
     treatments: ["Preventive care & annual exams", "Chronic disease management", "Acute illness & injury care", "Medication management", "Specialty referral coordination", "In-office labs & diagnostics"],
-    providers: ["neesheet-parikh", "kinnari-shah"],
+    providers: ["neesheet-parikh", "kinnari-shah", "robert-oh"],
     serviceLink: "primary-care",
   },
   {

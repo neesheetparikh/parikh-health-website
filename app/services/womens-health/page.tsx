@@ -6,7 +6,7 @@ import { SITE, SERVICES } from "@/content/site";
 export const metadata: Metadata = {
   title: "Women's Health | ParikhHealth Sunnyvale CA",
   description:
-    "Comprehensive women's primary care in Sunnyvale, CA — annual well-woman exams, Pap smears, contraception, menopause, PCOS, hormone health, pelvic floor co-management, and more. Dr. Neesheet Parikh, DO.",
+    "Comprehensive women's primary care in Sunnyvale, CA — annual well-woman exams, Pap smears, contraception, menopause, PCOS, hormone health, pelvic floor co-management, and more. Dr. Neeru Puri, MD, Kinnari Shah, PA-C, and Dr. Neesheet Parikh, DO.",
 };
 
 const SECTIONS = [
@@ -148,7 +148,7 @@ export default function WomensHealthPage() {
                 Women&apos;s Health at ParikhHealth
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4 text-base">
-                Women&apos;s health is a specialty unto itself — and it deserves a provider who treats it that way. At ParikhHealth in Sunnyvale, CA, Dr. Neesheet Parikh, DO and Kinnari Shah, PA-C provide primary-level women&apos;s health care with the depth and thoroughness that women deserve.
+                Women&apos;s health is a specialty unto itself — and it deserves a provider who treats it that way. At ParikhHealth in Sunnyvale, CA, Dr. Neeru Puri, MD practices women&apos;s health exclusively, alongside Kinnari Shah, PA-C and Dr. Neesheet Parikh, DO — bringing the depth and thoroughness that women deserve.
               </p>
               <p className="text-gray-600 leading-relaxed mb-10 text-base">
                 We don&apos;t rush. We listen. Whether you&apos;re navigating a new diagnosis, trying to optimize your hormones, managing a chronic condition, or simply overdue for your annual exam, we&apos;re here to be your long-term partner in health.
@@ -206,7 +206,7 @@ export default function WomensHealthPage() {
                   Ready to Get Started?
                 </h3>
                 <p className="text-sm text-gray-500 mb-5">
-                  Book a women&apos;s health appointment with Dr. Parikh or Kinnari Shah, PA-C — same-week availability most weeks.
+                  Book a women&apos;s health appointment with Dr. Puri, Kinnari Shah, PA-C, or Dr. Parikh — same-week availability most weeks.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const CLINICAL_PROVIDERS = TEAM.filter((m) =>
-  ["DO", "PA-C"].includes(m.credentials)
+  ["DO", "MD", "PA-C"].includes(m.credentials)
 );
 const PT_TEAM = TEAM.filter((m) =>
   ["PT", "PTA"].includes(m.credentials)

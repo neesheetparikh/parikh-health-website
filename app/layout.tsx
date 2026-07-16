@@ -148,7 +148,7 @@ const physicianSchemas = TEAM.filter((m) =>
   "@id": `${SITE.url}/providers/${provider.id}`,
   name: `${provider.name}, ${provider.credentials}`,
   url: `${SITE.url}/providers/${provider.id}`,
-  image: `${SITE.url}${provider.image}`,
+  ...(provider.image ? { image: `${SITE.url}${provider.image}` } : {}),
   description: provider.bio,
   medicalSpecialty: provider.specialties,
   worksFor: { "@id": `${SITE.url}/#organization` },
