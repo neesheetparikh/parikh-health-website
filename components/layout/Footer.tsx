@@ -10,7 +10,7 @@ const SERVICES_LINKS = [
   { label: "Concierge Medicine", href: "/services/concierge-medicine" },
   { label: "Women's Health", href: "/services/womens-health" },
   { label: "Aesthetic Services", href: "/services/cosmetics" },
-  { label: "Athlete Wellness", href: "/services/athlete-wellness" },
+  { label: "PitchFit", href: "/services/athlete-wellness" },
 ];
 
 const QUICK_LINKS = [

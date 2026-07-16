@@ -122,7 +122,7 @@ export default function HomePage() {
                 href="/services/athlete-wellness"
                 className="inline-flex items-center justify-center gap-2 border border-gray-300 hover:border-[#111111] text-[#111111] font-medium px-8 py-4 rounded-full text-base transition-colors"
               >
-                Explore Athlete Wellness →
+                Explore PitchFit →
               </Link>
             </div>
 
@@ -150,8 +150,8 @@ export default function HomePage() {
             {[
               {
                 tag: "⚡ Featured Program",
-                title: "Athlete Wellness",
-                desc: "Membership-based sports medicine with same-day access, direct cell to Dr. Parikh, injury prevention & recovery. For all ages and all sports.",
+                title: "PitchFit",
+                desc: "Elite cricket athlete care led by Dr. Parikh, Head Team Physician for USA Cricket — direct access, same-day visits, injury prevention & recovery.",
                 href: "/services/athlete-wellness",
               },
               {

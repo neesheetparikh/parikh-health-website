@@ -23,11 +23,11 @@ const FAQS = [
       },
       {
         q: "What are your office hours?",
-        a: "We are open Monday through Friday, 9:00 AM to 4:00 PM. We are closed on weekends. Concierge and Athlete Wellness members have extended access to Dr. Parikh outside standard hours.",
+        a: "We are open Monday through Friday, 9:00 AM to 4:00 PM. We are closed on weekends. Concierge and PitchFit members have extended access to Dr. Parikh outside standard hours.",
       },
       {
         q: "Do you offer same-day appointments?",
-        a: "Same-day sick visits are available for established patients on a first-come, first-served basis. Concierge Medicine and Athlete Wellness members receive guaranteed same-day or next-day availability.",
+        a: "Same-day sick visits are available for established patients on a first-come, first-served basis. Concierge Medicine and PitchFit members receive guaranteed same-day or next-day availability.",
       },
       {
         q: "Do you offer telehealth visits?",
@@ -95,7 +95,7 @@ const FAQS = [
     ],
   },
   {
-    category: "Concierge Medicine & Athlete Wellness",
+    category: "Concierge Medicine & PitchFit",
     items: [
       {
         q: "What is concierge medicine?",
@@ -106,8 +106,8 @@ const FAQS = [
         a: "Please call our office at " + SITE.phone.appointments + " for current membership pricing. Fees vary based on membership level and coverage included.",
       },
       {
-        q: "What is Athlete Wellness?",
-        a: "Athlete Wellness is our membership-based sports medicine program for athletes of all ages and levels — from youth athletes to weekend warriors to elite competitors. Members get direct cell access to Dr. Parikh, same-day appointments for injuries, injury prevention assessments, and return-to-sport planning.",
+        q: "What is PitchFit?",
+        a: "PitchFit is our membership-based athlete care program, led by Dr. Parikh in his role as Head Team Physician for USA Cricket. Members get direct cell access to Dr. Parikh, same-day appointments for injuries, sports physicals, cardiac and concussion screening, and return-to-sport planning. Visit pitchfit.cricket for full program details.",
       },
       {
         q: "Can I use my insurance with a concierge membership?",

@@ -26,7 +26,7 @@ const EXTENDED_REVIEWS = [
   {
     quote: "As an athlete, I need a doctor who gets it. Dr. Parikh understands sports injuries, recovery timelines, and what it means to get back to competing. He's the best.",
     author: "Ananya M.",
-    detail: "Athlete Wellness Member",
+    detail: "PitchFit Member",
     rating: 5,
   },
   {

@@ -137,7 +137,7 @@ export default function InsurancePage() {
                   No Insurance?
                 </h3>
                 <p className="text-sm text-gray-500 leading-relaxed mb-5">
-                  Our Concierge Medicine and Athlete Wellness memberships work alongside or independently of insurance — providing direct access to Dr. Parikh without the need for traditional insurance billing.
+                  Our Concierge Medicine and PitchFit memberships work alongside or independently of insurance — providing direct access to Dr. Parikh without the need for traditional insurance billing.
                 </p>
                 <Link
                   href="/services/concierge-medicine"
