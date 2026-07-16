@@ -52,24 +52,20 @@ export default function ProvidersPage() {
             </h2>
           </div>
 
-          <div className="space-y-16">
-            {CLINICAL_PROVIDERS.map((member, idx) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {CLINICAL_PROVIDERS.map((member) => (
               <div
                 key={member.id}
-                className={`grid lg:grid-cols-2 gap-12 items-center`}
+                className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md transition-shadow"
               >
                 {/* Photo */}
-                <div
-                  className={`bg-[#F8F7F4] rounded-3xl h-[440px] overflow-hidden flex items-center justify-center ${
-                    idx % 2 === 1 ? "lg:order-2" : ""
-                  }`}
-                >
+                <div className="bg-[#F8F7F4] rounded-2xl h-52 overflow-hidden flex items-center justify-center mb-6">
                   {member.image ? (
                     <Image
                       src={member.image}
                       alt={member.name}
-                      width={600}
-                      height={440}
+                      width={400}
+                      height={208}
                       className="w-full h-full object-cover object-top"
                     />
                   ) : (
@@ -77,50 +73,49 @@ export default function ProvidersPage() {
                   )}
                 </div>
 
-                {/* Bio */}
-                <div className={idx % 2 === 1 ? "lg:order-1" : ""}>
-                  <span className="text-[#111111] text-xs font-semibold tracking-widest uppercase">
-                    {member.title}
-                  </span>
-                  <h2 className="font-serif text-4xl font-semibold text-[#111111] mt-2 mb-1">
-                    {member.name}
-                  </h2>
-                  <p className="text-gray-500 font-medium text-lg mb-6">
-                    {member.credentials}
-                  </p>
-                  <p className="text-gray-600 leading-relaxed mb-8">{member.bio}</p>
+                <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
+                  {member.title}
+                </span>
+                <h3 className="font-serif text-xl font-semibold text-[#111111] mt-1 mb-3">
+                  {member.name},{" "}
+                  <span className="font-normal text-gray-500">{member.credentials}</span>
+                </h3>
+                <p className="text-sm text-gray-500 leading-relaxed mb-5 line-clamp-3">
+                  {member.bio}
+                </p>
+                <ul className="flex flex-wrap gap-2 mb-5">
+                  {member.specialties.map((s) => (
+                    <li
+                      key={s}
+                      className="text-xs bg-[#F8F7F4] text-gray-500 px-3 py-1 rounded-full border border-gray-100"
+                    >
+                      {s}
+                    </li>
+                  ))}
+                </ul>
 
-                  <div className="mb-6">
-                    <h3 className="text-xs font-semibold text-[#111111] uppercase tracking-wide mb-3">
-                      Specialties
-                    </h3>
-                    <ul className="flex flex-wrap gap-2">
-                      {member.specialties.map((s) => (
-                        <li
-                          key={s}
-                          className="text-sm bg-[#F8F7F4] text-gray-600 px-3 py-1 rounded-full border border-gray-100"
-                        >
-                          {s}
-                        </li>
-                      ))}
-                    </ul>
+                {member.acceptingNewPatients && (
+                  <div className="flex items-center gap-2 text-xs font-medium text-green-700 bg-green-50 px-3 py-1.5 rounded-full w-fit mb-5">
+                    <CheckCircle2 size={12} />
+                    Accepting New Patients
                   </div>
+                )}
 
-                  {member.acceptingNewPatients && (
-                    <div className="flex items-center gap-2 text-sm font-medium text-green-700 bg-green-50 px-4 py-2 rounded-full w-fit mb-8">
-                      <CheckCircle2 size={14} />
-                      Accepting New Patients
-                    </div>
-                  )}
-
+                <div className="flex items-center gap-4">
                   <a
                     href={member.bookingUrl ?? SITE.booking.zocdocUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#111111] hover:bg-[#333333] text-white font-medium px-7 py-3.5 rounded-full text-sm transition-colors"
+                    className="inline-flex items-center gap-1.5 bg-[#111111] hover:bg-[#333333] text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors"
                   >
-                    Book with {member.name.split(" ")[0]} <ArrowRight size={16} />
+                    Book with {member.name.split(" ")[0]} <ArrowRight size={14} />
                   </a>
+                  <Link
+                    href={`/providers/${member.id}`}
+                    className="text-sm text-[#111111] font-medium hover:underline"
+                  >
+                    View Profile
+                  </Link>
                 </div>
               </div>
             ))}
