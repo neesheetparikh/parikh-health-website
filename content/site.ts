@@ -374,14 +374,16 @@ export const SERVICES = [
     name: "Integrative Medicine",
     shortDesc: "Whole-person care blending Ayurvedic tradition with modern medicine.",
     description:
-      "Led by Mansi Parikh, DPT, AP, our integrative medicine program looks beyond symptoms to address root causes — combining time-tested Ayurvedic principles with personalized nutrition, herbal support, and lifestyle medicine. It's a complementary approach designed to work alongside your primary care team, not replace it, with a particular focus on women's health and sustainable lifestyle change.",
+      "Our integrative medicine program pairs Mansi Parikh, DPT, AP with Dr. Neesheet Parikh, DO to look beyond symptoms and address root causes — combining time-tested Ayurvedic principles, personalized nutrition, and herbal support with Dr. Parikh's osteopathic manipulative treatment. It's a complementary approach designed to work alongside your primary care, not replace it, with a particular focus on women's health and sustainable lifestyle change. Concierge Medicine members get the most seamless version of this — Mansi and Dr. Parikh collaborate directly on a combined Ayurvedic and Western treatment plan.",
     icon: "leaf",
     highlights: [
       "Ayurvedic consultations & personalized care plans",
+      "Osteopathic Manipulative Treatment (OMT)",
       "Whole-person, root-cause approach",
       "Nutrition & herbal support",
       "Lifestyle & stress management",
       "Integrative women's health support",
+      "Combined Ayurveda + Western care for Concierge members",
     ],
     image: "/services/integrative-medicine.jpg",
   },
