@@ -316,14 +316,14 @@ export default function HomePage() {
                   href="/providers"
                   className="group flex items-center gap-5 bg-[#F8F7F4] hover:bg-[#111111] rounded-2xl p-5 transition-all duration-300"
                 >
-                  <div className="w-14 h-14 rounded-xl bg-[#111111]/10 group-hover:bg-white/10 flex items-center justify-center shrink-0 transition-colors overflow-hidden">
+                  <div className="w-20 h-20 rounded-xl bg-[#111111]/10 group-hover:bg-white/10 flex items-center justify-center shrink-0 transition-colors overflow-hidden">
                     {member.image ? (
                       <Image
                         src={member.image}
                         alt={member.name}
-                        width={56}
-                        height={56}
-                        className="w-full h-full object-cover object-top"
+                        width={80}
+                        height={80}
+                        className="w-full h-full object-cover object-center"
                       />
                     ) : (
                       <div className="w-8 h-8 rounded-full bg-[#111111]/30" />

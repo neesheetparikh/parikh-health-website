@@ -103,14 +103,14 @@ export default function IntegrativeMedicinePage() {
                       key={provider.id}
                       className="bg-[#F8F7F4] rounded-2xl p-6 border border-gray-100"
                     >
-                      <div className="bg-white rounded-2xl h-40 overflow-hidden flex items-center justify-center mb-5">
+                      <div className="bg-white rounded-2xl h-52 overflow-hidden flex items-center justify-center mb-5">
                         {provider.image ? (
                           <Image
                             src={provider.image}
                             alt={provider.name}
-                            width={320}
-                            height={160}
-                            className="w-full h-full object-cover object-top"
+                            width={400}
+                            height={208}
+                            className="w-full h-full object-cover object-center"
                           />
                         ) : (
                           <span className="text-gray-300 text-sm">{provider.name} photo</span>

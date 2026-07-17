@@ -154,14 +154,14 @@ export default function AboutPage() {
                 key={member.id}
                 className="group border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
               >
-                <div className="bg-[#F8F7F4] h-64 flex items-center justify-center overflow-hidden">
+                <div className="bg-[#F8F7F4] h-80 flex items-center justify-center overflow-hidden">
                   {member.image ? (
                     <Image
                       src={member.image}
                       alt={member.name}
-                      width={400}
-                      height={256}
-                      className="w-full h-full object-cover object-top"
+                      width={480}
+                      height={320}
+                      className="w-full h-full object-cover object-center"
                     />
                   ) : (
                     <div className="text-gray-300 text-sm">Photo</div>

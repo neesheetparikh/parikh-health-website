@@ -62,14 +62,14 @@ export default function ProvidersPage() {
                 className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md transition-shadow"
               >
                 {/* Photo */}
-                <div className="bg-[#F8F7F4] rounded-2xl h-52 overflow-hidden flex items-center justify-center mb-6">
+                <div className="bg-[#F8F7F4] rounded-2xl h-64 overflow-hidden flex items-center justify-center mb-6">
                   {member.image ? (
                     <Image
                       src={member.image}
                       alt={member.name}
-                      width={400}
-                      height={208}
-                      className="w-full h-full object-cover object-top"
+                      width={480}
+                      height={256}
+                      className="w-full h-full object-cover object-center"
                     />
                   ) : (
                     <span className="text-gray-300 text-sm">{member.name} photo</span>
@@ -145,14 +145,14 @@ export default function ProvidersPage() {
                 className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md transition-shadow"
               >
                 {/* Photo */}
-                <div className="bg-[#F8F7F4] rounded-2xl h-52 overflow-hidden flex items-center justify-center mb-6">
+                <div className="bg-[#F8F7F4] rounded-2xl h-64 overflow-hidden flex items-center justify-center mb-6">
                   {member.image ? (
                     <Image
                       src={member.image}
                       alt={member.name}
-                      width={400}
-                      height={208}
-                      className="w-full h-full object-cover object-top"
+                      width={480}
+                      height={256}
+                      className="w-full h-full object-cover object-center"
                     />
                   ) : (
                     <span className="text-gray-300 text-sm">{member.name} photo</span>
@@ -229,14 +229,14 @@ export default function ProvidersPage() {
                 className="bg-white rounded-2xl p-8 border border-gray-100 block hover:shadow-md transition-shadow"
               >
                 {/* Photo */}
-                <div className="bg-[#F8F7F4] rounded-2xl h-52 overflow-hidden flex items-center justify-center mb-6">
+                <div className="bg-[#F8F7F4] rounded-2xl h-64 overflow-hidden flex items-center justify-center mb-6">
                   {member.image ? (
                     <Image
                       src={member.image}
                       alt={member.name}
-                      width={400}
-                      height={208}
-                      className="w-full h-full object-cover object-top"
+                      width={480}
+                      height={256}
+                      className="w-full h-full object-cover object-center"
                     />
                   ) : (
                     <span className="text-gray-300 text-sm">{member.name} photo</span>
@@ -291,13 +291,13 @@ export default function ProvidersPage() {
                 className="bg-[#F8F7F4] rounded-2xl px-5 py-6 border border-gray-100"
               >
                 {member.image && (
-                  <div className="w-12 h-12 rounded-full overflow-hidden mb-3">
+                  <div className="w-16 h-16 rounded-full overflow-hidden mb-3">
                     <Image
                       src={member.image}
                       alt={member.name}
-                      width={48}
-                      height={48}
-                      className="w-full h-full object-cover object-top"
+                      width={64}
+                      height={64}
+                      className="w-full h-full object-cover object-center"
                     />
                   </div>
                 )}

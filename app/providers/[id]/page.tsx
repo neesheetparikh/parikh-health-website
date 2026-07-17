@@ -110,14 +110,14 @@ export default async function ProviderPage({ params }: Params) {
             {/* Bio column */}
             <div className="lg:col-span-2 order-2 lg:order-1">
               {/* Photo — mobile only */}
-              <div className="lg:hidden bg-[#F8F7F4] rounded-3xl h-72 overflow-hidden flex items-center justify-center mb-10">
+              <div className="lg:hidden bg-[#F8F7F4] rounded-3xl h-80 overflow-hidden flex items-center justify-center mb-10">
                 {provider.image ? (
                   <Image
                     src={provider.image}
                     alt={`${provider.name}, ${provider.credentials}`}
-                    width={600}
-                    height={288}
-                    className="w-full h-full object-cover object-top"
+                    width={700}
+                    height={320}
+                    className="w-full h-full object-cover object-center"
                     priority
                   />
                 ) : (
@@ -230,14 +230,14 @@ export default async function ProviderPage({ params }: Params) {
             {/* Sidebar */}
             <div className="order-1 lg:order-2">
               {/* Photo — desktop */}
-              <div className="hidden lg:block bg-[#F8F7F4] rounded-3xl overflow-hidden mb-8 h-[420px]">
+              <div className="hidden lg:block bg-[#F8F7F4] rounded-3xl overflow-hidden mb-8 h-[480px]">
                 {provider.image ? (
                   <Image
                     src={provider.image}
                     alt={`${provider.name}, ${provider.credentials}`}
-                    width={500}
-                    height={420}
-                    className="w-full h-full object-cover object-top"
+                    width={560}
+                    height={480}
+                    className="w-full h-full object-cover object-center"
                     priority
                   />
                 ) : (
