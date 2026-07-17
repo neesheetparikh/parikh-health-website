@@ -7,11 +7,14 @@ import { TEAM, SUPPORT_STAFF, SITE } from "@/content/site";
 export const metadata: Metadata = {
   title: "Our Team | ParikhHealth",
   description:
-    "Meet the full ParikhHealth team — physicians, physician assistants, physical therapists, and support staff dedicated to exceptional care in Sunnyvale, CA.",
+    "Meet the full ParikhHealth team — physicians, physician assistants, physical therapists, integrative & Ayurvedic medicine practitioners, and support staff dedicated to exceptional care in Sunnyvale, CA.",
 };
 
 const CLINICAL_PROVIDERS = TEAM.filter((m) =>
   ["DO", "MD", "PA-C"].includes(m.credentials)
+);
+const INTEGRATIVE_TEAM = TEAM.filter((m) =>
+  m.specialties.includes("Ayurvedic Medicine")
 );
 const PT_TEAM = TEAM.filter((m) =>
   ["PT", "PTA"].includes(m.credentials)
@@ -33,9 +36,9 @@ export default function ProvidersPage() {
             Meet Our Team
           </h1>
           <p className="text-white/70 text-lg max-w-2xl leading-relaxed">
-            Physicians, physician assistants, physical therapists, and a
-            dedicated support staff — all working together so your care is
-            always connected.
+            Physicians, physician assistants, physical therapists, integrative &
+            Ayurvedic medicine practitioners, and a dedicated support staff —
+            all working together so your care is always connected.
           </p>
         </div>
       </section>
@@ -54,6 +57,89 @@ export default function ProvidersPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {CLINICAL_PROVIDERS.map((member) => (
+              <div
+                key={member.id}
+                className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md transition-shadow"
+              >
+                {/* Photo */}
+                <div className="bg-[#F8F7F4] rounded-2xl h-52 overflow-hidden flex items-center justify-center mb-6">
+                  {member.image ? (
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={400}
+                      height={208}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  ) : (
+                    <span className="text-gray-300 text-sm">{member.name} photo</span>
+                  )}
+                </div>
+
+                <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
+                  {member.title}
+                </span>
+                <h3 className="font-serif text-xl font-semibold text-[#111111] mt-1 mb-3">
+                  {member.name},{" "}
+                  <span className="font-normal text-gray-500">{member.credentials}</span>
+                </h3>
+                <p className="text-sm text-gray-500 leading-relaxed mb-5 line-clamp-3">
+                  {member.bio}
+                </p>
+                <ul className="flex flex-wrap gap-2 mb-5">
+                  {member.specialties.map((s) => (
+                    <li
+                      key={s}
+                      className="text-xs bg-[#F8F7F4] text-gray-500 px-3 py-1 rounded-full border border-gray-100"
+                    >
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+
+                {member.acceptingNewPatients && (
+                  <div className="flex items-center gap-2 text-xs font-medium text-green-700 bg-green-50 px-3 py-1.5 rounded-full w-fit mb-5">
+                    <CheckCircle2 size={12} />
+                    Accepting New Patients
+                  </div>
+                )}
+
+                <div className="flex items-center gap-4">
+                  <a
+                    href={member.bookingUrl ?? SITE.booking.zocdocUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 bg-[#111111] hover:bg-[#333333] text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors"
+                  >
+                    Book with {member.name.split(" ")[0]} <ArrowRight size={14} />
+                  </a>
+                  <Link
+                    href={`/providers/${member.id}`}
+                    className="text-sm text-[#111111] font-medium hover:underline"
+                  >
+                    View Profile
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── INTEGRATIVE & AYURVEDIC MEDICINE ────────────────────────────── */}
+      <section className="bg-white py-24">
+        <div className="site-container">
+          <div className="mb-14">
+            <span className="text-[#111111] text-sm font-semibold tracking-widest uppercase">
+              Whole-Person Care
+            </span>
+            <h2 className="font-serif text-3xl font-semibold text-[#111111] mt-2">
+              Integrative & Ayurvedic Medicine
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {INTEGRATIVE_TEAM.map((member) => (
               <div
                 key={member.id}
                 className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md transition-shadow"

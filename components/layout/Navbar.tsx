@@ -18,6 +18,7 @@ const NAV_LINKS = [
       { label: "Concierge Medicine", href: "/services/concierge-medicine" },
       { label: "PitchFit", href: "/services/athlete-wellness" },
       { label: "Women's Health", href: "/services/womens-health" },
+      { label: "Integrative Medicine", href: "/services/integrative-medicine" },
       { label: "Aesthetic Services", href: "/services/cosmetics" },
     ],
   },

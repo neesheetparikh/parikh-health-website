@@ -6,7 +6,7 @@ import { SITE, SERVICES } from "@/content/site";
 export const metadata: Metadata = {
   title: "Women's Health | ParikhHealth Sunnyvale CA",
   description:
-    "Comprehensive women's primary care in Sunnyvale, CA — annual well-woman exams, Pap smears, contraception, menopause, PCOS, hormone health, pelvic floor co-management, and more. Dr. Neeru Puri, MD, Kinnari Shah, PA-C, and Dr. Neesheet Parikh, DO.",
+    "Comprehensive women's primary care in Sunnyvale, CA — annual well-woman exams, Pap smears, contraception, menopause, PCOS, hormone health, pelvic floor co-management, and more. Dr. Neeru Puri, MD, Kinnari Shah, PA-C, Dr. Neesheet Parikh, DO, and integrative support from Mansi Parikh, DPT, AP.",
 };
 
 const SECTIONS = [
@@ -153,6 +153,9 @@ export default function WomensHealthPage() {
               <p className="text-gray-600 leading-relaxed mb-10 text-base">
                 We don&apos;t rush. We listen. Whether you&apos;re navigating a new diagnosis, trying to optimize your hormones, managing a chronic condition, or simply overdue for your annual exam, we&apos;re here to be your long-term partner in health.
               </p>
+              <p className="text-gray-600 leading-relaxed mb-10 text-base">
+                For patients who want to go further, Mansi Parikh, DPT, AP offers integrative and Ayurvedic support alongside your clinical care — personalized nutrition, herbal guidance, and lifestyle management tailored to women&apos;s health.
+              </p>
 
               {/* Quick highlights */}
               <div className="bg-[#F8F7F4] rounded-2xl p-7 mb-12">
@@ -206,7 +209,7 @@ export default function WomensHealthPage() {
                   Ready to Get Started?
                 </h3>
                 <p className="text-sm text-gray-500 mb-5">
-                  Book a women&apos;s health appointment with Dr. Puri, Kinnari Shah, PA-C, or Dr. Parikh — same-week availability most weeks.
+                  Book a women&apos;s health appointment with Dr. Puri, Kinnari Shah, PA-C, or Dr. Parikh — or an integrative consult with Mansi Parikh, DPT, AP — same-week availability most weeks.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link

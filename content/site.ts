@@ -86,6 +86,16 @@ export const TEAM = [
     acceptingNewPatients: true,
   },
   {
+    id: "mansi-parikh",
+    name: "Mansi Parikh",
+    credentials: "DPT, AP",
+    title: "Ayurvedic & Integrative Medicine Practitioner",
+    bio: "Mansi Parikh is a Doctor of Physical Therapy and certified Ayurvedic Practitioner who brings a whole-person, root-cause approach to care. She blends traditional Ayurvedic principles — personalized nutrition, herbal support, and lifestyle medicine — with a modern clinical foundation, with a special focus on women's health and sustainable lifestyle management.",
+    image: "",
+    specialties: ["Ayurvedic Medicine", "Women's Health", "Lifestyle Management"],
+    acceptingNewPatients: true,
+  },
+  {
     id: "miral-patel",
     name: "Miral Patel",
     credentials: "PT",
@@ -360,6 +370,22 @@ export const SERVICES = [
     image: "/services/womens-health.jpg",
   },
   {
+    id: "integrative-medicine",
+    name: "Integrative Medicine",
+    shortDesc: "Whole-person care blending Ayurvedic tradition with modern medicine.",
+    description:
+      "Led by Mansi Parikh, DPT, AP, our integrative medicine program looks beyond symptoms to address root causes — combining time-tested Ayurvedic principles with personalized nutrition, herbal support, and lifestyle medicine. It's a complementary approach designed to work alongside your primary care team, not replace it, with a particular focus on women's health and sustainable lifestyle change.",
+    icon: "leaf",
+    highlights: [
+      "Ayurvedic consultations & personalized care plans",
+      "Whole-person, root-cause approach",
+      "Nutrition & herbal support",
+      "Lifestyle & stress management",
+      "Integrative women's health support",
+    ],
+    image: "/services/integrative-medicine.jpg",
+  },
+  {
     id: "concierge-medicine",
     name: "Concierge Medicine",
     shortDesc: "Unhurried care, direct access, and a true medical partnership.",
@@ -492,7 +518,7 @@ export const CONDITIONS = [
     description: "Hypertension is often called the 'silent killer' because it rarely causes symptoms until it causes damage. At ParikhHealth, Dr. Parikh and Kinnari Shah provide ongoing management for patients with high blood pressure — including lifestyle modifications, medication management when appropriate, and regular monitoring. The goal is to understand and address the root causes, not just treat numbers.",
     keywords: ["high blood pressure doctor Sunnyvale", "hypertension management primary care", "blood pressure treatment Sunnyvale CA"],
     treatments: ["Comprehensive blood pressure evaluation", "Lifestyle & dietary counseling", "Medication management", "Home monitoring guidance", "Regular follow-up care"],
-    providers: ["neesheet-parikh", "kinnari-shah", "robert-oh"],
+    providers: ["neesheet-parikh", "kinnari-shah", "robert-oh", "mansi-parikh"],
     serviceLink: "primary-care",
   },
   {
@@ -502,7 +528,7 @@ export const CONDITIONS = [
     description: "Managing diabetes well means more than keeping your A1C in check. Our team helps patients build sustainable habits, understand their numbers, and prevent complications. We manage both Type 1 and Type 2 diabetes, coordinate with endocrinologists when needed, and use the latest monitoring technologies to keep patients engaged in their own care.",
     keywords: ["diabetes doctor Sunnyvale", "diabetes management primary care Sunnyvale", "Type 2 diabetes treatment Bay Area"],
     treatments: ["A1C & glucose monitoring", "Medication & insulin management", "Nutrition & lifestyle counseling", "Diabetes education", "Specialist coordination"],
-    providers: ["neesheet-parikh", "kinnari-shah", "robert-oh"],
+    providers: ["neesheet-parikh", "kinnari-shah", "robert-oh", "mansi-parikh"],
     serviceLink: "primary-care",
   },
   {
@@ -592,7 +618,7 @@ export const CONDITIONS = [
     description: "Women's health encompasses far more than reproductive care. At ParikhHealth, we provide comprehensive primary care tailored specifically to women's health needs across every life stage — from annual wellness exams and contraception counseling in your 20s, to perimenopause support and bone health in your 40s and 50s, to preventive screenings and chronic disease management as you age. Dr. Parikh and Kinnari Shah, PA-C are experienced in treating the whole woman, not just a list of symptoms.",
     keywords: ["women's health doctor Sunnyvale", "women's primary care Sunnyvale CA", "women's healthcare Sunnyvale", "women's preventive care Sunnyvale", "OBGYN primary care Sunnyvale CA"],
     treatments: ["Annual well-woman exams", "Contraception counseling & management", "Menopause & perimenopause care", "Hormone health discussions", "Osteoporosis screening & prevention", "Preventive cancer screenings"],
-    providers: ["neesheet-parikh", "kinnari-shah", "neeru-puri"],
+    providers: ["neesheet-parikh", "kinnari-shah", "neeru-puri", "mansi-parikh"],
     serviceLink: "womens-health",
   },
   {
@@ -612,7 +638,7 @@ export const CONDITIONS = [
     description: "A well-woman exam is more than a Pap smear — it's your dedicated annual time with a provider who knows your full health picture. At ParikhHealth in Sunnyvale, our well-woman visits include a complete physical, clinical breast exam, cervical cancer screening (when due), discussion of contraception or menopause management, STI risk assessment, mental health check-in, and any laboratory work indicated by your age and history. We accept most PPO plans and offer transparent self-pay rates.",
     keywords: ["well-woman exam Sunnyvale", "well woman visit Sunnyvale CA", "annual women's exam Sunnyvale", "OB-GYN primary care Sunnyvale", "women's annual exam Sunnyvale CA"],
     treatments: ["Complete physical examination", "Pap smear & HPV testing (when due)", "Clinical breast examination", "Contraception counseling", "Menopause management", "Preventive labs & immunizations"],
-    providers: ["neesheet-parikh", "kinnari-shah", "neeru-puri"],
+    providers: ["neesheet-parikh", "kinnari-shah", "neeru-puri", "mansi-parikh"],
     serviceLink: "womens-health",
   },
   {
