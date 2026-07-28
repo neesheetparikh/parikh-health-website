@@ -90,9 +90,9 @@ export const TEAM = [
     name: "Miral Patel",
     credentials: "PT",
     title: "Physical Therapist",
-    bio: "Miral Patel is a licensed physical therapist specializing in sports rehabilitation and musculoskeletal recovery. Utilizing cutting-edge tools including Fit3D body scanning, she designs individualized programs that get patients back to the activities they love.",
+    bio: "Miral Patel is a licensed physical therapist specializing in sports rehabilitation and musculoskeletal recovery. She designs individualized programs that get patients back to the activities they love.",
     image: "/team/miral-patel.jpg",
-    specialties: ["Sports Rehabilitation", "Musculoskeletal Therapy", "Fit3D Body Scanning", "Post-Surgical Recovery"],
+    specialties: ["Sports Rehabilitation", "Musculoskeletal Therapy", "Post-Surgical Recovery"],
     acceptingNewPatients: true,
   },
   {
@@ -193,11 +193,10 @@ export const SERVICES = [
     name: "Physical Therapy",
     shortDesc: "Personalized rehabilitation with state-of-the-art technology.",
     description:
-      "Our in-house physical therapy program, led by Miral Patel PT, combines manual therapy, therapeutic exercise, and the Fit3D body scanner to precisely track your progress. Having PT in-house with your medical team means seamlessly coordinated care.",
+      "Our in-house physical therapy program, led by Miral Patel PT, combines manual therapy and therapeutic exercise to help you recover fully. Having PT in-house with your medical team means seamlessly coordinated care.",
     icon: "dumbbell",
     highlights: [
       "Orthopedic & sports rehabilitation",
-      "Fit3D body composition scanning",
       "Post-surgical recovery",
       "Balance & gait training",
       "Manual therapy & soft tissue techniques",
@@ -423,7 +422,7 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      "After my knee surgery, Miral got me back to running in 10 weeks. The Fit3D scanner helped us track every bit of progress — I was blown away.",
+      "After my knee surgery, Miral got me back to running in 10 weeks. Her attention to every detail of my recovery was unlike anything I'd experienced before — I was blown away.",
     author: "James T.",
     detail: "Physical Therapy Patient",
     rating: 5,

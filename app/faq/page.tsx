@@ -86,11 +86,7 @@ const FAQS = [
       },
       {
         q: "What conditions does your physical therapy team treat?",
-        a: "Our PTs specialize in orthopedic and sports rehabilitation — including knee, shoulder, hip, and back injuries; post-surgical recovery; ACL and rotator cuff rehabilitation; balance and gait issues; and general musculoskeletal pain. We use evidence-based protocols and the Fit3D body scanner to track your progress.",
-      },
-      {
-        q: "What is the Fit3D scanner?",
-        a: "The Fit3D scanner is a state-of-the-art body composition and posture analysis tool. It creates a 3D model of your body to precisely track changes in composition, symmetry, and posture over time — giving our PT team objective data to measure your progress and tailor your program.",
+        a: "Our PTs specialize in orthopedic and sports rehabilitation — including knee, shoulder, hip, and back injuries; post-surgical recovery; ACL and rotator cuff rehabilitation; balance and gait issues; and general musculoskeletal pain. We use evidence-based protocols to track your progress.",
       },
     ],
   },

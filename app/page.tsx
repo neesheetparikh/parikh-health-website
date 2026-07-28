@@ -284,7 +284,7 @@ export default function HomePage() {
               <ul className="space-y-4">
                 {[
                   "Board-certified physicians with subspecialty training",
-                  "In-house physical therapy with state-of-the-art Fit3D scanning",
+                  "In-house physical therapy, fully coordinated with your medical team",
                   "Integrated team approach — your providers talk to each other",
                   "Same-day sick visits available",
                   "Concierge membership option for maximum access",
