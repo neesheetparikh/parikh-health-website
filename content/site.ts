@@ -59,21 +59,11 @@ export const TEAM = [
     name: "Kinnari Shah",
     credentials: "PA-C",
     title: "Physician Assistant",
-    bio: "Kinnari Shah is a certified physician assistant who delivers thorough, patient-centered primary care. She partners closely with patients to manage chronic conditions, preventive health, and acute illnesses with warmth and precision.",
+    bio: "Kinnari Shah is a certified physician assistant who delivers thorough, patient-centered primary care, with a special focus on women's health. She partners closely with patients to manage chronic conditions, preventive health, acute illness, and women's health needs — from annual exams to hormone and contraception counseling — with warmth and precision.",
     image: "/team/kinnari-shah.jpg",
     specialties: ["Primary Care", "Women's Health", "Aesthetics"],
     acceptingNewPatients: true,
     bookingUrl: "https://www.zocdoc.com/booking-link/doctor/kinnari-shah-pa-c-451056",
-  },
-  {
-    id: "neeru-puri",
-    name: "Neeru Puri",
-    credentials: "MD",
-    title: "Physician — Women's Health",
-    bio: "Dr. Puri is a board-certified family medicine physician dedicated exclusively to women's health. She provides comprehensive, compassionate care across every stage of life — from preventive screenings and contraception counseling to menopause management and complex hormonal concerns.",
-    image: "/team/neeru-puri.jpg",
-    specialties: ["Women's Health"],
-    acceptingNewPatients: true,
   },
   {
     id: "robert-oh",
@@ -570,7 +560,7 @@ export const CONDITIONS = [
     description: "ParikhHealth provides compassionate, thorough women's wellness care in a comfortable and private environment. Our annual well-woman exams include cervical cancer screening, breast exams, STI screening, contraception counseling, and menopause or perimenopause support. We believe women deserve a provider who listens carefully and takes their concerns seriously.",
     keywords: ["women's wellness exam Sunnyvale", "Pap smear Sunnyvale CA", "gynecology primary care Sunnyvale"],
     treatments: ["Annual well-woman exam", "Pap smear & cervical cancer screening", "Clinical breast exam", "Contraception counseling", "Menopause & hormone discussions"],
-    providers: ["neesheet-parikh", "kinnari-shah", "neeru-puri"],
+    providers: ["neesheet-parikh", "kinnari-shah"],
     serviceLink: "womens-health",
   },
   {
@@ -600,7 +590,7 @@ export const CONDITIONS = [
     description: "Early detection is the most powerful tool in breast cancer outcomes. At ParikhHealth, clinical breast exams are a standard part of every women's wellness visit. Dr. Parikh and Kinnari Shah, PA-C conduct thorough breast examinations, review your personal and family history for risk factors, and coordinate mammography referrals based on current USPSTF and ACR screening guidelines. We also counsel patients on breast self-awareness and what changes to watch for between visits.",
     keywords: ["clinical breast exam Sunnyvale", "breast exam doctor Sunnyvale CA", "breast health primary care Sunnyvale", "breast cancer screening Sunnyvale", "mammogram referral Sunnyvale"],
     treatments: ["Clinical breast examination", "Breast cancer risk assessment", "Mammography coordination & referrals", "Breast self-examination guidance", "Genetic risk counseling referral if indicated"],
-    providers: ["neesheet-parikh", "kinnari-shah", "neeru-puri"],
+    providers: ["neesheet-parikh", "kinnari-shah"],
     serviceLink: "womens-health",
   },
   {
@@ -610,7 +600,7 @@ export const CONDITIONS = [
     description: "Cervical cancer is one of the most preventable cancers when Pap smears and HPV testing are performed on schedule. At ParikhHealth in Sunnyvale, we follow current USPSTF and ACOG screening guidelines — Pap smears every 3 years for women aged 21–65, or every 5 years with HPV co-testing. Results are reviewed promptly and we coordinate any needed colposcopy or specialist referrals. Our office provides a private, comfortable environment for these sensitive exams.",
     keywords: ["Pap smear Sunnyvale", "cervical cancer screening Sunnyvale CA", "HPV test Sunnyvale", "Pap smear doctor Sunnyvale", "gynecology primary care Sunnyvale CA"],
     treatments: ["Pap smear (cervical cytology)", "HPV co-testing", "Abnormal Pap follow-up", "Colposcopy referral coordination", "HPV vaccination counseling"],
-    providers: ["neesheet-parikh", "kinnari-shah", "neeru-puri"],
+    providers: ["neesheet-parikh", "kinnari-shah"],
     serviceLink: "womens-health",
   },
   {
@@ -620,7 +610,7 @@ export const CONDITIONS = [
     description: "Women's health encompasses far more than reproductive care. At ParikhHealth, we provide comprehensive primary care tailored specifically to women's health needs across every life stage — from annual wellness exams and contraception counseling in your 20s, to perimenopause support and bone health in your 40s and 50s, to preventive screenings and chronic disease management as you age. Dr. Parikh and Kinnari Shah, PA-C are experienced in treating the whole woman, not just a list of symptoms.",
     keywords: ["women's health doctor Sunnyvale", "women's primary care Sunnyvale CA", "women's healthcare Sunnyvale", "women's preventive care Sunnyvale", "OBGYN primary care Sunnyvale CA"],
     treatments: ["Annual well-woman exams", "Contraception counseling & management", "Menopause & perimenopause care", "Hormone health discussions", "Osteoporosis screening & prevention", "Preventive cancer screenings"],
-    providers: ["neesheet-parikh", "kinnari-shah", "neeru-puri", "mansi-parikh"],
+    providers: ["neesheet-parikh", "kinnari-shah", "mansi-parikh"],
     serviceLink: "womens-health",
   },
   {
@@ -630,7 +620,7 @@ export const CONDITIONS = [
     description: "Sexual health is an important part of overall health, and ParikhHealth provides confidential, non-judgmental sexual health care for all patients. We offer comprehensive STI screening including HIV, gonorrhea, chlamydia, syphilis, hepatitis B and C, and HPV. We provide PrEP (pre-exposure prophylaxis) for HIV prevention, contraception counseling, and LGBTQ+-affirming care. All visits are completely confidential within the limits of applicable law.",
     keywords: ["STI testing Sunnyvale", "sexual health doctor Sunnyvale CA", "STD screening Sunnyvale", "PrEP Sunnyvale CA", "confidential STI testing Sunnyvale"],
     treatments: ["Comprehensive STI panel testing", "HIV testing & PrEP counseling", "Contraception counseling", "HPV vaccination", "LGBTQ+-affirming primary care", "Partner notification guidance"],
-    providers: ["neesheet-parikh", "kinnari-shah", "neeru-puri"],
+    providers: ["neesheet-parikh", "kinnari-shah"],
     serviceLink: "womens-health",
   },
   {
@@ -640,7 +630,7 @@ export const CONDITIONS = [
     description: "A well-woman exam is more than a Pap smear — it's your dedicated annual time with a provider who knows your full health picture. At ParikhHealth in Sunnyvale, our well-woman visits include a complete physical, clinical breast exam, cervical cancer screening (when due), discussion of contraception or menopause management, STI risk assessment, mental health check-in, and any laboratory work indicated by your age and history. We accept most PPO plans and offer transparent self-pay rates.",
     keywords: ["well-woman exam Sunnyvale", "well woman visit Sunnyvale CA", "annual women's exam Sunnyvale", "OB-GYN primary care Sunnyvale", "women's annual exam Sunnyvale CA"],
     treatments: ["Complete physical examination", "Pap smear & HPV testing (when due)", "Clinical breast examination", "Contraception counseling", "Menopause management", "Preventive labs & immunizations"],
-    providers: ["neesheet-parikh", "kinnari-shah", "neeru-puri", "mansi-parikh"],
+    providers: ["neesheet-parikh", "kinnari-shah", "mansi-parikh"],
     serviceLink: "womens-health",
   },
   {
