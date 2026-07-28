@@ -133,8 +133,7 @@ export const SUPPORT_STAFF = [
   { name: "Aarushi Kumar", title: "Front Desk", image: "/team/aarushi-kumar.jpg" },
   { name: "Vivi Le", title: "PT Aide", image: "/team/vivi-le.jpg" },
   { name: "Jazmyn Henry", title: "PT Aide", image: "/team/jazmyn-henry.jpg" },
-  { name: "Earl Dela Rosa", title: "PT Aide", image: "/team/earl-dela-rosa.jpg" },
-  { name: "Neha Shah", title: "PT Aide" },
+  { name: "Madhav Patel", title: "PT Aide" },
   { name: "Saurabh Bhatt", title: "Billing Specialist" },
 ];
 

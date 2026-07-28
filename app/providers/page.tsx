@@ -284,27 +284,29 @@ export default function ProvidersPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {SUPPORT_STAFF.map((member) => (
               <div
                 key={member.name}
-                className="bg-[#F8F7F4] rounded-2xl px-5 py-6 border border-gray-100"
+                className="bg-white rounded-2xl p-8 border border-gray-100"
               >
-                {member.image && (
-                  <div className="w-16 h-16 rounded-full overflow-hidden mb-3">
+                <div className="bg-[#F8F7F4] rounded-2xl h-64 overflow-hidden flex items-center justify-center mb-6">
+                  {member.image ? (
                     <Image
                       src={member.image}
                       alt={member.name}
-                      width={64}
-                      height={64}
+                      width={480}
+                      height={256}
                       className="w-full h-full object-cover object-center"
                     />
-                  </div>
-                )}
-                <p className="font-serif font-semibold text-[#111111] text-base leading-snug">
+                  ) : (
+                    <span className="text-gray-300 text-sm">{member.name} photo</span>
+                  )}
+                </div>
+                <h3 className="font-serif text-xl font-semibold text-[#111111] mb-1">
                   {member.name}
-                </p>
-                <p className="text-sm text-gray-500 mt-1">{member.title}</p>
+                </h3>
+                <p className="text-sm text-gray-500">{member.title}</p>
               </div>
             ))}
           </div>
