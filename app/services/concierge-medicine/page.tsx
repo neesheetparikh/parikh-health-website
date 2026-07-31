@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { SITE } from "@/content/site";
 import RevealObserver from "./RevealObserver";
 import styles from "./concierge.module.css";
@@ -30,9 +29,9 @@ export default function ConciergeMedicinePage() {
                 questions. All of it.
               </p>
               <div className={styles["hero-actions"]}>
-                <Link href="/appointments" className={`${styles.btn} ${styles["btn-primary"]}`}>
+                <a href="mailto:concierge@parikhhealth.com?subject=Concierge%20Medicine%20Consultation" className={`${styles.btn} ${styles["btn-primary"]}`}>
                   Request a Consultation
-                </Link>
+                </a>
                 <a href="#included" className={`${styles.btn} ${styles["btn-ghost"]}`}>
                   See What&apos;s Included
                 </a>
@@ -51,7 +50,7 @@ export default function ConciergeMedicinePage() {
                 <div className={styles["roster-stats"]}>
                   <div className={styles["roster-stat"]}>
                     <span>Members per physician</span>
-                    <span>Under 400*</span>
+                    <span>250*</span>
                   </div>
                   <div className={styles["roster-stat"]}>
                     <span>Typical visit length</span>
@@ -96,7 +95,7 @@ export default function ConciergeMedicinePage() {
             <div className={styles["bar-row"]}>
               <div className={styles["bar-label"]}>Typical primary care visit</div>
               <div className={styles["bar-track"]}>
-                <div className={`${styles["bar-fill"]} ${styles.short}`}>~10–12 min with your doctor</div>
+                <div className={`${styles["bar-fill"]} ${styles.short}`}>~12–15 min with your doctor</div>
               </div>
             </div>
             <div className={styles["bar-row"]}>
@@ -171,11 +170,12 @@ export default function ConciergeMedicinePage() {
                   <path d="M12 21s-7-4.5-9.5-9C.5 8 2 4 6 4c2 0 3.5 1.2 4 2 .5-.8 2-2 4-2 4 0 5.5 4 3.5 8-2.5 4.5-9.5 9-9.5 9z" />
                 </svg>
               </div>
-              <h3>Sports Medicine &amp; PT, Integrated</h3>
+              <h3>Sports Medicine, Integrated</h3>
               <p>
                 Injuries and performance issues are handled by a team that already knows
-                you — primary care, sports medicine, and physical therapy under one roof,
-                so nothing gets lost between referrals.
+                you — primary care and sports medicine under one roof, so nothing gets
+                lost between referrals. (Physical therapy is a separate program and
+                isn&apos;t included in Concierge membership.)
               </p>
             </div>
             <div className={`${styles["feature-card"]} ${styles.reveal}`} data-reveal>
@@ -340,12 +340,12 @@ export default function ConciergeMedicinePage() {
               <tbody>
                 <tr>
                   <td>Patients per physician</td>
-                  <td className={styles.no}>2,000–3,000</td>
-                  <td className={`${styles.yes} ${styles["col-highlight"]}`}>Under 400*</td>
+                  <td className={styles.no}>5,000–6,000</td>
+                  <td className={`${styles.yes} ${styles["col-highlight"]}`}>250</td>
                 </tr>
                 <tr>
                   <td>Typical visit length</td>
-                  <td className={styles.no}>10–15 minutes</td>
+                  <td className={styles.no}>12–15 minutes</td>
                   <td className={`${styles.yes} ${styles["col-highlight"]}`}>45–60 minutes</td>
                 </tr>
                 <tr>
@@ -364,9 +364,9 @@ export default function ConciergeMedicinePage() {
                   <td className={`${styles.yes} ${styles["col-highlight"]}`}>Built in, ongoing</td>
                 </tr>
                 <tr>
-                  <td>Sports medicine + PT</td>
+                  <td>Sports medicine</td>
                   <td className={styles.no}>Separate referral</td>
-                  <td className={`${styles.yes} ${styles["col-highlight"]}`}>Integrated, same team</td>
+                  <td className={`${styles.yes} ${styles["col-highlight"]}`}>Integrated</td>
                 </tr>
                 <tr>
                   <td>Between-visit research &amp; follow-up</td>
@@ -386,11 +386,6 @@ export default function ConciergeMedicinePage() {
               </tbody>
             </table>
           </div>
-          <p className={styles["table-note"]}>
-            *Panel size is capped by design; confirm current figures before publishing.
-            Typical primary care figures reflect general industry benchmarks, not any
-            specific practice.
-          </p>
         </div>
       </section>
 
@@ -494,9 +489,9 @@ export default function ConciergeMedicinePage() {
               complimentary consultation to see what&apos;s included and find the right fit.
             </p>
             <div className={styles["hero-actions"]}>
-              <Link href="/appointments" className={`${styles.btn} ${styles["btn-primary"]}`}>
+              <a href="mailto:concierge@parikhhealth.com?subject=Concierge%20Medicine%20Consultation" className={`${styles.btn} ${styles["btn-primary"]}`}>
                 Request a Consultation
-              </Link>
+              </a>
               <a href={`tel:${SITE.phone.appointments}`} className={`${styles.btn} ${styles["btn-ghost"]}`}>
                 Call ParikhHealth
               </a>
