@@ -378,15 +378,16 @@ export const SERVICES = [
   {
     id: "concierge-medicine",
     name: "Concierge Medicine",
-    shortDesc: "Unhurried care, direct access, and a true medical partnership.",
+    shortDesc: "The standard of care Dr. Parikh gives elite athletes, built around you.",
     description:
-      "For patients who want more — more time with their doctor, same-day access, and a physician who knows every detail of their health — our concierge program offers a premium, membership-based relationship with Dr. Parikh.",
+      "As team physician for USA Cricket, Dr. Parikh builds every plan around one athlete's body, history, and goals. Concierge membership brings that same standard of attention to your everyday health — nutrition, weight management, direct access, and a capped patient panel so there's always time to actually think about your case.",
     icon: "crown",
     highlights: [
       "Same-day & next-day appointments",
-      "Extended visit times",
+      "45-60 minute unhurried visits",
       "Direct phone & text access to your physician",
-      "Annual comprehensive physical",
+      "Personalized nutrition & weight management",
+      "Sports medicine & PT, fully integrated",
       "Care coordination for specialists",
     ],
     image: "/services/concierge.jpg",
