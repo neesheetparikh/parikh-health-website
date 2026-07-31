@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SITE } from "@/content/site";
-import RevealObserver from "./RevealObserver";
+import RevealObserver from "@/components/effects/RevealObserver";
 import styles from "./concierge.module.css";
 
 export const metadata: Metadata = {
