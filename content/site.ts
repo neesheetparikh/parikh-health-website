@@ -222,7 +222,6 @@ export const SERVICES = [
       {
         category: "Injectables & Neuromodulators",
         items: [
-          "Botox, Dysport & Xeomin",
           "Forehead lines & frown lines (glabellar lines)",
           "Crow's feet & bunny lines",
           "Brow lift",
@@ -568,7 +567,7 @@ export const CONDITIONS = [
     shortDesc: "Physician-administered Botox and neurotoxin treatments for natural-looking results.",
     description: "At ParikhHealth, cosmetic treatments are performed under direct physician oversight — not delegated to non-medical staff. Dr. Parikh administers Botox and neurotoxin treatments with a precise, conservative approach focused on natural-looking results. Medical oversight means faster response if any complication arises and a higher standard of safety.",
     keywords: ["Botox Sunnyvale", "Botox physician Sunnyvale CA", "neurotoxin treatment Bay Area"],
-    treatments: ["Botox (forehead, frown lines, crow's feet)", "Dysport & Xeomin", "Preventive Botox", "Hyperhidrosis (excessive sweating) treatment", "Medical-grade skincare consultation"],
+    treatments: ["Botox (forehead, frown lines, crow's feet)", "Preventive Botox", "Hyperhidrosis (excessive sweating) treatment", "Medical-grade skincare consultation"],
     providers: ["neesheet-parikh"],
     serviceLink: "cosmetics",
   },

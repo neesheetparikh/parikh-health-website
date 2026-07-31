@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { SITE } from "@/content/site";
 import RevealObserver from "@/components/effects/RevealObserver";
 import styles from "./aesthetic.module.css";
@@ -28,9 +27,14 @@ export default function AestheticServicesPage() {
                 a med-spa formula. A clinical standard, applied to how you look and feel.
               </p>
               <div className={styles["hero-actions"]}>
-                <Link href="/appointments" className={`${styles.btn} ${styles["btn-primary"]}`}>
+                <a
+                  href="https://www.zocdoc.com/booking-link/doctor/kinnari-shah-pa-c-451056"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${styles.btn} ${styles["btn-primary"]}`}
+                >
                   Book a Consultation
-                </Link>
+                </a>
                 <a href="#treatments" className={`${styles.btn} ${styles["btn-ghost"]}`}>
                   See Treatments
                 </a>
@@ -132,7 +136,7 @@ export default function AestheticServicesPage() {
               </div>
               <span className={styles["pillar-tag"]}>Pillar One</span>
               <h3>Injectables &amp; Neuromodulators</h3>
-              <p>Botox, Dysport &amp; Xeomin, precisely dosed and placed.</p>
+              <p>Botox, precisely dosed and placed.</p>
               <ul>
                 <li>Forehead lines &amp; frown lines (glabellar lines)</li>
                 <li>Crow&apos;s feet &amp; bunny lines</li>
@@ -356,9 +360,14 @@ export default function AestheticServicesPage() {
               grounded in medical expertise.
             </p>
             <div className={styles["hero-actions"]}>
-              <Link href="/appointments" className={`${styles.btn} ${styles["btn-primary"]}`}>
+              <a
+                href="https://www.zocdoc.com/booking-link/doctor/kinnari-shah-pa-c-451056"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${styles.btn} ${styles["btn-primary"]}`}
+              >
                 Book a Consultation
-              </Link>
+              </a>
               <a href={`tel:${SITE.phone.appointments}`} className={`${styles.btn} ${styles["btn-ghost"]}`}>
                 Call {SITE.phone.appointments}
               </a>
