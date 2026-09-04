@@ -341,7 +341,7 @@ export default function PrimaryCarePage() {
             <div className={styles["team-card"]}>
               <Image
                 className={styles["team-avatar"]}
-                src={drParikh.image}
+                src={drParikh.image!}
                 alt={`${drParikh.name}, ${drParikh.credentials}`}
                 width={64}
                 height={64}
@@ -353,7 +353,7 @@ export default function PrimaryCarePage() {
             <div className={styles["team-card"]}>
               <Image
                 className={styles["team-avatar"]}
-                src={drOh.image}
+                src={drOh.image!}
                 alt={`${drOh.name}, ${drOh.credentials}`}
                 width={64}
                 height={64}
@@ -365,7 +365,7 @@ export default function PrimaryCarePage() {
             <div className={styles["team-card"]}>
               <Image
                 className={styles["team-avatar"]}
-                src={kinnari.image}
+                src={kinnari.image!}
                 alt={`${kinnari.name}, ${kinnari.credentials}`}
                 width={64}
                 height={64}

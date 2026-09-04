@@ -392,7 +392,7 @@ export default function SportsMedicinePage() {
             <div className={`${styles["team-card"]} ${styles.reveal}`} data-reveal>
               <div className={styles["team-head"]}>
                 <div className={styles["team-photo"]}>
-                  <Image src={drParikh.image} alt={`${drParikh.name}, ${drParikh.credentials}`} width={60} height={60} />
+                  <Image src={drParikh.image!} alt={`${drParikh.name}, ${drParikh.credentials}`} width={60} height={60} />
                 </div>
                 <div>
                   <div className={styles["team-name"]}>Neesheet Parikh, DO</div>
@@ -415,7 +415,7 @@ export default function SportsMedicinePage() {
             <div className={`${styles["team-card"]} ${styles.reveal}`} data-reveal>
               <div className={styles["team-head"]}>
                 <div className={styles["team-photo"]}>
-                  <Image src={drOh.image} alt={`${drOh.name}, ${drOh.credentials}`} width={60} height={60} />
+                  <Image src={drOh.image!} alt={`${drOh.name}, ${drOh.credentials}`} width={60} height={60} />
                 </div>
                 <div>
                   <div className={styles["team-name"]}>Robert Oh, MD</div>

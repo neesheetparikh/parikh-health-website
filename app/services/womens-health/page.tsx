@@ -269,7 +269,7 @@ export default function WomensHealthPage() {
           <div className={`${styles["team-grid"]} ${styles.reveal}`} data-reveal>
             <div className={styles["team-card"]}>
               <div className={styles["team-photo"]}>
-                <Image src={drParikh.image} alt={`${drParikh.name}, ${drParikh.credentials}`} width={76} height={76} />
+                <Image src={drParikh.image!} alt={`${drParikh.name}, ${drParikh.credentials}`} width={76} height={76} />
               </div>
               <div className={styles["team-name"]}>Neesheet Parikh, DO</div>
               <div className={styles["team-role"]}>Physician — Family Medicine &amp; Sports Medicine</div>
@@ -282,7 +282,7 @@ export default function WomensHealthPage() {
             </div>
             <div className={styles["team-card"]}>
               <div className={styles["team-photo"]}>
-                <Image src={drOh.image} alt={`${drOh.name}, ${drOh.credentials}`} width={76} height={76} />
+                <Image src={drOh.image!} alt={`${drOh.name}, ${drOh.credentials}`} width={76} height={76} />
               </div>
               <div className={styles["team-name"]}>Robert Oh, MD</div>
               <div className={styles["team-role"]}>Physician — Family Medicine &amp; Sports Medicine</div>
@@ -295,7 +295,13 @@ export default function WomensHealthPage() {
             </div>
             <div className={styles["team-card"]}>
               <div className={styles["team-photo"]}>
-                <Image src={mansi.image} alt={`${mansi.name}, ${mansi.credentials}`} width={76} height={76} />
+                {mansi.image ? (
+                  <Image src={mansi.image} alt={`${mansi.name}, ${mansi.credentials}`} width={76} height={76} />
+                ) : (
+                  <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", background: "var(--navy-deep)", color: "var(--white)", fontFamily: "var(--font-display)", fontSize: "22px", fontWeight: 600 }}>
+                    MP
+                  </div>
+                )}
               </div>
               <div className={styles["team-name"]}>Mansi Parikh, DPT, AP</div>
               <div className={styles["team-role"]}>Integrative &amp; Ayurvedic Medicine Practitioner</div>

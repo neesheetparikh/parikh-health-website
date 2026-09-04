@@ -81,9 +81,9 @@ export const TEAM = [
     credentials: "DPT, AP",
     title: "Ayurvedic & Integrative Medicine Practitioner",
     bio: "Mansi Parikh is a Doctor of Physical Therapy and certified Ayurvedic Practitioner who brings a whole-person, root-cause approach to care. She blends traditional Ayurvedic principles — personalized nutrition, herbal support, and lifestyle medicine — with a modern clinical foundation, with a special focus on women's health and sustainable lifestyle management.",
-    image: "/team/mansi-parikh.jpg",
     specialties: ["Ayurvedic Medicine", "Women's Health", "Lifestyle Management"],
     acceptingNewPatients: true,
+    bookingUrl: "mailto:mansi@parikhhealth.com",
   },
   {
     id: "miral-patel",
