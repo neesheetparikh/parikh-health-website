@@ -1,403 +1,349 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Phone, Clock, MapPin, CheckCircle2, ArrowRight, Video, Building2, Stethoscope, ShieldCheck, MessageSquare, Activity, HelpCircle } from "lucide-react";
 import { SITE, ACCEPTED_PLANS, TEAM } from "@/content/site";
+import RevealObserver from "@/components/effects/RevealObserver";
 import ZocdocBookButton from "@/components/booking/ZocdocBookButton";
+import styles from "./appointments.module.css";
 
 export const metadata: Metadata = {
   title: "Book an Appointment",
   description:
     "Schedule an appointment with ParikhHealth in Sunnyvale, CA. New and existing patients welcome. Primary care, sports medicine, and physical therapy.",
+  alternates: { canonical: `${SITE.url}/appointments` },
 };
+
+const drParikh = TEAM.find((m) => m.id === "neesheet-parikh")!;
+const drOh = TEAM.find((m) => m.id === "robert-oh")!;
+const kinnari = TEAM.find((m) => m.id === "kinnari-shah")!;
+
+function providerInitials(name: string) {
+  return name.split(" ").map((p) => p[0]).join("").slice(0, 2).toUpperCase();
+}
 
 export default function AppointmentsPage() {
   return (
-    <>
-      {/* Header */}
-      <section
-        className="pt-36 pb-20"
-        style={{ background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)" }}
-      >
-        <div className="site-container">
-          <span className="text-[#111111] text-sm font-semibold tracking-widest uppercase">
-            Scheduling
-          </span>
-          <h1 className="font-serif text-5xl font-semibold text-white mt-3 mb-5 max-w-xl leading-tight">
-            Book an Appointment
-          </h1>
-          <p className="text-white/70 text-lg max-w-2xl leading-relaxed">
-            New and existing patients welcome. Choose your preferred booking
-            method below.
-          </p>
-        </div>
-      </section>
+    <div className={styles.appointments}>
+      <RevealObserver />
 
-      <section className="bg-white py-24">
-        <div className="site-container">
-          <div className="grid lg:grid-cols-3 gap-10">
-            {/* Main: booking widget area */}
-            <div className="lg:col-span-2">
-              <h2 className="font-serif text-3xl font-semibold text-[#111111] mb-3">
-                Book Online
-              </h2>
-              <p className="text-gray-500 mb-8">
-                Use our online booking system to choose your provider, service
-                type, and preferred time.
+      {/* HERO */}
+      <section className={styles.hero}>
+        <div className={styles.wrap}>
+          <div className={styles["hero-grid"]}>
+            <div>
+              <span className={styles.eyebrow}>Scheduling</span>
+              <h1>Getting an appointment shouldn&apos;t be the hardest part of getting care.</h1>
+              <p className={styles.lead}>
+                New and existing patients are welcome — online, by phone, or by text, whichever is
+                easiest. Pick your provider and visit type, and we&apos;ll take it from there.
               </p>
-
-              {/* Booking embed */}
-              <div className="bg-[#F8F7F4] rounded-2xl border border-gray-100 overflow-hidden">
-                {SITE.booking.provider === "zocdoc" && SITE.booking.zocdocUrl ? (
-                  <div className="p-10 text-center">
-                    <ZocdocBookButton className="inline-flex items-center gap-2 bg-[#111111] hover:bg-[#333333] text-white font-medium px-8 py-4 rounded-full transition-colors text-base cursor-pointer" />
-                    <p className="text-xs text-gray-400 mt-5">
-                      Scheduling powered by ZocDoc — HIPAA-compliant and
-                      free for patients. Opens in a secure booking window
-                      right over this page.
-                    </p>
-                  </div>
-                ) : SITE.booking.provider === "calendly" && SITE.booking.calendlyUrl ? (
-                  <iframe
-                    src={SITE.booking.calendlyUrl}
-                    width="100%"
-                    height="700"
-                    frameBorder="0"
-                    title="Book an appointment"
-                  />
-                ) : (
-                  <div className="p-10 text-center">
-                    <p className="text-gray-500 mb-4">
-                      Online booking is being configured. Please call or message
-                      us directly.
-                    </p>
-                    <a
-                      href={`tel:${SITE.phone.appointments}`}
-                      className="inline-flex items-center gap-2 bg-[#111111] text-white font-medium px-7 py-3.5 rounded-full text-sm"
-                    >
-                      <Phone size={16} /> Call or Text to Book
-                    </a>
-                  </div>
-                )}
-              </div>
-
-              {/* New vs Existing */}
-              <div className="mt-10 grid sm:grid-cols-2 gap-6">
-                <div className="bg-[#F8F7F4] rounded-2xl p-6 border border-gray-100">
-                  <h3 className="font-serif text-lg font-semibold text-[#111111] mb-3">
-                    New Patient?
-                  </h3>
-                  <ul className="space-y-2 mb-4">
-                    {[
-                      'Select "New Patient" when booking',
-                      "Arrive 15 min early for paperwork",
-                      "Bring your insurance card and ID",
-                      "List any current medications",
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-gray-500">
-                        <CheckCircle2 size={14} className="text-[#111111] mt-0.5 shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    href="/contact"
-                    className="text-sm text-[#111111] font-medium hover:underline"
-                  >
-                    Have questions? Contact us →
-                  </Link>
-                </div>
-                <div className="bg-[#F8F7F4] rounded-2xl p-6 border border-gray-100">
-                  <h3 className="font-serif text-lg font-semibold text-[#111111] mb-3">
-                    Existing Patient?
-                  </h3>
-                  <ul className="space-y-2 mb-4">
-                    {[
-                      'Select "Established Patient" when booking',
-                      "Same-day sick visits available — call us",
-                      "Telehealth options available",
-                      "Prescription refills: allow 48 hrs",
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-gray-500">
-                        <CheckCircle2 size={14} className="text-[#111111] mt-0.5 shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <a
-                    href={`tel:${SITE.phone.appointments}`}
-                    className="text-sm text-[#111111] font-medium hover:underline"
-                  >
-                    Call for same-day availability →
-                  </a>
-                </div>
-              </div>
-
-              {/* In-person vs telehealth */}
-              <div className="mt-16">
-                <h2 className="font-serif text-2xl font-semibold text-[#111111] mb-3">
-                  In-Person or Telehealth — Your Choice
-                </h2>
-                <p className="text-gray-500 mb-6 max-w-2xl">
-                  When you book online, you can choose the visit format that
-                  works best for you. Not every visit type is eligible for
-                  telehealth, so if you&apos;re not sure, our front desk can
-                  help you pick the right one.
-                </p>
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="flex gap-4 bg-[#F8F7F4] rounded-2xl p-6 border border-gray-100">
-                    <Building2 size={20} className="text-[#111111] shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-serif text-lg font-semibold text-[#111111] mb-1">
-                        In-Person Visits
-                      </h3>
-                      <p className="text-sm text-gray-500 leading-relaxed">
-                        Physical exams, procedures, physical therapy, and most
-                        new patient visits are done in our Sunnyvale office.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4 bg-[#F8F7F4] rounded-2xl p-6 border border-gray-100">
-                    <Video size={20} className="text-[#111111] shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-serif text-lg font-semibold text-[#111111] mb-1">
-                        Telehealth Visits
-                      </h3>
-                      <p className="text-sm text-gray-500 leading-relaxed">
-                        Available for select visit types — including
-                        follow-ups, medication management, and minor illness
-                        consultations. When booking online, filter by
-                        &quot;video visit&quot; to see telehealth availability.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Choosing a provider */}
-              <div className="mt-16">
-                <h2 className="font-serif text-2xl font-semibold text-[#111111] mb-3">
-                  Not Sure Which Provider to See?
-                </h2>
-                <p className="text-gray-500 mb-6 max-w-2xl">
-                  Our online booking lets you choose a specific provider for
-                  your visit type — you don&apos;t have to see the same person
-                  for everything.
-                </p>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {TEAM.filter((m) => ["DO", "PA-C"].includes(m.credentials)).map((m) => (
-                    <div key={m.id} className="flex gap-4 border border-gray-100 rounded-2xl p-5">
-                      <Stethoscope size={18} className="text-[#111111] shrink-0 mt-1" />
-                      <div>
-                        <p className="font-serif font-semibold text-[#111111]">
-                          {m.name}, {m.credentials}
-                        </p>
-                        <p className="text-sm text-gray-500 mt-1">
-                          {m.specialties.join(" · ")}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <p className="text-sm text-gray-500 mt-5">
-                  Physical therapy, pelvic health, and rehab? See our{" "}
-                  <Link href="/providers" className="text-[#111111] font-medium hover:underline">
-                    full care team
-                  </Link>{" "}
-                  to pick the right specialist.
-                </p>
-              </div>
-
-              {/* Insurance explained */}
-              <div className="mt-16">
-                <h2 className="font-serif text-2xl font-semibold text-[#111111] mb-3">
-                  Insurance, Explained Simply
-                </h2>
-                <p className="text-gray-500 mb-6 max-w-2xl">
-                  Insurance terms can be confusing. Here&apos;s what the
-                  common ones actually mean for what you&apos;ll pay.
-                </p>
-                <div className="grid sm:grid-cols-2 gap-4 mb-6">
-                  {[
-                    {
-                      term: "Deductible",
-                      def: "The amount you pay out-of-pocket each year before your insurance starts covering costs. A $1,500 deductible means you pay the first $1,500 of care yourself.",
-                    },
-                    {
-                      term: "Copay",
-                      def: "A fixed fee — like $25 or $40 — you pay at each visit, often even after your deductible is met.",
-                    },
-                    {
-                      term: "Coinsurance",
-                      def: "After your deductible is met, this is the percentage of the bill you still owe. If your plan covers 80%, you pay the remaining 20%.",
-                    },
-                    {
-                      term: "In-Network",
-                      def: "We have a negotiated rate with your insurance company, which usually means lower costs for you than an out-of-network provider.",
-                    },
-                    {
-                      term: "Benefits",
-                      def: "The specific services your plan covers and how much of the cost it pays — this varies by plan even within the same insurance company.",
-                    },
-                    {
-                      term: "Out-of-Pocket Maximum",
-                      def: "The most you'll pay in a year for covered care. Once you hit it, your insurance covers 100% of costs for the rest of the year.",
-                    },
-                  ].map((item) => (
-                    <div key={item.term} className="flex gap-3 bg-[#F8F7F4] rounded-xl p-5 border border-gray-100">
-                      <HelpCircle size={16} className="text-[#111111] mt-0.5 shrink-0" />
-                      <div>
-                        <p className="font-serif font-semibold text-[#111111] text-sm mb-1">{item.term}</p>
-                        <p className="text-xs text-gray-500 leading-relaxed">{item.def}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="border border-gray-100 rounded-2xl p-6 mb-10">
-                  <p className="font-serif font-semibold text-[#111111] text-sm mb-3">
-                    How this works at your visit
-                  </p>
-                  <ol className="space-y-2">
-                    {[
-                      "We check that you're in-network before your appointment — or call the number on your insurance card to verify yourself.",
-                      "At check-in, you pay your copay or any remaining deductible.",
-                      "We bill your insurance for the rest of the visit.",
-                      "If anything's still owed after your insurance processes the claim, we'll bill you afterward.",
-                    ].map((step, i) => (
-                      <li key={step} className="flex items-start gap-3 text-sm text-gray-500">
-                        <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#111111] text-white text-xs font-medium shrink-0 mt-0.5">
-                          {i + 1}
-                        </span>
-                        {step}
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-              </div>
-
-              {/* Insurance summary */}
-              <div>
-                <h2 className="font-serif text-2xl font-semibold text-[#111111] mb-3">
-                  Insurance We Accept
-                </h2>
-                <p className="text-gray-500 mb-6 max-w-2xl">
-                  We accept most major PPO plans. Coverage varies by employer
-                  and plan year, so we recommend verifying benefits before your
-                  visit.
-                </p>
-                <div className="grid sm:grid-cols-2 gap-3 mb-5">
-                  {ACCEPTED_PLANS.map((plan) => (
-                    <div key={plan.name} className="flex items-start gap-3 bg-[#F8F7F4] rounded-xl p-4 border border-gray-100">
-                      <ShieldCheck size={16} className="text-green-600 mt-0.5 shrink-0" />
-                      <div>
-                        <p className="font-medium text-[#111111] text-sm">{plan.name}</p>
-                        <p className="text-xs text-gray-500 mt-0.5">{plan.notes}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <Link
-                  href="/insurance"
-                  className="inline-flex items-center gap-1.5 text-sm text-[#111111] font-medium hover:underline"
-                >
-                  Full insurance details & self-pay options <ArrowRight size={14} />
-                </Link>
+              <div className={styles["hero-actions"]}>
+                <ZocdocBookButton className={`${styles.btn} ${styles["btn-primary"]}`}>Book Online Now</ZocdocBookButton>
+                <a href="#patients" className={`${styles.btn} ${styles["btn-ghost"]}`}>New Here? Start Below</a>
               </div>
             </div>
-
-            {/* Sidebar */}
-            <div className="space-y-6">
-              {/* Call or Text */}
-              <div className="bg-[#111111] rounded-2xl p-7 text-white">
-                <h3 className="font-serif text-xl font-semibold mb-4">
-                  Call/Text for Appointment
-                </h3>
-                <p className="text-sm text-white/60 mb-5">
-                  Our front desk is happy to schedule you directly — call or
-                  text, whichever&apos;s easier.
-                </p>
-                <a
-                  href={`tel:${SITE.phone.appointments}`}
-                  className="flex items-center gap-2 text-lg font-semibold hover:text-[#111111] transition-colors"
-                >
-                  <Phone size={18} className="text-[#111111]" />
-                  {SITE.phone.appointments}
-                </a>
-                <a
-                  href={`sms:${SITE.phone.appointments.replace(/-/g, "")}`}
-                  className="flex items-center gap-2 text-sm font-medium text-white/70 hover:text-white transition-colors mt-3"
-                >
-                  <MessageSquare size={15} className="text-[#111111]" />
-                  Text us instead
-                </a>
-              </div>
-
-              {/* Physical Therapy scheduling */}
-              <div className="border border-gray-100 rounded-2xl p-7">
-                <h3 className="font-serif text-lg font-semibold text-[#111111] mb-3 flex items-center gap-2">
-                  <Activity size={18} className="text-[#111111]" /> Physical Therapy
-                </h3>
-                <p className="text-sm text-gray-500 leading-relaxed mb-5">
-                  PT appointments are scheduled directly with our PT team —
-                  text us at {SITE.phone.appointments} to set up your session.
-                </p>
-                <a
-                  href={`sms:${SITE.phone.appointments.replace(/-/g, "")}`}
-                  className="flex items-center gap-2 text-sm font-medium text-[#111111] hover:underline"
-                >
-                  <MessageSquare size={15} /> Text to Schedule PT
-                </a>
-              </div>
-
-              {/* Hours */}
-              <div className="border border-gray-100 rounded-2xl p-7">
-                <h3 className="font-serif text-lg font-semibold text-[#111111] mb-4 flex items-center gap-2">
-                  <Clock size={18} className="text-[#111111]" /> Office Hours
-                </h3>
-                <ul className="space-y-2">
-                  {SITE.hours.map((h) => (
-                    <li
-                      key={h.day}
-                      className="flex justify-between text-sm text-gray-600"
-                    >
-                      <span>{h.day}</span>
-                      <span className="font-medium text-[#111111]">{h.hours}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Location */}
-              <div className="border border-gray-100 rounded-2xl p-7">
-                <h3 className="font-serif text-lg font-semibold text-[#111111] mb-4 flex items-center gap-2">
-                  <MapPin size={18} className="text-[#111111]" /> Location
-                </h3>
-                <p className="text-sm text-gray-500 mb-4">
-                  {SITE.address.full}
-                </p>
-                <a
-                  href={SITE.address.mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-[#111111] font-medium hover:underline"
-                >
-                  Get Directions →
-                </a>
-              </div>
-
-              {/* Concierge note */}
-              <div className="bg-black/5 border border-black/10 rounded-2xl p-7">
-                <h3 className="font-serif text-lg font-semibold text-[#111111] mb-2">
-                  Concierge Patients
-                </h3>
-                <p className="text-sm text-gray-500">
-                  Concierge members contact Dr. Parikh directly for same-day
-                  scheduling.
-                </p>
+            <div className={`${styles["card-frame"]} ${styles.reveal}`} data-reveal>
+              <div className={styles["roster-card"]}>
+                <div className={styles["roster-top"]}>
+                  <div className={`${styles.monogram} ${styles["icon-mono"]}`}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <rect x="3" y="5" width="18" height="16" rx="2" />
+                      <path d="M16 3v4M8 3v4M3 10h18" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className={styles["roster-name"]}>Book in Minutes</div>
+                    <div className={styles["roster-role"]}>Scheduling powered by ZocDoc</div>
+                  </div>
+                </div>
+                <div className={styles.badge}>HIPAA Compliant · Free for Patients</div>
+                <div className={styles["roster-stats"]}>
+                  <div className={styles["roster-stat"]}><span>New patient scheduling</span><span>Online or by phone</span></div>
+                  <div className={styles["roster-stat"]}><span>Same or next-day sick visits</span><span>Call/Text</span></div>
+                  <div className={styles["roster-stat"]}><span>Telehealth</span><span>Select visit types</span></div>
+                  <div className={styles["roster-stat"]}><span>Physical therapy</span><span>Direct text scheduling</span></div>
+                </div>
+                <div className={styles["roster-foot"]}>Not sure which visit type fits? Our front desk can help you choose.</div>
               </div>
             </div>
           </div>
         </div>
       </section>
-    </>
+
+      <div className={styles.wrap}><div className={styles.seam} /></div>
+
+      {/* BOOKING METHODS */}
+      <section id="book">
+        <div className={styles.wrap}>
+          <div className={`${styles["section-head"]} ${styles.reveal}`} data-reveal>
+            <span className={styles.eyebrow}>Ways To Book</span>
+            <h2>Choose whichever is easier</h2>
+            <p>All three paths reach the right schedule — pick the one that fits how you&apos;d rather handle it today.</p>
+          </div>
+          <div className={`${styles.grid} ${styles.reveal}`} data-reveal>
+            <div className={styles["feature-card"]}>
+              <div className={styles.icon}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M16 3v4M8 3v4M3 10h18" /></svg>
+              </div>
+              <h3>Book Online</h3>
+              <p>Use our online booking system to choose your provider, service type, and preferred time. Opens in a secure window right over this page.</p>
+              <ZocdocBookButton className={`${styles.btn} ${styles["btn-primary"]}`}>Book Now</ZocdocBookButton>
+            </div>
+            <div className={styles["feature-card"]}>
+              <div className={styles.icon}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 3a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c1 .3 2 .5 3 .6a2 2 0 011.7 2z" /></svg>
+              </div>
+              <h3>Call/Text</h3>
+              <p>Our front desk is happy to schedule you directly — whichever&apos;s easier. Reach us during office hours or leave a message anytime.</p>
+              <a href={`tel:${SITE.phone.appointments}`} className={`${styles.btn} ${styles["btn-primary"]}`}>Call/Text {SITE.phone.appointments}</a>
+            </div>
+            <div className={styles["feature-card"]}>
+              <div className={styles.icon}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6.5 6.5l11 11M4 20l4-1 9-9-3-3-9 9-1 4zM17 3l4 4-2 2-4-4 2-2z" /></svg>
+              </div>
+              <h3>Physical Therapy</h3>
+              <p>PT appointments are scheduled directly with our PT team, not through online booking — just text to set up your session.</p>
+              <a href={`sms:${SITE.phone.appointments}`} className={`${styles.btn} ${styles["btn-primary"]}`}>Text to Schedule PT</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW / EXISTING PATIENTS */}
+      <section className={styles.alt} id="patients">
+        <div className={styles.wrap}>
+          <div className={`${styles["section-head"]} ${styles.reveal}`} data-reveal>
+            <span className={styles.eyebrow}>Before You Book</span>
+            <h2>First visit, or coming back?</h2>
+            <p>A couple of small details make check-in faster, whichever kind of visit this is.</p>
+          </div>
+          <div className={`${styles["grid-2"]} ${styles.reveal}`} data-reveal>
+            <div className={styles["feature-card"]}>
+              <h3>New Patient</h3>
+              <ul className={styles["credential-list"]}>
+                <li>Select &quot;New Patient&quot; when booking online</li>
+                <li>Arrive 15 minutes early for paperwork</li>
+                <li>Bring your insurance card and a photo ID</li>
+                <li>List any current medications and dosages</li>
+              </ul>
+              <Link href="/contact" className={styles["inline-link"]}>Have questions? Contact us →</Link>
+            </div>
+            <div className={styles["feature-card"]}>
+              <h3>Existing Patient</h3>
+              <ul className={styles["credential-list"]}>
+                <li>Select &quot;Established Patient&quot; when booking online</li>
+                <li>Same-day sick visits available — call/text us</li>
+                <li>Telehealth options available for eligible visits</li>
+                <li>Prescription refills: please allow 48 hours</li>
+              </ul>
+              <a href={`tel:${SITE.phone.appointments}`} className={styles["inline-link"]}>Call/Text for same-day availability →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* IN-PERSON / TELEHEALTH */}
+      <section>
+        <div className={styles.wrap}>
+          <div className={`${styles["section-head"]} ${styles.reveal}`} data-reveal>
+            <span className={styles.eyebrow}>Visit Format</span>
+            <h2>In-person or telehealth — your choice</h2>
+            <p>When you book online, you can choose the format that works best for you. Not every visit type is eligible for telehealth — if you&apos;re not sure, our front desk can help you pick the right one.</p>
+          </div>
+          <div className={`${styles["grid-2"]} ${styles.reveal}`} data-reveal>
+            <div className={styles["feature-card"]}>
+              <div className={styles.icon}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 21V9a2 2 0 012-2h12a2 2 0 012 2v12M9 21V13h6v8" /></svg>
+              </div>
+              <h3>In-Person Visits</h3>
+              <p style={{ marginBottom: 0 }}>Physical exams, procedures, physical therapy, and most new patient visits are done in our Sunnyvale office.</p>
+            </div>
+            <div className={styles["feature-card"]}>
+              <div className={styles.icon}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="6" width="14" height="12" rx="2" /><path d="M16 10l6-3v10l-6-3" /></svg>
+              </div>
+              <h3>Telehealth Visits</h3>
+              <p style={{ marginBottom: 0 }}>Available for select visit types — including follow-ups, medication management, and minor illness consultations. Filter by &quot;video visit&quot; when booking online to see availability.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PROVIDERS */}
+      <section className={styles.alt} id="providers">
+        <div className={styles.wrap}>
+          <div className={`${styles["section-head"]} ${styles.reveal}`} data-reveal>
+            <span className={styles.eyebrow}>Care Team</span>
+            <h2>Not sure which provider to see?</h2>
+            <p>Our online booking lets you choose a specific provider for your visit type — you don&apos;t have to see the same person for everything.</p>
+          </div>
+          <div className={`${styles.grid} ${styles.reveal}`} data-reveal>
+            <div className={styles["card-frame"]}>
+              <div className={styles["roster-card"]}>
+                <div className={styles["roster-top"]}>
+                  <div className={styles.monogram}>{providerInitials(drParikh.name)}</div>
+                  <div>
+                    <div className={styles["roster-name"]}>{drParikh.name}, {drParikh.credentials}</div>
+                    <div className={styles["roster-role"]}>Founder &amp; Chief Medical Officer</div>
+                  </div>
+                </div>
+                <div className={styles.badge}>Primary Care · Sports Medicine</div>
+                <p style={{ fontSize: "14px", color: "var(--ink-soft)", margin: 0 }}>{drParikh.specialties.join(" · ")}</p>
+              </div>
+            </div>
+            <div className={styles["card-frame"]}>
+              <div className={styles["roster-card"]}>
+                <div className={styles["roster-top"]}>
+                  <div className={styles.monogram}>{providerInitials(drOh.name)}</div>
+                  <div>
+                    <div className={styles["roster-name"]}>{drOh.name}, {drOh.credentials}</div>
+                    <div className={styles["roster-role"]}>Family &amp; Sports Medicine</div>
+                  </div>
+                </div>
+                <div className={styles.badge}>Primary Care · Sports Medicine</div>
+                <p style={{ fontSize: "14px", color: "var(--ink-soft)", margin: 0 }}>{drOh.specialties.join(" · ")}</p>
+              </div>
+            </div>
+            <div className={styles["card-frame"]}>
+              <div className={styles["roster-card"]}>
+                <div className={styles["roster-top"]}>
+                  <div className={styles.monogram}>{providerInitials(kinnari.name)}</div>
+                  <div>
+                    <div className={styles["roster-name"]}>{kinnari.name}, {kinnari.credentials}</div>
+                    <div className={styles["roster-role"]}>Physician Assistant</div>
+                  </div>
+                </div>
+                <div className={styles.badge}>Primary Care Team</div>
+                <p style={{ fontSize: "14px", color: "var(--ink-soft)", margin: 0 }}>{kinnari.specialties.join(" · ")}</p>
+              </div>
+            </div>
+          </div>
+          <p className={styles["table-note"]}>
+            Looking for physical therapy, pelvic health, or rehab?{" "}
+            <Link href="/providers" className={styles["inline-link"]} style={{ marginTop: 0 }}>See our full care team →</Link>
+          </p>
+        </div>
+      </section>
+
+      <div className={styles.wrap}><div className={styles.seam} /></div>
+
+      {/* INSURANCE EXPLAINED */}
+      <section id="insurance">
+        <div className={styles.wrap}>
+          <div className={`${styles["section-head"]} ${styles.reveal}`} data-reveal>
+            <span className={styles.eyebrow}>Coverage</span>
+            <h2>Insurance, explained simply</h2>
+            <p>Insurance terms can be confusing. Here&apos;s what the common ones actually mean for what you&apos;ll pay.</p>
+          </div>
+          <div className={`${styles.grid} ${styles.reveal}`} data-reveal>
+            <div className={styles["feature-card"]}>
+              <h3>Deductible</h3>
+              <p style={{ marginBottom: 0 }}>The amount you pay out-of-pocket each year before your insurance starts covering costs. A $1,500 deductible means you pay the first $1,500 of care yourself.</p>
+            </div>
+            <div className={styles["feature-card"]}>
+              <h3>Copay</h3>
+              <p style={{ marginBottom: 0 }}>A fixed fee — like $25 or $40 — you pay at each visit, often even after your deductible is met.</p>
+            </div>
+            <div className={styles["feature-card"]}>
+              <h3>Coinsurance</h3>
+              <p style={{ marginBottom: 0 }}>After your deductible is met, this is the percentage of the bill you still owe. If your plan covers 80%, you pay the remaining 20%.</p>
+            </div>
+            <div className={styles["feature-card"]}>
+              <h3>In-Network</h3>
+              <p style={{ marginBottom: 0 }}>We have a negotiated rate with your insurance company, which usually means lower costs for you than an out-of-network provider.</p>
+            </div>
+            <div className={styles["feature-card"]}>
+              <h3>Benefits</h3>
+              <p style={{ marginBottom: 0 }}>The specific services your plan covers and how much of the cost it pays — this varies by plan, even within the same insurance company.</p>
+            </div>
+            <div className={styles["feature-card"]}>
+              <h3>Out-of-Pocket Maximum</h3>
+              <p style={{ marginBottom: 0 }}>The most you&apos;ll pay in a year for covered care. Once you hit it, your insurance covers 100% of costs for the rest of the year.</p>
+            </div>
+          </div>
+
+          <div className={styles["grid-label"]}>How This Works At Your Visit</div>
+          <ul className={`${styles.steps} ${styles.reveal}`} data-reveal>
+            <li className={styles["step-item"]}><span className={styles["step-num"]}>1</span><p>We check that you&apos;re in-network before your appointment — or you can call the number on your insurance card to verify yourself.</p></li>
+            <li className={styles["step-item"]}><span className={styles["step-num"]}>2</span><p>At check-in, you pay your copay or any remaining deductible.</p></li>
+            <li className={styles["step-item"]}><span className={styles["step-num"]}>3</span><p>We bill your insurance for the rest of the visit.</p></li>
+            <li className={styles["step-item"]}><span className={styles["step-num"]}>4</span><p>If anything&apos;s still owed after your insurance processes the claim, we&apos;ll bill you afterward.</p></li>
+          </ul>
+        </div>
+      </section>
+
+      {/* INSURANCE ACCEPTED */}
+      <section className={styles.alt}>
+        <div className={styles.wrap}>
+          <div className={`${styles["section-head"]} ${styles.reveal}`} data-reveal>
+            <span className={styles.eyebrow}>Insurance We Accept</span>
+            <h2>Most major PPO plans</h2>
+            <p>Coverage varies by employer and plan year, so we recommend verifying benefits before your visit.</p>
+          </div>
+          <div className={`${styles["plan-grid"]} ${styles.reveal}`} data-reveal>
+            {ACCEPTED_PLANS.map((plan) => (
+              <div key={plan.name} className={styles["plan-card"]}>
+                <div className={styles["plan-name"]}>{plan.name}</div>
+                <div className={styles["plan-note"]}>{plan.notes}</div>
+              </div>
+            ))}
+          </div>
+          <p className={styles["table-note"]}>
+            <Link href="/insurance" className={styles["inline-link"]} style={{ marginTop: 0 }}>Full insurance details &amp; self-pay options →</Link>
+          </p>
+        </div>
+      </section>
+
+      {/* CONCIERGE CROSS-SELL */}
+      <section>
+        <div className={styles.wrap}>
+          <div className={`${styles.callout} ${styles.reveal}`} data-reveal>
+            <div className={styles["callout-text"]}>
+              <span className={styles.eyebrow}>Already A Concierge Member?</span>
+              <h2>Concierge patients skip the line entirely.</h2>
+              <p>Concierge members contact Dr. Parikh directly for same-day scheduling — no ZocDoc, no front desk queue. If that kind of access sounds like a better fit for your care, take a look at what&apos;s included.</p>
+            </div>
+            <Link href="/services/concierge-medicine" className={`${styles.btn} ${styles["btn-primary"]}`}>Explore Concierge Medicine</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* PRACTICAL INFO */}
+      <section className={styles.alt}>
+        <div className={styles.wrap}>
+          <div className={`${styles["section-head"]} ${styles.reveal}`} data-reveal>
+            <span className={styles.eyebrow}>Good To Know</span>
+            <h2>Hours and location</h2>
+          </div>
+          <div className={`${styles["grid-2"]} ${styles.reveal}`} data-reveal>
+            <div className={styles["info-card"]}>
+              <h3>Office Hours</h3>
+              {SITE.hours.map((h) => (
+                <p key={h.day}>{h.day}: {h.hours}</p>
+              ))}
+            </div>
+            <div className={styles["info-card"]}>
+              <h3>Location</h3>
+              <p>{SITE.address.street}<br />{SITE.address.city}, {SITE.address.state} {SITE.address.zip}</p>
+              <a href={SITE.address.mapsUrl} target="_blank" rel="noopener noreferrer" className={styles["inline-link"]}>Get Directions →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className={styles.final} id="contact">
+        <div className={styles.wrap}>
+          <div className={styles.reveal} data-reveal>
+            <span className={styles.eyebrow}>Ready When You Are</span>
+            <h2>Let&apos;s get you on the schedule.</h2>
+            <p>New and existing patients, individuals and families — online booking takes just a couple of minutes.</p>
+            <div className={styles["hero-actions"]}>
+              <ZocdocBookButton className={`${styles.btn} ${styles["btn-primary"]}`}>Book Online Now</ZocdocBookButton>
+              <a href={`tel:${SITE.phone.appointments}`} className={`${styles.btn} ${styles["btn-ghost"]}`}>Call/Text ParikhHealth</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

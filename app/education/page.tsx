@@ -1,136 +1,122 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllPosts, getAllCategories } from "@/lib/blog";
+import { getAllPosts } from "@/lib/blog";
 import { formatDate } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
+import { SITE } from "@/content/site";
+import RevealObserver from "@/components/effects/RevealObserver";
+import EducationArticleGrid from "@/components/education/EducationArticleGrid";
+import styles from "./education.module.css";
 
 export const metadata: Metadata = {
   title: "Health Education & Blog",
   description:
-    "Evidence-based health education, practice news, and wellness tips from the providers at ParikhHealth in Sunnyvale, CA.",
+    "Evidence-based health education, wellness tips, and practice news from the providers at ParikhHealth in Sunnyvale, CA — primary care, sports medicine, and physical therapy.",
+  alternates: { canonical: `${SITE.url}/education` },
+};
+
+const TAG_CLASS: Record<string, string> = {
+  "Primary Care": "tag-primary",
+  "Physical Therapy": "tag-pt",
+  "Sports Medicine": "tag-sports",
+  "Health Education": "tag-health",
+  "Practice News": "tag-news",
 };
 
 export default function EducationPage() {
   const posts = getAllPosts();
-  const categories = getAllCategories();
   const featured = posts.filter((p) => p.featured);
   const rest = posts.filter((p) => !p.featured);
 
   return (
-    <>
-      {/* Header */}
-      <section
-        className="pt-36 pb-20"
-        style={{ background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)" }}
-      >
-        <div className="site-container">
-          <span className="text-[#111111] text-sm font-semibold tracking-widest uppercase">
-            Health Education
-          </span>
-          <h1 className="font-serif text-5xl font-semibold text-white mt-3 mb-5 max-w-xl leading-tight">
-            From Our Providers
-          </h1>
-          <p className="text-white/70 text-lg max-w-2xl leading-relaxed">
-            Evidence-based health education, wellness tips, practice news, and
-            the latest in primary care and sports medicine — written by your own
-            providers.
+    <div className={styles.education}>
+      <RevealObserver />
+
+      {/* HERO */}
+      <section className={styles.hero}>
+        <div className={styles.wrap}>
+          <span className={styles.eyebrow}>Health Education</span>
+          <h1>From Our Providers</h1>
+          <p className={styles.lead}>
+            Evidence-based health education, wellness tips, and practice news — written by the
+            physicians and therapists who actually treat you, not a content mill. No filler, no
+            clickbait. Just what we&apos;d tell you in the room.
           </p>
         </div>
       </section>
 
-      <section className="bg-white py-24">
-        <div className="site-container">
-          {/* Categories */}
-          <div className="flex flex-wrap gap-2 mb-14">
-            <span className="text-xs font-semibold text-[#111111] bg-[#111111]/5 px-4 py-1.5 rounded-full">
-              All Topics
-            </span>
-            {categories.map((cat) => (
-              <span
-                key={cat}
-                className="text-xs font-medium text-gray-500 bg-gray-50 border border-gray-100 px-4 py-1.5 rounded-full cursor-pointer hover:border-[#111111] hover:text-[#111111] transition-colors"
-              >
-                {cat}
-              </span>
-            ))}
+      {/* FEATURED */}
+      {featured.length > 0 && (
+        <section style={{ paddingTop: "12px" }}>
+          <div className={styles.wrap}>
+            <div className={`${styles["grid-label"]} ${styles.reveal}`} data-reveal>Featured</div>
+            <div className={styles["featured-grid"]}>
+              {featured.map((post) => (
+                <Link key={post.slug} href={`/education/${post.slug}`} className={`${styles["featured-card"]} ${styles.reveal}`} data-reveal>
+                  <span className={`${styles.tag} ${styles[TAG_CLASS[post.category] ?? "tag-health"]}`}>{post.category}</span>
+                  <h3>{post.title}</h3>
+                  <p>{post.excerpt}</p>
+                  <div className={styles.byline}>
+                    <strong>{post.author}</strong>
+                    <span className={styles.dot} />
+                    <span>{formatDate(post.publishedAt)}</span>
+                    <span className={styles.dot} />
+                    <span>{post.readingTime} read</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
+        </section>
+      )}
 
-          {/* Featured posts */}
-          {featured.length > 0 && (
-            <div className="mb-16">
-              <h2 className="font-serif text-2xl font-semibold text-[#111111] mb-8">
-                Featured Articles
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {featured.map((post) => (
-                  <Link
-                    key={post.slug}
-                    href={`/education/${post.slug}`}
-                    className="group border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
-                  >
-                    <div className="bg-[#F8F7F4] h-52" />
-                    <div className="p-6">
-                      <span className="text-xs font-semibold text-[#111111] uppercase tracking-wide">
-                        {post.category}
-                      </span>
-                      <h3 className="font-serif text-xl font-semibold text-[#111111] mt-1.5 mb-2 group-hover:text-[#111111] transition-colors leading-snug">
-                        {post.title}
-                      </h3>
-                      <p className="text-sm text-gray-500 leading-relaxed mb-4 line-clamp-2">
-                        {post.excerpt}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2 text-xs text-gray-400">
-                          <span>{post.author}</span>
-                          <span>·</span>
-                          <span>{formatDate(post.publishedAt)}</span>
-                        </div>
-                        <span className="flex items-center gap-1 text-xs font-semibold text-[#111111] group-hover:text-[#111111] transition-colors">
-                          {post.readingTime} read <ArrowRight size={12} />
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* All posts */}
-          {rest.length > 0 && (
-            <div>
-              <h2 className="font-serif text-2xl font-semibold text-[#111111] mb-8">
-                All Articles
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {rest.map((post) => (
-                  <Link
-                    key={post.slug}
-                    href={`/education/${post.slug}`}
-                    className="group"
-                  >
-                    <div className="bg-[#F8F7F4] rounded-2xl h-40 mb-4" />
-                    <span className="text-xs font-semibold text-[#111111] uppercase tracking-wide">
-                      {post.category}
-                    </span>
-                    <h3 className="font-serif text-lg font-semibold text-[#111111] mt-1.5 mb-2 group-hover:text-[#111111] transition-colors leading-snug">
-                      {post.title}
-                    </h3>
-                    <p className="text-sm text-gray-500 line-clamp-2 mb-3">
-                      {post.excerpt}
-                    </p>
-                    <div className="flex items-center gap-2 text-xs text-gray-400">
-                      <span>{formatDate(post.publishedAt)}</span>
-                      <span>·</span>
-                      <span>{post.readingTime} read</span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
+      {/* ALL ARTICLES */}
+      <section className={styles.alt}>
+        <div className={styles.wrap}>
+          <div className={`${styles["grid-label"]} ${styles.reveal}`} data-reveal>All Articles</div>
+          <EducationArticleGrid posts={rest.length > 0 ? rest : posts} />
         </div>
       </section>
-    </>
+
+      {/* EXPERTISE / AUTHOR */}
+      <section>
+        <div className={styles.wrap}>
+          <div className={`${styles["expert-callout"]} ${styles.reveal}`} data-reveal>
+            <div className={styles["expert-monogram"]}>NP</div>
+            <div>
+              <span className={styles.eyebrow}>Who&apos;s Writing This</span>
+              <h2>Written by the physician who&apos;s actually in the room with you.</h2>
+              <p className={styles.lede}>
+                Dr. Neesheet Parikh, DO founded ParikhHealth as an independent practice, and every
+                article on this page comes out of a real exam room — the questions patients actually
+                ask, answered the way he&apos;d answer them in person.
+              </p>
+              <ul className={styles["expert-creds"]}>
+                <li><strong>Primary Care &amp; Family Medicine</strong>Board-trained in whole-person, evidence-based primary care for every stage of life.</li>
+                <li><strong>Sports Medicine</strong>Diagnosing and treating everything from overuse injuries to concussion, for weekend athletes and competitive ones alike.</li>
+                <li><strong>Team Physician, USA Cricket</strong>Trusted with the health of athletes at the national level — on the same clinical judgment his patients get.</li>
+                <li><strong>Founder, Independent Private Practice</strong>Built ParikhHealth outside a hospital system, so care decisions stay between physician and patient.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className={styles.wrap}><div className={styles.seam} /></div>
+
+      {/* FINAL CTA */}
+      <section className={styles.final}>
+        <div className={styles.wrap}>
+          <div className={styles.reveal} data-reveal>
+            <span className={styles.eyebrow}>Have A Question We Haven&apos;t Answered?</span>
+            <h2>Bring it to your next visit — or ask us directly.</h2>
+            <p>These articles are a starting point, not a substitute for an actual exam. If something here raises a question about your own health, we&apos;d rather hear it in person.</p>
+            <div className={styles["hero-actions"]}>
+              <Link href="/appointments" className={`${styles.btn} ${styles["btn-primary"]}`}>Book an Appointment</Link>
+              <Link href="/contact" className={`${styles.btn} ${styles["btn-ghost"]}`}>Contact Us</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
