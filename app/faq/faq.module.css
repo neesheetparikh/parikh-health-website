@@ -27,7 +27,6 @@
 
 
 .faq img { max-width: 100%; display: block; }
-.faq a { color: inherit; }
 .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
 .faq h1, .faq h2, .faq h3 { font-family: var(--font-display); margin: 0; color: var(--navy-deep); }
 .eyebrow {

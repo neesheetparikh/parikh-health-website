@@ -31,7 +31,6 @@
 
 
 .education img { max-width: 100%; display: block; }
-.education a { color: inherit; }
 .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
 .education h1, .education h2, .education h3 { font-family: var(--font-display); margin: 0; color: var(--navy-deep); }
 .eyebrow {
