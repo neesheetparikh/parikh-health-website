@@ -81,7 +81,7 @@
 .lead { font-size: 16.5px; color: var(--ink-soft); max-width: 560px; margin-bottom: 0; }
 
 /* search */
-.search-shell { margin-top: 34px; max-width: 560px; }
+.search-shell { margin: 34px auto 0; max-width: 560px; }
 .search-box {
   display: flex;
   align-items: center;

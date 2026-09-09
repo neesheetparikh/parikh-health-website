@@ -92,29 +92,31 @@ export default function FaqInteractive({ categories }: { categories: FaqCategory
 
   return (
     <>
-      <div className={styles["search-shell"]}>
-        <div className={styles["search-box"]}>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <circle cx="11" cy="11" r="7" />
-            <path d="M21 21l-4.3-4.3" />
-          </svg>
-          <input
-            type="text"
-            placeholder="Search questions — e.g. insurance, PT, concierge..."
-            aria-label="Search FAQ"
-            value={term}
-            onChange={(e) => setTerm(e.target.value)}
-          />
-          {term && (
-            <button type="button" className={`${styles["search-clear"]} ${styles.show}`} onClick={() => setTerm("")}>
-              Clear
-            </button>
-          )}
-        </div>
-        <div className={styles["search-count"]} aria-live="polite">
-          {normalizedTerm
-            ? `${totalVisible} matching ${totalVisible === 1 ? "question" : "questions"}`
-            : ""}
+      <div className={styles.wrap}>
+        <div className={styles["search-shell"]}>
+          <div className={styles["search-box"]}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="11" cy="11" r="7" />
+              <path d="M21 21l-4.3-4.3" />
+            </svg>
+            <input
+              type="text"
+              placeholder="Search questions — e.g. insurance, PT, concierge..."
+              aria-label="Search FAQ"
+              value={term}
+              onChange={(e) => setTerm(e.target.value)}
+            />
+            {term && (
+              <button type="button" className={`${styles["search-clear"]} ${styles.show}`} onClick={() => setTerm("")}>
+                Clear
+              </button>
+            )}
+          </div>
+          <div className={styles["search-count"]} aria-live="polite">
+            {normalizedTerm
+              ? `${totalVisible} matching ${totalVisible === 1 ? "question" : "questions"}`
+              : ""}
+          </div>
         </div>
       </div>
 
