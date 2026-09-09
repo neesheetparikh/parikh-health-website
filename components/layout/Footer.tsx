@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { Phone, MapPin, Clock, Mail } from "lucide-react";
 import { SITE } from "@/content/site";
-
+import styles from "./Footer.module.css";
 
 const SERVICES_LINKS = [
   { label: "Primary Care", href: "/services/primary-care" },
@@ -24,147 +23,99 @@ const QUICK_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#111111] text-white">
-      {/* Main footer */}
-      <div className="site-container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <div className="flex flex-col leading-none mb-5">
-              <span className="font-serif text-2xl font-semibold">
-                ParikhHealth
-              </span>
-              <span className="text-xs text-white/60 tracking-widest uppercase mt-1">
-                Sunnyvale, CA
+    <div className={styles.footerWrap}>
+      <div className={styles.seam} />
+      <footer className={styles.footer}>
+        <div className={styles.wrap}>
+          <div className={styles["footer-top"]}>
+            {/* BRAND */}
+            <div>
+              <div className={styles["f-brand-mark"]}>ParikhHealth</div>
+              <span className={styles["f-brand-loc"]}>Sunnyvale, CA</span>
+              <p className={styles["f-tagline"]}>
+                Primary care, sports medicine, physical therapy, aesthetics,
+                and women&apos;s health — five specialties, one team, one
+                Sunnyvale practice. Led by Dr. Neesheet Parikh, DO, team
+                physician for USA Cricket.
+              </p>
+              <Link href="/appointments" className={styles["f-cta"]}>
+                Book an Appointment
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </Link>
+            </div>
+
+            {/* SERVICES */}
+            <nav aria-label="Services">
+              <div className={styles["f-col-label"]}>Services</div>
+              <ul className={styles["f-links"]}>
+                {SERVICES_LINKS.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href}>{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            {/* QUICK LINKS */}
+            <nav aria-label="Quick links">
+              <div className={styles["f-col-label"]}>Quick Links</div>
+              <ul className={styles["f-links"]}>
+                {QUICK_LINKS.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href}>{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            {/* CONTACT */}
+            <div>
+              <div className={styles["f-col-label"]}>Contact</div>
+              <address className={styles["f-address"]}>
+                <div className={styles["f-contact-item"]}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" /></svg>
+                  <a href={SITE.address.mapsUrl} target="_blank" rel="noopener noreferrer">
+                    {SITE.address.street}<br />
+                    {SITE.address.city}, {SITE.address.state} {SITE.address.zip}
+                  </a>
+                </div>
+                <div className={styles["f-contact-item"]}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 3a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c1 .3 2 .5 3 .6a2 2 0 011.7 2z" /></svg>
+                  <a href={`tel:${SITE.phone.general}`}>{SITE.phone.general}</a>
+                </div>
+                <div className={styles["f-contact-item"]}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16v16H4z" /><path d="M4 6l8 7 8-7" /></svg>
+                  <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+                </div>
+                <div className={styles["f-contact-item"]}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" /></svg>
+                  <div>
+                    {SITE.hours.map((h, i) => (
+                      i === 0 ? (
+                        <p key={h.day}>{h.day}: {h.hours}</p>
+                      ) : (
+                        <p key={h.day} className={styles["f-hours-day"]}>{h.day}: {h.hours}</p>
+                      )
+                    ))}
+                  </div>
+                </div>
+              </address>
+            </div>
+          </div>
+
+          <div className={styles["footer-bottom"]}>
+            <span className={styles["f-copyright"]}>© {new Date().getFullYear()} ParikhHealth. All rights reserved.</span>
+            <div className={styles["f-legal"]}>
+              <Link href="/privacy">Privacy Policy</Link>
+              <Link href="/accessibility">Accessibility</Link>
+              <span className={styles["f-hipaa"]}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z" /><path d="M9 12l2 2 4-4" /></svg>
+                HIPAA Compliant Practice
               </span>
             </div>
-            <p className="text-sm text-white/60 leading-relaxed mb-6">
-              Exceptional primary care and sports medicine for every stage of
-              life — delivered with compassion, precision, and respect.
-            </p>
-            <Link
-              href="/appointments"
-              className="inline-block bg-white hover:bg-white/90 text-[#111111] text-sm font-medium px-5 py-2.5 rounded-full transition-colors"
-            >
-              Book an Appointment
-            </Link>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="text-sm font-semibold tracking-widest uppercase text-white/60 mb-5">
-              Services
-            </h3>
-            <ul className="space-y-2.5">
-              {SERVICES_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/70 hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Quick links */}
-          <div>
-            <h3 className="text-sm font-semibold tracking-widest uppercase text-white/60 mb-5">
-              Quick Links
-            </h3>
-            <ul className="space-y-2.5">
-              {QUICK_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/70 hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="text-sm font-semibold tracking-widest uppercase text-white/60 mb-5">
-              Contact
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin size={14} className="text-white/60 mt-0.5 shrink-0" />
-                <a
-                  href={SITE.address.mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-white/70 hover:text-white transition-colors"
-                >
-                  {SITE.address.street}
-                  <br />
-                  {SITE.address.city}, {SITE.address.state} {SITE.address.zip}
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone size={14} className="text-white/60 shrink-0" />
-                <a
-                  href={`tel:${SITE.phone.general}`}
-                  className="text-sm text-white/70 hover:text-white transition-colors"
-                >
-                  {SITE.phone.general}
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail size={14} className="text-white/60 shrink-0" />
-                <a
-                  href={`mailto:${SITE.email}`}
-                  className="text-sm text-white/70 hover:text-white transition-colors"
-                >
-                  {SITE.email}
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <Clock size={14} className="text-white/60 mt-0.5 shrink-0" />
-                <div className="flex flex-col gap-0.5">
-                  {SITE.hours.map((h) => (
-                    <span key={h.day} className="text-sm text-white/70">
-                      {h.day}: {h.hours}
-                    </span>
-                  ))}
-                </div>
-              </li>
-            </ul>
           </div>
         </div>
-      </div>
-
-      {/* Bottom bar */}
-      <div className="border-t border-white/10">
-        <div className="site-container flex flex-col md:flex-row items-center justify-between gap-3 py-5">
-          <p className="text-xs text-white/40">
-            © {new Date().getFullYear()} ParikhHealth. All rights reserved.
-          </p>
-          <div className="flex items-center gap-5">
-            <Link
-              href="/privacy"
-              className="text-xs text-white/40 hover:text-white/70 transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/accessibility"
-              className="text-xs text-white/40 hover:text-white/70 transition-colors"
-            >
-              Accessibility
-            </Link>
-            <span className="text-xs text-white/40">
-              HIPAA Compliant Practice
-            </span>
-          </div>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   );
 }
