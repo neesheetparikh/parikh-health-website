@@ -75,7 +75,7 @@
 .btn-ghost:hover { border-color: var(--navy-deep); }
 
 /* HERO */
-.hero { padding: 128px 0 40px; }
+.faq .hero { padding: 128px 0 40px; }
 .hero-inner { max-width: 700px; }
 .hero h1 { font-size: clamp(30px, 4vw, 44px); font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; margin: 16px 0 16px; }
 .lead { font-size: 16.5px; color: var(--ink-soft); max-width: 560px; margin-bottom: 0; }

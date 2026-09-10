@@ -74,7 +74,7 @@
 .btn-ghost:hover { border-color: var(--navy-deep); }
 
 /* HERO */
-.hero { padding: 128px 0 70px; position: relative; overflow: hidden; }
+.about .hero { padding: 128px 0 70px; position: relative; overflow: hidden; }
 .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; align-items: center; }
 @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
 .hero h1 { font-size: clamp(34px, 4.4vw, 50px); font-weight: 600; line-height: 1.14; letter-spacing: -0.01em; margin: 18px 0 22px; }

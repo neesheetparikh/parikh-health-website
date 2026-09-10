@@ -137,7 +137,7 @@
 }
 
 /* HERO */
-.hero {
+.home .hero {
   padding: 128px 0 56px;
   position: relative;
   overflow: hidden;
