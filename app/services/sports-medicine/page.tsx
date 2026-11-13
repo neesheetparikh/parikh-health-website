@@ -8,11 +8,12 @@ import styles from "./sports-medicine.module.css";
 export const metadata: Metadata = {
   title: "Sports Medicine | ParikhHealth Sunnyvale CA",
   description:
-    "Non-surgical sports medicine in Sunnyvale, CA from Dr. Neesheet Parikh, DO (team physician, USA Cricket) and Dr. Robert Oh, MD — orthopedic injury care, concussion management, PRP injections, sports physicals, and integrated physical therapy.",
+    "Non-surgical sports medicine in Sunnyvale, CA from Dr. Neesheet Parikh, DO (team physician, USA Cricket), Dr. Vatsal Gandhi, DO, and Dr. Robert Oh, MD — orthopedic injury care, concussion management, PRP injections, sports physicals, and integrated physical therapy.",
 };
 
 const drParikh = TEAM.find((m) => m.id === "neesheet-parikh")!;
 const drOh = TEAM.find((m) => m.id === "robert-oh")!;
+const drGandhi = TEAM.find((m) => m.id === "vatsal-gandhi")!;
 
 export default function SportsMedicinePage() {
   return (
@@ -386,7 +387,7 @@ export default function SportsMedicinePage() {
           <div className={`${styles["section-head"]} ${styles.reveal}`} data-reveal>
             <span className={styles.eyebrow}>Meet the Team</span>
             <h2>Your sports medicine physicians</h2>
-            <p>Two physicians, one coordinated approach to non-surgical orthopedic and sports medicine care.</p>
+            <p>Three physicians, one coordinated approach to non-surgical orthopedic and sports medicine care.</p>
           </div>
           <div className={styles["team-grid"]}>
             <div className={`${styles["team-card"]} ${styles.reveal}`} data-reveal>
@@ -409,6 +410,35 @@ export default function SportsMedicinePage() {
               <div className={styles["team-badges"]}>
                 <span className={styles["mini-badge"]}>Team Physician · USA Cricket</span>
                 <span className={styles["mini-badge"]}>Sports Medicine</span>
+                <span className={styles["mini-badge"]}>Primary Care</span>
+              </div>
+            </div>
+            <div className={`${styles["team-card"]} ${styles.reveal}`} data-reveal>
+              <div className={styles["team-head"]}>
+                <div className={`${styles["team-photo"]} ${styles["team-monogram"]}`}>
+                  {drGandhi.image ? (
+                    <Image src={drGandhi.image} alt={`${drGandhi.name}, ${drGandhi.credentials}`} width={60} height={60} />
+                  ) : (
+                    "VG"
+                  )}
+                </div>
+                <div>
+                  <div className={styles["team-name"]}>Vatsal Gandhi, DO</div>
+                  <div className={styles["team-role"]}>Physician, Sports Medicine &amp; Primary Care</div>
+                </div>
+              </div>
+              <p>
+                Dr. Gandhi is a sports medicine physician who treats musculoskeletal
+                injuries of every kind — sprains, tendon and overuse injuries, joint
+                pain, and return-to-play decisions — for athletes and active patients
+                at every level. Osteopathically trained, he pairs a hands-on
+                musculoskeletal exam with full-scope primary care, so the same
+                physician who treats your injury can also look after your health
+                between seasons.
+              </p>
+              <div className={styles["team-badges"]}>
+                <span className={styles["mini-badge"]}>Sports Medicine</span>
+                <span className={styles["mini-badge"]}>Musculoskeletal Injuries</span>
                 <span className={styles["mini-badge"]}>Primary Care</span>
               </div>
             </div>
@@ -478,7 +508,7 @@ export default function SportsMedicinePage() {
           <div className={styles.reveal} data-reveal>
             <span className={styles.eyebrow}>Ready When You Are</span>
             <h2>Let&apos;s get you evaluated and moving again.</h2>
-            <p>Schedule a sports medicine visit with Dr. Parikh or Dr. Oh — same practice, same coordinated team, from evaluation through rehab.</p>
+            <p>Schedule a sports medicine visit with Dr. Parikh, Dr. Gandhi, or Dr. Oh — same practice, same coordinated team, from evaluation through rehab.</p>
             <div className={styles["hero-actions"]}>
               <Link href="/appointments" className={`${styles.btn} ${styles["btn-primary"]}`}>
                 Schedule a Visit

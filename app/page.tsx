@@ -68,6 +68,7 @@ const CARE_TEAM = [
   "neesheet-parikh",
   "kinnari-shah",
   "robert-oh",
+  "vatsal-gandhi",
   "mansi-parikh",
   "miral-patel",
   "sonia-sharma",
@@ -139,7 +140,7 @@ export default function HomePage() {
                   <div className={styles["snap-stat"]}><span>Years in practice</span><span>15+</span></div>
                   <div className={styles["snap-stat"]}><span>5-star reviews</span><span>{SITE.rating.count}+</span></div>
                   <div className={styles["snap-stat"]}><span>Specialty services</span><span>{SERVICES.length}</span></div>
-                  <div className={styles["snap-stat"]}><span>Physicians &amp; PA</span><span>3</span></div>
+                  <div className={styles["snap-stat"]}><span>Physicians &amp; PA</span><span>4</span></div>
                 </div>
                 <div className={styles["snap-foot"]}>Rated {SITE.rating.score} / 5 on {SITE.rating.source}.</div>
               </div>
@@ -156,10 +157,10 @@ export default function HomePage() {
         <div className={styles.wrap}>
           <div className={`${styles["ribbon-row"]} ${styles.reveal}`} data-reveal>
             <div className={`${styles["ribbon-card"]} ${styles.brass}`}>
-              <span className={`${styles.eyebrow} ${styles.brass}`}>⚡ Featured Program</span>
-              <h3>PitchFit</h3>
-              <p>Elite cricket athlete care led by Dr. Parikh, Head Team Physician for USA Cricket — direct access, same-day visits, injury prevention &amp; recovery.</p>
-              <Link className={styles.link} href="/services/athlete-wellness">Learn more →</Link>
+              <span className={`${styles.eyebrow} ${styles.brass}`}>★ Now Offering</span>
+              <h3>Immigration Medical Exams</h3>
+              <p>USCIS Form I-693 exams with Dr. Parikh, a designated civil surgeon — on-site vaccines, transparent self-pay pricing, and your sealed form back fast.</p>
+              <Link className={styles.link} href="/services/immigration-medical-exams">Learn more →</Link>
             </div>
             <div className={styles["ribbon-card"]}>
               <span className={styles.eyebrow}>★ Premium</span>

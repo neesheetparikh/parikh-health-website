@@ -192,7 +192,7 @@ export default function AboutPage() {
           <div className={`${styles["section-head"]} ${styles.reveal}`} data-reveal>
             <span className={styles.eyebrow}>The Team</span>
             <h2>Meet your providers</h2>
-            <p>Eight clinicians, five disciplines, one coordinated team — so your care never has to start over with someone new.</p>
+            <p>Nine clinicians, five disciplines, one coordinated team — so your care never has to start over with someone new.</p>
           </div>
           <div className={styles["team-grid"]}>
             {TEAM.map((m) => (

@@ -76,6 +76,15 @@ export const TEAM = [
     acceptingNewPatients: true,
   },
   {
+    id: "vatsal-gandhi",
+    name: "Vatsal Gandhi",
+    credentials: "DO",
+    title: "Physician — Sports Medicine & Primary Care",
+    bio: "Dr. Gandhi is a sports medicine physician who also provides comprehensive primary care. Osteopathically trained, he focuses on diagnosing and treating musculoskeletal injuries — from sprains, tendon problems, and overuse injuries to joint pain and return-to-play decisions — for athletes and active patients of every level, while caring for the whole person between injuries.",
+    specialties: ["Sports Medicine", "Musculoskeletal Injuries", "Primary Care", "Osteopathic Medicine"],
+    acceptingNewPatients: true,
+  },
+  {
     id: "mansi-parikh",
     name: "Mansi Parikh",
     credentials: "DPT, AP",
@@ -134,7 +143,9 @@ export const SUPPORT_STAFF = [
   { name: "Carina F.", title: "Front Desk", image: "/team/carina-franquez.jpg" },
   { name: "Vivi Le", title: "PT Aide", image: "/team/vivi-le.jpg" },
   { name: "Jazmyn Henry", title: "PT Aide", image: "/team/jazmyn-henry.jpg" },
-  { name: "Madhav Patel", title: "PT Aide" },
+  { name: "Trevor", title: "PT Aide" },
+  { name: "Priyansi", title: "PT Aide" },
+  { name: "Elaine", title: "PT Aide" },
   { name: "Saurabh Bhatt", title: "Billing Specialist" },
 ];
 
