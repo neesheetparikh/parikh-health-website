@@ -16,6 +16,7 @@ const NAV_LINKS = [
       { label: "Sports Medicine", href: "/services/sports-medicine" },
       { label: "Physical Therapy", href: "/services/physical-therapy" },
       { label: "Concierge Medicine", href: "/services/concierge-medicine" },
+      { label: "Immigration Exams (I-693)", href: "/services/immigration-medical-exams" },
       { label: "PitchFit", href: "/services/athlete-wellness" },
       { label: "Women's Health", href: "/services/womens-health" },
       { label: "Integrative Medicine", href: "/services/integrative-medicine" },

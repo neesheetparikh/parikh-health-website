@@ -442,6 +442,23 @@ export const SERVICES = [
     image: "/services/concierge.jpg",
   },
   {
+    id: "immigration-medical-exams",
+    name: "Immigration Medical Exams",
+    shortDesc: "USCIS Form I-693 exams with a designated civil surgeon, for adults 18+.",
+    description:
+      "Dr. Neesheet Parikh, DO is a USCIS-designated civil surgeon performing Form I-693 immigration medical exams for adult applicants in Sunnyvale. Physician-led exams, on-site vaccines, transparent self-pay pricing, and your sealed form back to you fast.",
+    icon: "stethoscope",
+    highlights: [
+      "USCIS-designated civil surgeon",
+      "Form I-693 completed and sealed",
+      "Required vaccines given on-site",
+      "TB blood testing (IGRA)",
+      "Transparent self-pay pricing",
+      "Adults 18 and older",
+    ],
+    image: "/services/immigration-medical-exams.jpg",
+  },
+  {
     id: "athlete-wellness",
     name: "PitchFit",
     shortDesc: "Elite cricket athlete care, led by USA Cricket's Head Team Physician.",

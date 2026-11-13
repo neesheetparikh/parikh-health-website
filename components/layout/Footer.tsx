@@ -7,6 +7,7 @@ const SERVICES_LINKS = [
   { label: "Sports Medicine", href: "/services/sports-medicine" },
   { label: "Physical Therapy", href: "/services/physical-therapy" },
   { label: "Concierge Medicine", href: "/services/concierge-medicine" },
+  { label: "Immigration Exams (I-693)", href: "/services/immigration-medical-exams" },
   { label: "Women's Health", href: "/services/womens-health" },
   { label: "Integrative Medicine", href: "/services/integrative-medicine" },
   { label: "Aesthetic Services", href: "/services/cosmetics" },
