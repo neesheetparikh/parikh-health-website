@@ -255,7 +255,7 @@ export default function ProvidersPage() {
           </div>
           {SUPPORT_STAFF.some((s) => !s.image) && (
             <p style={{ fontSize: "12px", color: "var(--ink-soft)", opacity: 0.8, marginTop: "16px" }}>
-              *{SUPPORT_STAFF.filter((s) => !s.image).map((s) => s.name.split(" ")[0]).join(", ")} don&apos;t have photos on file yet — using placeholders until they&apos;re added.
+              *{SUPPORT_STAFF.filter((s) => !s.image).map((s) => s.name.split(" ")[0]).join(", ")}{" "}don&apos;t have photos on file yet — using placeholders until they&apos;re added.
             </p>
           )}
         </div>
