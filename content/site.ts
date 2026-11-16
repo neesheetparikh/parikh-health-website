@@ -143,7 +143,6 @@ export const SUPPORT_STAFF = [
   { name: "Aarushi Kumar", title: "Front Desk", image: "/team/aarushi-kumar.jpg" },
   { name: "Carina F.", title: "Front Desk", image: "/team/carina-franquez.jpg" },
   { name: "Vivi Le", title: "PT Aide", image: "/team/vivi-le.jpg" },
-  { name: "Jazmyn Henry", title: "PT Aide", image: "/team/jazmyn-henry.jpg" },
   { name: "Trevor", title: "PT Aide" },
   { name: "Priyansi", title: "PT Aide" },
   { name: "Elaine", title: "PT Aide" },
