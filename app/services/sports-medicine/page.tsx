@@ -438,6 +438,7 @@ export default function SportsMedicinePage() {
               </p>
               <div className={styles["team-badges"]}>
                 <span className={styles["mini-badge"]}>Sports Medicine</span>
+                <span className={styles["mini-badge"]}>MSK Ultrasound</span>
                 <span className={styles["mini-badge"]}>Musculoskeletal Injuries</span>
                 <span className={styles["mini-badge"]}>Primary Care</span>
               </div>
