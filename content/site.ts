@@ -82,7 +82,7 @@ export const TEAM = [
     title: "Physician — Sports Medicine & Primary Care",
     image: "/team/vatsal-gandhi.jpg",
     bio: "Dr. Gandhi is a sports medicine physician who also provides comprehensive primary care. Osteopathically trained, he focuses on diagnosing and treating musculoskeletal injuries — from sprains, tendon problems, and overuse injuries to joint pain and return-to-play decisions — for athletes and active patients of every level, while caring for the whole person between injuries.",
-    specialties: ["Sports Medicine", "Musculoskeletal Injuries", "Primary Care", "Osteopathic Medicine"],
+    specialties: ["Sports Medicine", "MSK Ultrasound", "Musculoskeletal Injuries", "Primary Care", "Osteopathic Medicine"],
     acceptingNewPatients: true,
   },
   {
