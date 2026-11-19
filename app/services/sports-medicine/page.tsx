@@ -423,23 +423,23 @@ export default function SportsMedicinePage() {
                   )}
                 </div>
                 <div>
-                  <div className={styles["team-name"]}>Vatsal Gandhi, DO</div>
+                  <div className={styles["team-name"]}>Vatsal Gandhi, DO, MBA, MPH</div>
                   <div className={styles["team-role"]}>Physician, Sports Medicine &amp; Primary Care</div>
                 </div>
               </div>
               <p>
-                Dr. Gandhi is a sports medicine physician who treats musculoskeletal
-                injuries of every kind — sprains, tendon and overuse injuries, joint
-                pain, and return-to-play decisions — for athletes and active patients
-                at every level. Osteopathically trained, he pairs a hands-on
-                musculoskeletal exam with full-scope primary care, so the same
-                physician who treats your injury can also look after your health
-                between seasons.
+                Dr. Gandhi is a sports medicine physician board certified in family
+                medicine, with fellowship training at UPMC, where he served as
+                assistant team physician for University of Pittsburgh football. He
+                focuses on non-operative care of sprains, tendon and overuse
+                injuries, and joint pain — using musculoskeletal ultrasound for
+                diagnosis and guided treatment — and provides primary care between
+                injuries.
               </p>
               <div className={styles["team-badges"]}>
                 <span className={styles["mini-badge"]}>Sports Medicine</span>
                 <span className={styles["mini-badge"]}>MSK Ultrasound</span>
-                <span className={styles["mini-badge"]}>Musculoskeletal Injuries</span>
+                <span className={styles["mini-badge"]}>Non-Operative Orthopedics</span>
                 <span className={styles["mini-badge"]}>Primary Care</span>
               </div>
             </div>

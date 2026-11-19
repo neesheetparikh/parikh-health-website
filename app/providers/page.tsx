@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { TEAM, SUPPORT_STAFF, SITE } from "@/content/site";
+import { TEAM, SUPPORT_STAFF, SITE, primaryCredential } from "@/content/site";
 import RevealObserver from "@/components/effects/RevealObserver";
 import styles from "./providers.module.css";
 
@@ -12,9 +12,9 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE.url}/providers` },
 };
 
-const CLINICAL_PROVIDERS = TEAM.filter((m) => ["DO", "MD", "PA-C"].includes(m.credentials));
+const CLINICAL_PROVIDERS = TEAM.filter((m) => ["DO", "MD", "PA-C"].includes(primaryCredential(m)));
 const INTEGRATIVE_TEAM = TEAM.filter((m) => m.specialties.includes("Ayurvedic Medicine"));
-const PT_TEAM = TEAM.filter((m) => ["PT", "PTA"].includes(m.credentials));
+const PT_TEAM = TEAM.filter((m) => ["PT", "PTA"].includes(primaryCredential(m)));
 
 function initials(name: string) {
   return name
@@ -108,8 +108,8 @@ export default function ProvidersPage() {
                 <div className={styles["provider-body"]}>
                   <div className={styles["provider-role"]}>{m.title}</div>
                   <div className={styles["provider-name"]}>{m.name}, {m.credentials}</div>
-                  {m.id === "neesheet-parikh" && (
-                    <div className={styles["provider-credential"]}>Team Physician · USA Cricket</div>
+                  {m.highlight && (
+                    <div className={styles["provider-credential"]}>{m.highlight}</div>
                   )}
                   <p className={styles["provider-bio"]}>{m.bio}</p>
                   <div className={styles["provider-tags"]}>

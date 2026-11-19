@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { SITE, TEAM, SERVICES } from "@/content/site";
+import { SITE, TEAM, SERVICES, primaryCredential } from "@/content/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -141,7 +141,7 @@ const localBusinessSchema = {
 };
 
 const physicianSchemas = TEAM.filter((m) =>
-  ["DO", "MD", "PA-C"].includes(m.credentials)
+  ["DO", "MD", "PA-C"].includes(primaryCredential(m))
 ).map((provider) => ({
   "@context": "https://schema.org",
   "@type": "Physician",

@@ -42,11 +42,39 @@ export const SITE = {
   rating: { score: 4.78, count: 201, source: "Google" },
 };
 
-export const TEAM = [
+export type LabeledItem = { label: string; value: string };
+
+export type TeamMember = {
+  id: string;
+  name: string;
+  /** Primary credential first (e.g. "DO, MBA, MPH") — the first one decides which team section a provider appears in. */
+  credentials: string;
+  title: string;
+  bio: string;
+  image?: string;
+  specialties: string[];
+  acceptingNewPatients: boolean;
+  bookingUrl?: string;
+  /** Optional brass credential badge shown on cards and the profile header. */
+  highlight?: string;
+  /** Optional rich-profile fields — shown on the individual profile page when present. */
+  facts?: LabeledItem[];
+  about?: string[];
+  education?: LabeledItem[];
+  sportsCoverage?: LabeledItem[];
+  presentations?: { title: string; detail: string }[];
+  affiliations?: string[];
+};
+
+/** The provider's licensing credential (first in the list), e.g. "DO" from "DO, MBA, MPH". */
+export const primaryCredential = (m: Pick<TeamMember, "credentials">) => m.credentials.split(",")[0].trim();
+
+export const TEAM: TeamMember[] = [
   {
     id: "neesheet-parikh",
     name: "Neesheet Parikh",
     credentials: "DO",
+    highlight: "Team Physician · USA Cricket",
     title: "Physician — Family Medicine & Sports Medicine",
     bio: "Dr. Parikh is a board-certified family medicine and sports medicine physician with a passion for keeping patients active and healthy at every stage of life. He completed his osteopathic medical training and brings a whole-body, integrative approach to primary care.",
     image: "/team/dr-parikh.jpg",
@@ -78,12 +106,48 @@ export const TEAM = [
   {
     id: "vatsal-gandhi",
     name: "Vatsal Gandhi",
-    credentials: "DO",
+    credentials: "DO, MBA, MPH",
     title: "Physician — Sports Medicine & Primary Care",
     image: "/team/vatsal-gandhi.jpg",
-    bio: "Dr. Gandhi is a sports medicine physician who also provides comprehensive primary care. Osteopathically trained, he focuses on diagnosing and treating musculoskeletal injuries — from sprains, tendon problems, and overuse injuries to joint pain and return-to-play decisions — for athletes and active patients of every level, while caring for the whole person between injuries.",
-    specialties: ["Sports Medicine", "MSK Ultrasound", "Musculoskeletal Injuries", "Primary Care", "Osteopathic Medicine"],
+    bio: "Dr. Gandhi is a sports medicine physician board certified in family medicine, with fellowship training at the University of Pittsburgh Medical Center, where he served as assistant team physician for University of Pittsburgh football. He treats musculoskeletal injuries for athletes and active patients of every level, with a focus on non-operative care and ultrasound-guided diagnosis and treatment, and provides primary care between injuries.",
+    specialties: ["Sports Medicine", "MSK Ultrasound", "Non-Operative Orthopedics", "Primary Care", "Osteopathic Medicine"],
     acceptingNewPatients: true,
+    highlight: "Fellowship · UPMC Sports Medicine",
+    facts: [
+      { label: "Specialty", value: "Sports Medicine, Family Medicine" },
+      { label: "Board certification", value: "Family Medicine (American Board of Family Medicine)" },
+      { label: "Languages", value: "English, Gujarati" },
+    ],
+    about: [
+      "Dr. Vatsal Gandhi is a sports medicine physician board certified in family medicine, with additional expertise in musculoskeletal ultrasound and non-operative orthopedics. He joined ParikhHealth in 2026 and has been practicing since 2022.",
+      "Prior to joining ParikhHealth, Dr. Gandhi completed his primary care sports medicine fellowship at the University of Pittsburgh Medical Center (UPMC), where he served as an assistant team physician for the University of Pittsburgh football team, as well as for the Pitt men's and women's soccer and all Fox Chapel High School sports. He also provided coverage for Pitt women's volleyball and track and field, Robert Morris University, Carnegie Mellon University soccer, the Pittsburgh Steelers' summer camp, and the Pittsburgh Marathon and Pittsburgh 10 Miler. He completed his family medicine residency at UPMC Shadyside, where he received the Exceptional Resident Teacher Award three years in a row (2023–2025).",
+      "Dr. Gandhi's clinical interests include non-operative management of sprains, tendon problems, overuse injuries and joint pain, diagnostic musculoskeletal ultrasound, shockwave therapy, return-to-play decisions, and sports-focused primary care. Alongside his osteopathic medical degree, he holds an MBA in health and medical services administration and an MPH, which shape how he thinks about prevention, access and coordinated care.",
+      "Dr. Gandhi grew up in Voorhees, New Jersey. In his free time he enjoys playing soccer, basketball and cricket, running, and following European soccer, the NBA, the NFL and international cricket.",
+    ],
+    education: [
+      { label: "Medical school", value: "Philadelphia College of Osteopathic Medicine (DO, 2022)" },
+      { label: "Residency", value: "UPMC Shadyside Family Medicine, 2022–2025" },
+      { label: "Fellowship", value: "Primary Care Sports Medicine, University of Pittsburgh Medical Center (University of Pittsburgh Football track), 2025–2026" },
+      { label: "Graduate degrees", value: "MBA, Saint Joseph's University (2020); MPH, Thomas Jefferson University (2016)" },
+      { label: "Undergraduate", value: "BS in Biology and Biochemistry, Duquesne University (2015)" },
+    ],
+    sportsCoverage: [
+      { label: "Collegiate", value: "University of Pittsburgh (football, men's and women's soccer, women's volleyball, track and field), Robert Morris University (women's basketball, ice hockey, lacrosse), Carnegie Mellon University men's and women's soccer" },
+      { label: "High school", value: "Fox Chapel High School (football, wrestling, boys' and girls' soccer), Allegheny County High School Wrestling Championships" },
+      { label: "Special events", value: "Pittsburgh Steelers' Summer Camp, Pittsburgh Marathon, EQT Pittsburgh 10 Miler, State Farm Women's College Volleyball Showcase, USA Boxing events, National Senior Games" },
+    ],
+    presentations: [
+      { title: "Serving Up a Diagnosis: When Shoulder Pain Signals Something More in a Volleyball Coach", detail: "Poster, AMSSM Annual Meeting, 2026" },
+      { title: "Chest Pain, Syncope and the Hidden Struggle in an Athlete's Heart", detail: "Podium presentation, AMSSM Annual Meeting, 2025" },
+      { title: "Heat and Environmental Illness and Hematologic Conditions in Sports Medicine", detail: "UPMC Orthopedic Sports Medicine Grand Rounds, 2026" },
+    ],
+    affiliations: [
+      "UPMC Shadyside Family Medicine Residency Exceptional Resident Teacher Award",
+      "Advanced Team Physician Course",
+      "SafeSport Trained",
+      "American Academy of Family Physicians (AAFP)",
+      "American Medical Society for Sports Medicine (AMSSM)",
+    ],
   },
   {
     id: "mansi-parikh",
