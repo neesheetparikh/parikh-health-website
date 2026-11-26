@@ -35,9 +35,9 @@ export default function Footer() {
               <span className={styles["f-brand-loc"]}>Sunnyvale, CA</span>
               <p className={styles["f-tagline"]}>
                 Primary care, sports medicine, physical therapy, aesthetics,
-                and women&apos;s health — five specialties, one team, one
-                Sunnyvale practice. Led by Dr. Neesheet Parikh, DO, team
-                physician for USA Cricket.
+                women&apos;s health, and more — one team, one Sunnyvale
+                practice. Led by Dr. Neesheet Parikh, DO, Head Team
+                Physician for USA Cricket.
               </p>
               <Link href="/appointments" className={styles["f-cta"]}>
                 Book an Appointment

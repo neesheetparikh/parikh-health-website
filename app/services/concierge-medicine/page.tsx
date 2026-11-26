@@ -22,14 +22,14 @@ export default function ConciergeMedicinePage() {
               <span className={styles.eyebrow}>ParikhHealth Concierge Medicine</span>
               <h1>The kind of care an elite athlete gets — built around you instead.</h1>
               <p className={styles.lead}>
-                As team physician for USA Cricket, Dr. Neesheet Parikh builds every plan
+                As Head Team Physician for USA Cricket, Dr. Neesheet Parikh builds every plan
                 around one athlete&apos;s body, history, and goals — never a waiting room
                 full of them. Concierge membership brings that exact standard of attention
                 to your everyday health: your nutrition, your weight, your training, your
                 questions. All of it.
               </p>
               <div className={styles["hero-actions"]}>
-                <a href="mailto:concierge@parikhhealth.com?subject=Concierge%20Medicine%20Consultation" className={`${styles.btn} ${styles["btn-primary"]}`}>
+                <a href="mailto:support@parikhhealth.com?subject=Concierge%20Medicine%20Consultation" className={`${styles.btn} ${styles["btn-primary"]}`}>
                   Request a Consultation
                 </a>
                 <a href="#included" className={`${styles.btn} ${styles["btn-ghost"]}`}>
@@ -46,7 +46,7 @@ export default function ConciergeMedicinePage() {
                     <div className={styles["roster-role"]}>Founder &amp; Chief Medical Officer</div>
                   </div>
                 </div>
-                <div className={styles.badge}>Team Physician · USA Cricket</div>
+                <div className={styles.badge}>Head Team Physician · USA Cricket</div>
                 <div className={styles["roster-stats"]}>
                   <div className={styles["roster-stat"]}>
                     <span>Members per physician</span>
@@ -199,7 +199,7 @@ export default function ConciergeMedicinePage() {
               </div>
               <h3>The USA Cricket Standard</h3>
               <p>
-                As team physician for a national team, Dr. Parikh is trusted with the
+                As Head Team Physician for a national team, Dr. Parikh is trusted with the
                 health of athletes who cannot afford an off day. Concierge membership
                 means your everyday care meets that same bar.
               </p>
@@ -402,7 +402,7 @@ export default function ConciergeMedicinePage() {
             <div className={styles.reveal} data-reveal>
               <p>
                 Dr. Neesheet Parikh, DO is the founder and Chief Medical Officer of
-                ParikhHealth, and serves as team physician for USA Cricket. His practice
+                ParikhHealth, and serves as Head Team Physician for USA Cricket. His practice
                 spans primary care, sports medicine, and physical therapy — brought
                 together under one roof so your care never gets fragmented across
                 specialists who don&apos;t talk to each other.
@@ -416,7 +416,7 @@ export default function ConciergeMedicinePage() {
               </p>
               <ul className={styles["credential-list"]}>
                 <li>
-                  <strong>Team Physician, USA Cricket</strong> — trusted with athlete health
+                  <strong>Head Team Physician, USA Cricket</strong> — trusted with athlete health
                   at the national level.
                 </li>
                 <li>
@@ -489,7 +489,7 @@ export default function ConciergeMedicinePage() {
               complimentary consultation to see what&apos;s included and find the right fit.
             </p>
             <div className={styles["hero-actions"]}>
-              <a href="mailto:concierge@parikhhealth.com?subject=Concierge%20Medicine%20Consultation" className={`${styles.btn} ${styles["btn-primary"]}`}>
+              <a href="mailto:support@parikhhealth.com?subject=Concierge%20Medicine%20Consultation" className={`${styles.btn} ${styles["btn-primary"]}`}>
                 Request a Consultation
               </a>
               <a href={`tel:${SITE.phone.appointments}`} className={`${styles.btn} ${styles["btn-ghost"]}`}>

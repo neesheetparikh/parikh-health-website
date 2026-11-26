@@ -72,19 +72,24 @@ export default async function ProviderPage({ params }: Params) {
     (m) => m.id !== provider.id && ["DO", "MD", "PA-C"].includes(primaryCredential(m))
   ).slice(0, 3);
 
+  const isPhysician = ["DO", "MD"].includes(primaryCredential(provider));
+
   const providerSchema = {
     "@context": "https://schema.org",
-    "@type": isClinician ? "Physician" : "MedicalBusiness",
+    // Physicians (DO/MD) are typed Physician; PAs and therapists are people with a job title.
+    "@type": isPhysician ? "Physician" : "Person",
+    ...(isPhysician ? {} : { jobTitle: provider.title }),
     "@id": `${SITE.url}/providers/${provider.id}`,
     name: `${provider.name}, ${provider.credentials}`,
     url: `${SITE.url}/providers/${provider.id}`,
     ...(provider.image ? { image: `${SITE.url}${provider.image}` } : {}),
     description: provider.bio,
-    medicalSpecialty: provider.specialties,
+    ...(isPhysician ? { medicalSpecialty: ["PrimaryCare", "Musculoskeletal"] } : {}),
+    knowsAbout: provider.specialties,
     ...(provider.facts?.find((f) => f.label === "Languages")
       ? { knowsLanguage: provider.facts.find((f) => f.label === "Languages")!.value.split(",").map((l) => l.trim()) }
       : {}),
-    worksFor: { "@type": "MedicalClinic", name: SITE.name, url: SITE.url },
+    worksFor: { "@id": `${SITE.url}/#organization` },
     workLocation: {
       "@type": "MedicalClinic",
       name: SITE.name,
@@ -97,7 +102,7 @@ export default async function ProviderPage({ params }: Params) {
         addressCountry: "US",
       },
     },
-    isAcceptingNewPatients: provider.acceptingNewPatients,
+    ...(isPhysician ? { isAcceptingNewPatients: provider.acceptingNewPatients } : {}),
     telephone: `+1-${SITE.phone.appointments}`,
   };
 

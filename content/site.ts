@@ -74,11 +74,11 @@ export const TEAM: TeamMember[] = [
     id: "neesheet-parikh",
     name: "Neesheet Parikh",
     credentials: "DO",
-    highlight: "Team Physician · USA Cricket",
+    highlight: "Head Team Physician · USA Cricket",
     title: "Physician — Family Medicine & Sports Medicine",
     bio: "Dr. Parikh is a board-certified family medicine and sports medicine physician with a passion for keeping patients active and healthy at every stage of life. He completed his osteopathic medical training and brings a whole-body, integrative approach to primary care.",
     image: "/team/dr-parikh.jpg",
-    specialties: ["Family Medicine", "Sports Medicine", "Osteopathic Manipulative Therapy", "Concierge Medicine"],
+    specialties: ["Family Medicine", "Sports Medicine", "Osteopathic Manipulative Therapy", "Concierge Medicine", "USCIS Civil Surgeon (Form I-693)"],
     acceptingNewPatients: true,
     bookingUrl: "https://www.zocdoc.com/booking-link/doctor/neesheet-parikh-do-29659",
   },
@@ -157,7 +157,7 @@ export const TEAM: TeamMember[] = [
     bio: "Mansi Parikh is a Doctor of Physical Therapy and certified Ayurvedic Practitioner who brings a whole-person, root-cause approach to care. She blends traditional Ayurvedic principles — personalized nutrition, herbal support, and lifestyle medicine — with a modern clinical foundation, with a special focus on women's health and sustainable lifestyle management.",
     specialties: ["Ayurvedic Medicine", "Women's Health", "Lifestyle Management"],
     acceptingNewPatients: true,
-    bookingUrl: "mailto:mansi@parikhhealth.com",
+    bookingUrl: "mailto:support@parikhhealth.com?subject=Appointment%20with%20Mansi%20Parikh",
   },
   {
     id: "miral-patel",
@@ -504,7 +504,7 @@ export const SERVICES = [
     name: "Concierge Medicine",
     shortDesc: "The standard of care Dr. Parikh gives elite athletes, built around you.",
     description:
-      "As team physician for USA Cricket, Dr. Parikh builds every plan around one athlete's body, history, and goals. Concierge membership brings that same standard of attention to your everyday health — nutrition, weight management, direct access, and a capped patient panel so there's always time to actually think about your case.",
+      "As Head Team Physician for USA Cricket, Dr. Parikh builds every plan around one athlete's body, history, and goals. Concierge membership brings that same standard of attention to your everyday health — nutrition, weight management, direct access, and a capped patient panel so there's always time to actually think about your case.",
     icon: "crown",
     highlights: [
       "Same-day & next-day appointments",

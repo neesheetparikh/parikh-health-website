@@ -31,7 +31,7 @@ export default function AccessibilityPage() {
           <p>
             We welcome your feedback on the accessibility of our website. If you encounter
             accessibility barriers, please contact us at{" "}
-            <a href="mailto:info@parikhhealth.com">info@parikhhealth.com</a> or call{" "}
+            <a href="mailto:support@parikhhealth.com">support@parikhhealth.com</a> or call{" "}
             <a href="tel:408-266-3100">408-266-3100</a>.
           </p>
           <p>We try to respond to accessibility feedback within 2 business days.</p>

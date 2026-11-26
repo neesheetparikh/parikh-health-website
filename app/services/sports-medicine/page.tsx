@@ -8,7 +8,7 @@ import styles from "./sports-medicine.module.css";
 export const metadata: Metadata = {
   title: "Sports Medicine | ParikhHealth Sunnyvale CA",
   description:
-    "Non-surgical sports medicine in Sunnyvale, CA from Dr. Neesheet Parikh, DO (team physician, USA Cricket), Dr. Vatsal Gandhi, DO, and Dr. Robert Oh, MD — orthopedic injury care, concussion management, PRP injections, sports physicals, and integrated physical therapy.",
+    "Non-surgical sports medicine in Sunnyvale, CA from Dr. Neesheet Parikh, DO (Head Team Physician, USA Cricket), Dr. Vatsal Gandhi, DO, and Dr. Robert Oh, MD — orthopedic injury care, concussion management, PRP injections, sports physicals, and integrated physical therapy.",
 };
 
 const drParikh = TEAM.find((m) => m.id === "neesheet-parikh")!;
@@ -28,7 +28,7 @@ export default function SportsMedicinePage() {
               <span className={styles.eyebrow}>ParikhHealth Sports Medicine</span>
               <h1>The same sports medicine standard trusted by a national team, built into your everyday care.</h1>
               <p className={styles.lead}>
-                As team physician for USA Cricket, Dr. Neesheet Parikh brings
+                As Head Team Physician for USA Cricket, Dr. Neesheet Parikh brings
                 elite-level, non-surgical sports medicine to every patient — weekend
                 athletes, student athletes, and anyone dealing with an overuse injury
                 or joint pain. Evaluation, imaging coordination, injections,
@@ -402,13 +402,13 @@ export default function SportsMedicinePage() {
               </div>
               <p>
                 Dr. Parikh is a board-certified primary care and sports medicine
-                physician and serves as team physician for USA Cricket, where he
+                physician and serves as Head Team Physician for USA Cricket, where he
                 manages injury care, concussion protocols, and return-to-play
                 decisions for athletes competing at the national level. That same
                 standard shapes how he treats every patient at ParikhHealth.
               </p>
               <div className={styles["team-badges"]}>
-                <span className={styles["mini-badge"]}>Team Physician · USA Cricket</span>
+                <span className={styles["mini-badge"]}>Head Team Physician · USA Cricket</span>
                 <span className={styles["mini-badge"]}>Sports Medicine</span>
                 <span className={styles["mini-badge"]}>Primary Care</span>
               </div>

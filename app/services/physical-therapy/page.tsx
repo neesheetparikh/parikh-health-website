@@ -324,7 +324,7 @@ export default function PhysicalTherapyPage() {
             </div>
             <div className={styles.reveal} data-reveal>
               <p>Physical therapy at ParikhHealth isn&apos;t a separate referral — it sits inside the same practice as your primary care, sports medicine, and women&apos;s health providers, so nothing gets lost between appointments.</p>
-              <p>As team physician for USA Cricket, Dr. Neesheet Parikh brings a national-team standard of sports medicine to every orthopedic and post-operative plan built here. That same standard of coordinated, unhurried attention carries through pelvic floor care, where Sonia Sharma, PT works directly with ParikhHealth&apos;s Women&apos;s Health team on referrals.</p>
+              <p>As Head Team Physician for USA Cricket, Dr. Neesheet Parikh brings a national-team standard of sports medicine to every orthopedic and post-operative plan built here. That same standard of coordinated, unhurried attention carries through pelvic floor care, where Sonia Sharma, PT works directly with ParikhHealth&apos;s Women&apos;s Health team on referrals.</p>
               <ul className={styles["credential-list"]}>
                 <li><strong>In-House With Your Medical Team</strong> — physical therapy shares a chart and a building with your physicians, not a fax machine.</li>
                 <li><strong>Sports Medicine Standard</strong> — orthopedic and post-operative rehab informed by the same expertise Dr. Parikh brings to national-team athletes.</li>

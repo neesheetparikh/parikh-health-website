@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
     }
 
-    const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "info@parikhhealth.com";
+    const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "support@parikhhealth.com";
     const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL ?? "noreply@parikhhealth.com";
 
     const htmlBody = `

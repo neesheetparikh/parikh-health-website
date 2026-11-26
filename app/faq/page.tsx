@@ -1,5 +1,6 @@
+import type React from "react";
 import type { Metadata } from "next";
-import { SITE } from "@/content/site";
+import { SITE, ACCEPTED_PLANS } from "@/content/site";
 import RevealObserver from "@/components/effects/RevealObserver";
 import FaqInteractive, { type FaqCategory } from "@/components/faq/FaqInteractive";
 import styles from "./faq.module.css";
@@ -59,19 +60,20 @@ const CATEGORIES: FaqCategory[] = [
     items: [
       {
         q: "What insurance plans do you accept?",
-        keywords: "insurance plans accepted ppo aetna blue shield cigna united",
+        keywords: "insurance plans accepted ppo aetna blue shield cigna united anthem health net medicare tricare",
         a: (
           <>
-            We accept most major PPO plans, including Aetna, Blue Shield, Cigna, and United Healthcare.
-            We recommend confirming in-network status with your insurer before your visit — call us at{" "}
-            <a href={`tel:${SITE.phone.appointments}`}>{SITE.phone.appointments}</a> for a full list.
+            We accept {ACCEPTED_PLANS.map((p) => p.name).join(", ")}, as well as self-pay. See our{" "}
+            <a href="/insurance">insurance page</a> for plan details, and confirm in-network status with
+            your insurer before your visit — or call us at{" "}
+            <a href={`tel:${SITE.phone.appointments}`}>{SITE.phone.appointments}</a>.
           </>
         ),
       },
       {
         q: "Do you accept HMO or Medi-Cal plans?",
         keywords: "hmo medi-cal medicaid",
-        a: "Not currently. We accept PPO insurance plans and self-pay patients.",
+        a: "Not currently. We don't accept HMO plans (including Kaiser), Medi-Cal / Medicaid, Covered California marketplace plans, or HMO-based Medicare Advantage plans. We accept most PPO plans, Original Medicare, and self-pay patients.",
       },
       {
         q: "What does a visit cost without insurance?",
@@ -101,9 +103,9 @@ const CATEGORIES: FaqCategory[] = [
         a: "Primary care covers your overall health — annual exams, chronic disease management, sick visits, preventive screenings, and referrals. Sports medicine focuses on musculoskeletal injuries, athletic performance, injury prevention, and return-to-sport. Our physicians are trained in both, so many patients get both kinds of care from the same team.",
       },
       {
-        q: "What does it mean that Dr. Parikh is team physician for USA Cricket?",
+        q: "What does it mean that Dr. Parikh is Head Team Physician for USA Cricket?",
         keywords: "dr parikh usa cricket team physician credentials",
-        a: "Dr. Neesheet Parikh serves as team physician for USA Cricket, managing the health and performance of athletes competing at the national level — the same standard of injury care, screening, and return-to-play judgment he brings to every patient at ParikhHealth.",
+        a: "Dr. Neesheet Parikh serves as Head Team Physician for USA Cricket, managing the health and performance of athletes competing at the national level — the same standard of injury care, screening, and return-to-play judgment he brings to every patient at ParikhHealth.",
       },
       {
         q: "Can one doctor be both my primary care and my sports medicine physician?",
@@ -194,8 +196,8 @@ const CATEGORIES: FaqCategory[] = [
         keywords: "pitchfit cricket athlete program",
         a: (
           <>
-            PitchFit is our membership-based athlete care program, led by Dr. Parikh in his role as team
-            physician for USA Cricket. Members get direct access to Dr. Parikh, same-day injury
+            PitchFit is our membership-based athlete care program, led by Dr. Parikh in his role as Head Team
+            Physician for USA Cricket. Members get direct access to Dr. Parikh, same-day injury
             appointments, sports physicals, cardiac and concussion screening, and return-to-sport
             planning. Full program details are at{" "}
             <a href="https://pitchfit.cricket" target="_blank" rel="noopener">
@@ -250,10 +252,37 @@ const CATEGORIES: FaqCategory[] = [
   },
 ];
 
+// Flattens an answer (plain string or JSX with links) to the visible text, for FAQPage structured data.
+function toPlainText(node: React.ReactNode): string {
+  if (node === null || node === undefined || typeof node === "boolean") return "";
+  if (typeof node === "string" || typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(toPlainText).join("");
+  if (typeof node === "object" && "props" in node) {
+    return toPlainText((node as React.ReactElement<{ children?: React.ReactNode }>).props.children);
+  }
+  return "";
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: CATEGORIES.flatMap((c) =>
+    c.items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: toPlainText(item.a).replace(/\s+/g, " ").trim() },
+    }))
+  ),
+};
+
 export default function FaqPage() {
   return (
     <div className={styles.faq}>
       <RevealObserver />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
       {/* HERO */}
       <section className={styles.hero}>
@@ -263,8 +292,8 @@ export default function FaqPage() {
             <h1>Everything you need to know before your first visit — and beyond.</h1>
             <p className={styles.lead}>
               ParikhHealth is an independent, physician-led practice offering primary care, sports
-              medicine, physical therapy, and more under one roof — led by Dr. Neesheet Parikh, team
-              physician for USA Cricket. Search below or browse by topic.
+              medicine, physical therapy, and more under one roof — led by Dr. Neesheet Parikh, Head Team
+              Physician for USA Cricket. Search below or browse by topic.
             </p>
           </div>
         </div>

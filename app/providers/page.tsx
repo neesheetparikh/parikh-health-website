@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { TEAM, SUPPORT_STAFF, SITE, primaryCredential } from "@/content/site";
+import { TEAM, SUPPORT_STAFF, SITE, SERVICES, primaryCredential } from "@/content/site";
 import RevealObserver from "@/components/effects/RevealObserver";
 import styles from "./providers.module.css";
 
@@ -58,7 +58,7 @@ export default function ProvidersPage() {
                 </div>
                 <div className={styles.badge}>Affiliated with El Camino Health</div>
                 <div className={styles["roster-stats"]}>
-                  <div className={styles["roster-stat"]}><span>Care disciplines, one roof</span><span>5</span></div>
+                  <div className={styles["roster-stat"]}><span>Specialty services, one roof</span><span>{SERVICES.length}</span></div>
                   <div className={styles["roster-stat"]}><span>Clinical providers</span><span>{TEAM.length}</span></div>
                   <div className={styles["roster-stat"]}><span>Care &amp; support staff</span><span>{SUPPORT_STAFF.length}</span></div>
                   <div className={styles["roster-stat"]}><span>New patients</span><span>Accepted</span></div>

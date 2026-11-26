@@ -344,7 +344,7 @@ export default function ImmigrationMedicalExamsPage() {
               <ul className={s.credentialList}>
                 <li><span><strong>USCIS-designated civil surgeon</strong> — authorized to complete and sign Form I-693.</span></li>
                 <li><span><strong>Double board-certified</strong> — Family Medicine and Sports Medicine.</span></li>
-                <li><span><strong>Founder, ParikhHealth</strong> — a 100% independently owned practice. Ask us about his work as team physician for USA Cricket.</span></li>
+                <li><span><strong>Founder, ParikhHealth</strong> — a 100% independently owned practice. Ask us about his work as Head Team Physician for USA Cricket.</span></li>
               </ul>
             </div>
           </div>

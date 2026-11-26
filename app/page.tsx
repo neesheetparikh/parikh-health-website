@@ -13,53 +13,7 @@ export const metadata: Metadata = {
     "ParikhHealth in Sunnyvale, CA offers exceptional primary care, sports medicine, physical therapy, and concierge medicine. Accepting new patients — book online today.",
 };
 
-// JSON-LD structured data for Google
-function JsonLd() {
-  const data = {
-    "@context": "https://schema.org",
-    "@type": ["MedicalOrganization", "LocalBusiness"],
-    name: SITE.name,
-    description: SITE.description,
-    url: SITE.url,
-    telephone: SITE.phone.appointments,
-    email: SITE.email,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: SITE.address.street,
-      addressLocality: SITE.address.city,
-      addressRegion: SITE.address.state,
-      postalCode: SITE.address.zip,
-      addressCountry: "US",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 37.373,
-      longitude: -122.002,
-    },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "16:00",
-      },
-    ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: SITE.rating.score,
-      reviewCount: SITE.rating.count,
-    },
-    hasMap: SITE.address.mapsUrl,
-    medicalSpecialty: ["FamilyMedicine", "SportsMedicine", "PhysicalTherapy"],
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
-  );
-}
+// Clinic structured data lives in app/layout.tsx (one entity for the whole site).
 
 const svc = (id: string) => SERVICES.find((s) => s.id === id)!;
 const person = (id: string) => TEAM.find((m) => m.id === id)!;
@@ -88,7 +42,6 @@ export default function HomePage() {
 
   return (
     <div className={styles.home}>
-      <JsonLd />
       <RevealObserver />
 
       {/* HERO */}
@@ -138,7 +91,7 @@ export default function HomePage() {
                 </div>
                 <div className={styles["snap-stats"]}>
                   <div className={styles["snap-stat"]}><span>Years in practice</span><span>15+</span></div>
-                  <div className={styles["snap-stat"]}><span>5-star reviews</span><span>{SITE.rating.count}+</span></div>
+                  <div className={styles["snap-stat"]}><span>Google rating</span><span>{SITE.rating.score.toFixed(1)} ★</span></div>
                   <div className={styles["snap-stat"]}><span>Specialty services</span><span>{SERVICES.length}</span></div>
                   <div className={styles["snap-stat"]}><span>Physicians &amp; PA</span><span>4</span></div>
                 </div>
@@ -186,7 +139,7 @@ export default function HomePage() {
         <div className={styles.wrap}>
           <div className={`${styles["stat-strip"]} ${styles.reveal}`} data-reveal>
             <div className={styles["stat-item"]}><div className={styles["stat-num"]}>15+</div><div className={styles["stat-label"]}>Years in Practice</div></div>
-            <div className={styles["stat-item"]}><div className={styles["stat-num"]}>{SITE.rating.count}+</div><div className={styles["stat-label"]}>5-Star Reviews</div></div>
+            <div className={styles["stat-item"]}><div className={styles["stat-num"]}>{SITE.rating.score.toFixed(1)} ★</div><div className={styles["stat-label"]}>Google Rating · {Math.floor(SITE.rating.count / 100) * 100}+ Reviews</div></div>
             <div className={styles["stat-item"]}><div className={styles["stat-num"]}>{SERVICES.length}</div><div className={styles["stat-label"]}>Specialty Services</div></div>
             <div className={styles["stat-item"]}><div className={styles["stat-num"]}>{CARE_TEAM.length}</div><div className={styles["stat-label"]}>Expert Providers</div></div>
           </div>
