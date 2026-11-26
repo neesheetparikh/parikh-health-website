@@ -68,11 +68,6 @@ const organizationSchema = {
     postalCode: SITE.address.zip,
     addressCountry: "US",
   },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 37.3839,
-    longitude: -122.0143,
-  },
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -81,12 +76,26 @@ const organizationSchema = {
       closes: "16:00",
     },
   ],
-  medicalSpecialty: [
-    "Family Practice",
-    "Sports Medicine",
-    "Physical Therapy",
-    "Osteopathic Medicine",
+  // schema.org MedicalSpecialty enumeration values only; specifics go in knowsAbout.
+  medicalSpecialty: ["PrimaryCare", "Musculoskeletal", "Physiotherapy"],
+  knowsAbout: [
+    "Family medicine",
+    "Sports medicine",
+    "Osteopathic manipulative treatment",
+    "Physical therapy",
+    "Pelvic floor physical therapy",
+    "Concussion management",
+    "Musculoskeletal ultrasound",
+    "Concierge medicine",
+    "Women's health",
+    "Ayurvedic and integrative medicine",
+    "Cricket sports medicine",
+    "USCIS immigration medical exams (Form I-693)",
   ],
+  areaServed: ["Sunnyvale", "Santa Clara", "San Jose", "Mountain View", "Cupertino", "Milpitas", "Fremont"].map(
+    (name) => ({ "@type": "City", name })
+  ),
+  faxNumber: `+1-${SITE.phone.fax}`,
   availableService: SERVICES.map((s) => ({
     "@type": "MedicalTherapy",
     name: s.name,
@@ -103,6 +112,8 @@ const organizationSchema = {
   hasMap: SITE.address.mapsUrl,
   sameAs: [
     SITE.social.google,
+    SITE.booking.zocdocUrl,
+    SITE.social.linkedin,
     SITE.social.facebook,
     SITE.social.instagram,
   ].filter(Boolean),
@@ -112,45 +123,22 @@ const organizationSchema = {
   isAcceptingNewPatients: true,
 };
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": `${SITE.url}/#localbusiness`,
-  name: SITE.name,
-  url: SITE.url,
-  telephone: `+1-${SITE.phone.appointments}`,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: SITE.address.street,
-    addressLocality: SITE.address.city,
-    addressRegion: SITE.address.state,
-    postalCode: SITE.address.zip,
-    addressCountry: "US",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 37.3839,
-    longitude: -122.0143,
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: SITE.rating.score.toString(),
-    reviewCount: SITE.rating.count.toString(),
-    bestRating: "5",
-  },
-};
-
 const physicianSchemas = TEAM.filter((m) =>
   ["DO", "MD", "PA-C"].includes(primaryCredential(m))
 ).map((provider) => ({
   "@context": "https://schema.org",
-  "@type": "Physician",
+  // Physicians are typed Physician; the PA is a Person with a job title.
+  "@type": primaryCredential(provider) === "PA-C" ? "Person" : "Physician",
+  ...(primaryCredential(provider) === "PA-C" ? { jobTitle: provider.title } : {}),
   "@id": `${SITE.url}/providers/${provider.id}`,
   name: `${provider.name}, ${provider.credentials}`,
   url: `${SITE.url}/providers/${provider.id}`,
   ...(provider.image ? { image: `${SITE.url}${provider.image}` } : {}),
   description: provider.bio,
-  medicalSpecialty: provider.specialties,
+  ...(primaryCredential(provider) === "PA-C"
+    ? {}
+    : { medicalSpecialty: ["PrimaryCare", "Musculoskeletal"] }),
+  knowsAbout: provider.specialties,
   worksFor: { "@id": `${SITE.url}/#organization` },
   workLocation: {
     "@type": "MedicalClinic",
@@ -163,7 +151,7 @@ const physicianSchemas = TEAM.filter((m) =>
       postalCode: SITE.address.zip,
     },
   },
-  isAcceptingNewPatients: provider.acceptingNewPatients,
+  ...(primaryCredential(provider) === "PA-C" ? {} : { isAcceptingNewPatients: provider.acceptingNewPatients }),
   telephone: `+1-${SITE.phone.appointments}`,
 }));
 
@@ -178,10 +166,6 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
         {physicianSchemas.map((schema, i) => (
           <script

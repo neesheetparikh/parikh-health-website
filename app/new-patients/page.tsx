@@ -61,7 +61,7 @@ export default function NewPatientsPage() {
           <div className={`${styles["diff-strip"]} ${styles.reveal}`} data-reveal>
             <div className={styles["diff-chip"]}><span className={styles.dot} />Independent private practice, not a hospital system</div>
             <div className={styles["diff-chip"]}><span className={styles.dot} />Primary care and sports medicine under one roof</div>
-            <div className={styles["diff-chip"]}><span className={styles.dot} />Led by Dr. Neesheet Parikh, DO — team physician, USA Cricket</div>
+            <div className={styles["diff-chip"]}><span className={styles.dot} />Led by Dr. Neesheet Parikh, DO — Head Team Physician, USA Cricket</div>
           </div>
         </div>
       </section>

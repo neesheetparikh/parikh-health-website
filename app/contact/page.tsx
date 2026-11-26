@@ -142,7 +142,7 @@ export default function ContactPage() {
           <div className={`${styles["section-head"]} ${styles.reveal}`} data-reveal>
             <span className={styles.eyebrow}>Not Sure Where To Start?</span>
             <h2>Find the right specialty for your question</h2>
-            <p>ParikhHealth brings five specialties together under one roof. If you already know who you need, go straight to the source.</p>
+            <p>ParikhHealth brings primary care, sports medicine, physical therapy, and more together under one roof. If you already know who you need, go straight to the source.</p>
           </div>
           <div className={`${styles.grid} ${styles.reveal}`} data-reveal>
             {DEPARTMENTS.map((d) => (

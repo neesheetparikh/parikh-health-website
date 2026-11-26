@@ -40,7 +40,7 @@ export default function PrivacyPage() {
           <h2>5. Contact</h2>
           <p>
             For privacy-related questions, contact us at{" "}
-            <a href="mailto:info@parikhhealth.com">info@parikhhealth.com</a> or{" "}
+            <a href="mailto:support@parikhhealth.com">support@parikhhealth.com</a> or{" "}
             <Link href="/contact">via our contact form</Link>.
           </p>
         </div>

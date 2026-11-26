@@ -223,7 +223,7 @@ export default function AthleteWellnessPage() {
               <ul className={styles["credential-list"]}>
                 <li><strong>Primary Care</strong> — comprehensive, ongoing health management, not just the visits between injuries.</li>
                 <li><strong>Sports Medicine</strong> — training load, injury prevention, and return-to-play built on real athletic-medicine training.</li>
-                <li><strong>Team Physician, USA Cricket</strong> — six-plus years trusted with the national team at the sport&apos;s highest level.</li>
+                <li><strong>Head Team Physician, USA Cricket</strong> — six-plus years trusted with the national team at the sport&apos;s highest level.</li>
                 <li><strong>Independent Private Practice</strong> — built around the athlete relationship, on a timeline the game actually moves at.</li>
               </ul>
             </div>

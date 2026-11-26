@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { TEAM, SITE } from "@/content/site";
+import { TEAM, SITE, SERVICES } from "@/content/site";
 import RevealObserver from "@/components/effects/RevealObserver";
 import styles from "./about.module.css";
 
@@ -30,7 +30,7 @@ export default function AboutPage() {
               <h1>An independent practice, built the way medicine should feel.</h1>
               <p className={styles.lead}>
                 ParikhHealth was founded by Dr. Neesheet Parikh, DO — a primary care and sports
-                medicine physician who also serves as team physician for USA Cricket — on a simple
+                medicine physician who also serves as Head Team Physician for USA Cricket — on a simple
                 conviction: healthcare works best as a genuine, ongoing relationship, not a series of
                 disconnected transactions. We&apos;re affiliated with El Camino Health for the
                 specialists and resources that benefit our patients, but ParikhHealth remains 100%
@@ -53,7 +53,7 @@ export default function AboutPage() {
                 </div>
                 <div className={styles.badge}>Affiliated with El Camino Health</div>
                 <div className={styles["roster-stats"]}>
-                  <div className={styles["roster-stat"]}><span>Care disciplines, one roof</span><span>5</span></div>
+                  <div className={styles["roster-stat"]}><span>Specialty services, one roof</span><span>{SERVICES.length}</span></div>
                   <div className={styles["roster-stat"]}><span>Hospital affiliation</span><span>El Camino Health</span></div>
                   <div className={styles["roster-stat"]}><span>Ownership</span><span>100% Independent</span></div>
                   <div className={styles["roster-stat"]}><span>New patients</span><span>Accepted</span></div>
@@ -173,7 +173,7 @@ export default function AboutPage() {
             <span className={styles.eyebrow}>The Simplest Way To Say It</span>
             <h2>We hold every patient to a national-team standard.</h2>
             <p>
-              As team physician for USA Cricket, Dr. Parikh works inside a simple discipline: know the
+              As Head Team Physician for USA Cricket, Dr. Parikh works inside a simple discipline: know the
               athlete&apos;s full history, build a plan around their body and their life, and stay
               accountable for how they&apos;re actually doing — not just for the visit itself.
               That&apos;s not a special program reserved for a few. It&apos;s simply how ParikhHealth
@@ -192,7 +192,7 @@ export default function AboutPage() {
           <div className={`${styles["section-head"]} ${styles.reveal}`} data-reveal>
             <span className={styles.eyebrow}>The Team</span>
             <h2>Meet your providers</h2>
-            <p>Nine clinicians, five disciplines, one coordinated team — so your care never has to start over with someone new.</p>
+            <p>Nine clinicians, one coordinated team — so your care never has to start over with someone new.</p>
           </div>
           <div className={styles["team-grid"]}>
             {TEAM.map((m) => (

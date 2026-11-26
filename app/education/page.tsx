@@ -93,7 +93,7 @@ export default function EducationPage() {
               <ul className={styles["expert-creds"]}>
                 <li><strong>Primary Care &amp; Family Medicine</strong>Board-trained in whole-person, evidence-based primary care for every stage of life.</li>
                 <li><strong>Sports Medicine</strong>Diagnosing and treating everything from overuse injuries to concussion, for weekend athletes and competitive ones alike.</li>
-                <li><strong>Team Physician, USA Cricket</strong>Trusted with the health of athletes at the national level — on the same clinical judgment his patients get.</li>
+                <li><strong>Head Team Physician, USA Cricket</strong>Trusted with the health of athletes at the national level — on the same clinical judgment his patients get.</li>
                 <li><strong>Founder, Independent Private Practice</strong>Built ParikhHealth outside a hospital system, so care decisions stay between physician and patient.</li>
               </ul>
             </div>

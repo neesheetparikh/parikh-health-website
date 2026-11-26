@@ -29,7 +29,7 @@ export default function PrimaryCarePage() {
             <p className={styles.lead}>
               A sprained ankle, an annual physical, a question about your mood, an
               aesthetics consult — our physicians bring the same sports-medicine
-              precision Dr. Neesheet Parikh uses as team physician for USA Cricket to
+              precision Dr. Neesheet Parikh uses as Head Team Physician for USA Cricket to
               every visit. Primary care, sports medicine, physical therapy, and
               aesthetics, together under one roof, backed by the technology that keeps
               it all connected.
@@ -162,7 +162,7 @@ export default function PrimaryCarePage() {
             <span className={styles.eyebrow}>Sports Medicine, Built In</span>
             <h2>Injuries treated by someone who treats them for a living</h2>
             <p>
-              As team physician for USA Cricket, Dr. Parikh evaluates and manages
+              As Head Team Physician for USA Cricket, Dr. Parikh evaluates and manages
               athlete injuries at the national level — and that standard runs through
               the whole practice. Dr. Oh brings his own sports medicine training to
               primary care, and every physician here treats a sprained ankle, an aching
@@ -348,7 +348,7 @@ export default function PrimaryCarePage() {
               />
               <div className={styles["team-name"]}>{drParikh.name}, {drParikh.credentials}</div>
               <div className={styles["team-role"]}>Founder &amp; CMO · Family Medicine &amp; Sports Medicine</div>
-              <p>Team physician for USA Cricket, bringing national-team sports medicine standards to everyday primary care.</p>
+              <p>Head Team Physician for USA Cricket, bringing national-team sports medicine standards to everyday primary care.</p>
             </div>
             <div className={styles["team-card"]}>
               <Image
