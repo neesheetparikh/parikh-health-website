@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SITE } from "@/content/site";
 import RevealObserver from "@/components/effects/RevealObserver";
 import styles from "./aesthetic.module.css";
@@ -163,7 +164,11 @@ export default function AestheticServicesPage() {
               <ul>
                 <li>SkinPen microneedling</li>
                 <li>Microneedling with PRP</li>
-                <li>PRP facial treatments</li>
+                <li>
+                  <Link href="/conditions/prp-facial" style={{ textDecoration: "underline" }}>
+                    PRP facial treatments
+                  </Link>
+                </li>
                 <li>Acne scar reduction</li>
                 <li>Fine line &amp; wrinkle improvement</li>
                 <li>Pore minimization &amp; texture enhancement</li>
