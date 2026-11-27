@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SITE } from "@/content/site";
 import RevealObserver from "@/components/effects/RevealObserver";
 import styles from "./aesthetic.module.css";
@@ -136,7 +137,7 @@ export default function AestheticServicesPage() {
               </div>
               <span className={styles["pillar-tag"]}>Pillar One</span>
               <h3>Injectables &amp; Neuromodulators</h3>
-              <p>Botox, precisely dosed and placed.</p>
+              <p><Link href="/conditions/botox" style={{ textDecoration: "underline" }}>Botox</Link>, precisely dosed and placed.</p>
               <ul>
                 <li>Forehead lines &amp; frown lines (glabellar lines)</li>
                 <li>Crow&apos;s feet &amp; bunny lines</li>
@@ -161,9 +162,13 @@ export default function AestheticServicesPage() {
               <h3>Skin Rejuvenation &amp; SkinPen Microneedling</h3>
               <p>Medical-grade SkinPen microneedling, with or without PRP.</p>
               <ul>
-                <li>SkinPen microneedling</li>
-                <li>Microneedling with PRP (vampire facial)</li>
-                <li>PRP facial treatments</li>
+                <li><Link href="/conditions/microneedling" style={{ textDecoration: "underline" }}>SkinPen microneedling</Link></li>
+                <li>Microneedling with PRP</li>
+                <li>
+                  <Link href="/conditions/prp-facial" style={{ textDecoration: "underline" }}>
+                    PRP facial treatments
+                  </Link>
+                </li>
                 <li>Acne scar reduction</li>
                 <li>Fine line &amp; wrinkle improvement</li>
                 <li>Pore minimization &amp; texture enhancement</li>
@@ -180,7 +185,7 @@ export default function AestheticServicesPage() {
               <h3>PRP Hair Restoration</h3>
               <p>Regenerative treatment for thinning hair, from your own plasma.</p>
               <ul>
-                <li>PRP scalp injections for thinning hair</li>
+                <li><Link href="/conditions/prp-hair-restoration" style={{ textDecoration: "underline" }}>PRP scalp injections for thinning hair</Link></li>
                 <li>Androgenetic alopecia (pattern hair loss) treatment</li>
                 <li>Hair loss assessment &amp; candidacy evaluation</li>
                 <li>Monthly induction series with quarterly maintenance</li>
@@ -325,8 +330,7 @@ export default function AestheticServicesPage() {
               <h3>What&apos;s the difference between microneedling and microneedling with PRP?</h3>
               <p>
                 Standard SkinPen microneedling stimulates collagen through controlled
-                micro-injury. Adding your own PRP (platelet-rich plasma) — often called the
-                &quot;vampire facial&quot; — layers in growth factors that can enhance
+                micro-injury. Adding your own PRP (platelet-rich plasma) layers in growth factors that can enhance
                 texture, tone, and healing.
               </p>
             </div>
