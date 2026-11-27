@@ -162,7 +162,7 @@ export default function AestheticServicesPage() {
               <p>Medical-grade SkinPen microneedling, with or without PRP.</p>
               <ul>
                 <li>SkinPen microneedling</li>
-                <li>Microneedling with PRP (vampire facial)</li>
+                <li>Microneedling with PRP</li>
                 <li>PRP facial treatments</li>
                 <li>Acne scar reduction</li>
                 <li>Fine line &amp; wrinkle improvement</li>
@@ -325,8 +325,7 @@ export default function AestheticServicesPage() {
               <h3>What&apos;s the difference between microneedling and microneedling with PRP?</h3>
               <p>
                 Standard SkinPen microneedling stimulates collagen through controlled
-                micro-injury. Adding your own PRP (platelet-rich plasma) — often called the
-                &quot;vampire facial&quot; — layers in growth factors that can enhance
+                micro-injury. Adding your own PRP (platelet-rich plasma) layers in growth factors that can enhance
                 texture, tone, and healing.
               </p>
             </div>
