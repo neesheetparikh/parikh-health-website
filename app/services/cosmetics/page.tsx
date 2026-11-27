@@ -137,7 +137,7 @@ export default function AestheticServicesPage() {
               </div>
               <span className={styles["pillar-tag"]}>Pillar One</span>
               <h3>Injectables &amp; Neuromodulators</h3>
-              <p>Botox, precisely dosed and placed.</p>
+              <p><Link href="/conditions/botox" style={{ textDecoration: "underline" }}>Botox</Link>, precisely dosed and placed.</p>
               <ul>
                 <li>Forehead lines &amp; frown lines (glabellar lines)</li>
                 <li>Crow&apos;s feet &amp; bunny lines</li>
@@ -162,7 +162,7 @@ export default function AestheticServicesPage() {
               <h3>Skin Rejuvenation &amp; SkinPen Microneedling</h3>
               <p>Medical-grade SkinPen microneedling, with or without PRP.</p>
               <ul>
-                <li>SkinPen microneedling</li>
+                <li><Link href="/conditions/microneedling" style={{ textDecoration: "underline" }}>SkinPen microneedling</Link></li>
                 <li>Microneedling with PRP</li>
                 <li>
                   <Link href="/conditions/prp-facial" style={{ textDecoration: "underline" }}>
@@ -185,7 +185,7 @@ export default function AestheticServicesPage() {
               <h3>PRP Hair Restoration</h3>
               <p>Regenerative treatment for thinning hair, from your own plasma.</p>
               <ul>
-                <li>PRP scalp injections for thinning hair</li>
+                <li><Link href="/conditions/prp-hair-restoration" style={{ textDecoration: "underline" }}>PRP scalp injections for thinning hair</Link></li>
                 <li>Androgenetic alopecia (pattern hair loss) treatment</li>
                 <li>Hair loss assessment &amp; candidacy evaluation</li>
                 <li>Monthly induction series with quarterly maintenance</li>
